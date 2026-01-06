@@ -8,14 +8,3 @@ backend:
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
-
-collections:
-  - name: "pages"
-    label: "Mes Pages"
-    files:
-      - label: "Accueil"
-        name: "index"
-        file: "index.html"
-        fields:
-          - {label: "Titre principal", name: "title", widget: "string"}
-          - {label: "Contenu", name: "body", widget: "markdown"}
