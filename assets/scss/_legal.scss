@@ -1,59 +1,65 @@
 #legal {
+
     section {
+        padding: 0;
+    }
+
+    .legal-item {
         margin-bottom: 40px;
         padding: 0;
+    }
 
-        .boxed {
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 28px;
-            background-color: var(--neutral-light);
-            margin-top: 2.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 14px;
-            padding: 1rem;
-            min-height: 600px;
+    .boxed {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 28px;
+        background-color: var(--neutral-light);
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        border-radius: 14px;
+        padding: 1rem;
+        min-height: 600px;
 
-        }
+    }
 
-        h2 {
-            color: var(--accent-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
+    h2 {
+        color: var(--accent-color);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
 
-        h3 {
-            color: var(--main-color);
-            font-size: 1.3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.9rem;
-            padding-left: 2rem;
-        }
+    h3 {
+        color: var(--main-color);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.9rem;
+        padding-left: 2rem;
+    }
 
-        p,
+    p,
+    li {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--main-color);
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 1rem;
+
         li {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--main-color);
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 1rem;
-
-            li {
-                margin-bottom: 0.5rem;
-            }
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: underline;
-
-            &:hover {
-                color: var(--second-btn-color);
-            }
+            margin-bottom: 0.5rem;
         }
     }
+
+    a {
+        color: var(--accent-color);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--second-btn-color);
+        }
+    }
+
 }
 
 @media (max-width: 1300px) {
@@ -63,7 +69,7 @@
     }
 
     #legal {
-        section {
+        article {
             padding-inline: 1rem;
         }
     }

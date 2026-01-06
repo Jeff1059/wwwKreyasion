@@ -254,7 +254,7 @@ section {
   position: relative;
   padding-bottom: 0;
   padding-top: 0;
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 #cover::before {
   content: "";
@@ -961,12 +961,11 @@ span {
 }
 
 footer {
-  padding-top: 7rem;
-}
-footer section {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   background-color: var(--surface-color);
   border-top-left-radius: 250px 100px;
-  padding-bottom: 1rem;
 }
 footer .footer-bottom {
   display: flex;
@@ -1258,9 +1257,6 @@ footer .footer-bottom a {
     flex: 0 0 auto;
     width: 100%;
   }
-  footer {
-    padding-top: 0;
-  }
 }
 @media screen and (max-width: 600px) {
   .competences-grid {
@@ -1278,10 +1274,13 @@ footer .footer-bottom a {
   }
 }
 #legal section {
+  padding: 0;
+}
+#legal .legal-item {
   margin-bottom: 40px;
   padding: 0;
 }
-#legal section .boxed {
+#legal .boxed {
   box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 28px;
   background-color: var(--neutral-light);
   margin-top: 2.5rem;
@@ -1290,37 +1289,37 @@ footer .footer-bottom a {
   padding: 1rem;
   min-height: 600px;
 }
-#legal section h2 {
+#legal h2 {
   color: var(--accent-color);
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
-#legal section h3 {
+#legal h3 {
   color: var(--main-color);
   font-size: 1.3rem;
   margin-top: 1.5rem;
   margin-bottom: 0.9rem;
   padding-left: 2rem;
 }
-#legal section p,
-#legal section li {
+#legal p,
+#legal li {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--main-color);
 }
-#legal section ul {
+#legal ul {
   list-style-type: disc;
   padding-left: 20px;
   margin-bottom: 1rem;
 }
-#legal section ul li {
+#legal ul li {
   margin-bottom: 0.5rem;
 }
-#legal section a {
+#legal a {
   color: var(--accent-color);
   text-decoration: underline;
 }
-#legal section a:hover {
+#legal a:hover {
   color: var(--second-btn-color);
 }
 
@@ -1328,7 +1327,7 @@ footer .footer-bottom a {
   .boxed {
     padding: 1rem 0 1rem 0;
   }
-  #legal section {
+  #legal article {
     padding-inline: 1rem;
   }
 }

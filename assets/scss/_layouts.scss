@@ -16,7 +16,7 @@ section {
     position: relative;
     padding-bottom: 0;
     padding-top: 0;
-    margin-top: 6rem;
+    margin-top: 5rem;
 
     &::before {
         content: "";
@@ -231,9 +231,6 @@ span {
     }
 
 }
-
-
-@media screen and (max-width: 600px) {}
 
 @media screen and (max-width: 410px) {
     #banner {

@@ -591,14 +591,12 @@
 
 
 footer {
+    margin-top: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: var(--surface-color);
+    border-top-left-radius: 250px 100px;
 
-    padding-top: 7rem;
-
-    section {
-        background-color: var(--surface-color);
-        border-top-left-radius: 250px 100px;
-        padding-bottom: 1rem;
-    }
 
     .footer-bottom {
         display: flex;
@@ -964,10 +962,6 @@ footer {
             width: 100%;
         }
 
-    }
-
-    footer {
-        padding-top: 0;
     }
 
 }
