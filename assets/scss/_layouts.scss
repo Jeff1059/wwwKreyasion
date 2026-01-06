@@ -1,0 +1,268 @@
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    width: 100%;
+    scroll-margin-top: 100px;
+    overflow: clip;
+}
+
+.container {
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 0.75rem;
+}
+
+#banner {
+
+    position: relative;
+    align-content: center;
+    height: 100vh;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-bottom: 14px;
+        z-index: -100;
+        background-color: var(--surface-color);
+        border-bottom-right-radius: 500px 250px;
+        border-bottom-left-radius: 200px 50px;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.3);
+        content: "";
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: var(--alternative-text-color);
+        mask-image:
+            url('data:image/svg+xml,<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><circle cx="12" cy="12" r="7.8" style="fill:none;stroke:currentColor;stroke-width:1px;stroke-opacity:0.5;"/><circle cx="12" cy="12" r="10.8" style="fill:none;stroke:currentColor;stroke-width:2.2px;stroke-opacity:0.5;"/></svg>'),
+            url('data:image/svg+xml,<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><circle cx="12" cy="12" r="7.8" style="fill:none;stroke:currentColor;stroke-width:1px;stroke-opacity:0.5;"/><circle cx="12" cy="12" r="10.8" style="fill:none;stroke:currentColor;stroke-width:2.2px;stroke-opacity:0.5;"/></svg>');
+        mask-repeat: no-repeat, no-repeat;
+        mask-position: 5vw 10vh, 70vw 50vh;
+        mask-size: 250px 250px, 140px 140px;
+    }
+
+}
+
+/*.banner {
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+    background-image: url(../images/cover-header.jpg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
+
+
+.banner p {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--accent-color)
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.banner-content_text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.undertitle::after {
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.left {
+    align-items: flex-start !important;
+}
+
+.profil-design {
+    flex: 0 0 51%;
+    max-width: 51%;
+    padding-top: 2rem;
+}
+
+.profil-card {
+    position: relative;
+    box-sizing: border-box;
+    margin: 50px 0 0 50px;
+    z-index: 1;
+    border-radius: 16px;
+    background-color: var(--surface-color);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.profil-card_text {
+    padding: 20px 20px 20px 20px;
+
+    h3 {
+        padding-left: 100px;
+    }
+
+    p {
+        padding-left: 100px;
+    }
+}
+
+.profil-card_image {
+    z-index: 2;
+    position: absolute;
+    border-radius: 16px;
+}
+
+.parcours {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.competences-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 1rem;
+    gap: 4rem;
+}
+
+.direction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .flex {
+        justify-content: center;
+    }
+
+    #banner {
+        min-height: 80vh;
+    }
+
+    .competences-grid {
+        padding-top: 4rem;
+        gap: 3.25rem;
+    }
+
+    .direction {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    section {
+        padding-top: 2rem;
+    }
+
+    .flex {
+        flex-wrap: wrap;
+    }
+
+    .banner {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .banner-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left !important
+    }
+
+    .direction {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parcours {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .profil-design {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .competences-grid {
+        grid-template-columns: repeat(2, 2fr);
+        row-gap: 5rem;
+        column-gap: 2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .competences-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+    #banner {
+        img {
+            max-width: 80%;
+        }
+
+        .banner-content_text h1 {
+            font-size: 1.75rem;
+        }
+    }
+
+
+    .profil-card_text p {
+        padding-top: 1rem;
+        padding-left: 0px;
+    }
+
+    .profil-card_text h3 {
+        margin-bottom: 2rem;
+    }
+}

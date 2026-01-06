@@ -1,9 +1,9 @@
 {
-  "name": "Kreasyon Design",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "dependencies": {
-    "resend": "^4.0.0"
-  }
+    "name": "Kreasyon Design",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "dependencies": {
+        "resend": "^4.0.0"
+    }
 }
