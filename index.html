@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Création sites web modernes pour TPE/PME. WordPress, CMS, responsive.">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="canonical" href="https://www.kreasyon-design.com/">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700|open-sans:400,500,600,700"
         rel="stylesheet" />
@@ -144,8 +148,7 @@
         <section id="banner" class="banner">
             <div class="container">
                 <div class="banner-content">
-                    <img class="banner-content_image" src="assets/images/cover-head.png" width="380px" height="380px"
-                        alt="bannière">
+                    <img class="banner-content_image" src="assets/images/cover-head.png" alt="bannière">
                     <div class="banner-content_text">
                         <h1>Création de sites web modernes & efficaces</h1>
                         <p>Je conçois des sites web professionnels, rapides et simples à administrer pour les
@@ -228,7 +231,7 @@
             <div class="container">
                 <h2 class="undertitle">Mes <span>Services</span></h2>
                 <div class="services-area">
-                    <div class="services-card service-1">
+                    <div class="services-card">
                         <img src="assets/images/service-web.png" alt="service-web">
                         <div class="services-card_text">
                             <h3>Création de votre site vitrine</h3>
@@ -240,7 +243,7 @@
                                 les objectifs et le niveau d’autonomie souhaité.</p>
                         </div>
                     </div>
-                    <div class="services-card service-2">
+                    <div class="services-card">
                         <img src="assets/images/service-uxui.png" alt="service-uxui">
                         <div class="services-card_text">
                             <h3>Refonte & amélioration UX</h3>
@@ -251,7 +254,7 @@
                                 phase de tests/recette et corrections.</p>
                         </div>
                     </div>
-                    <div class="services-card service-3">
+                    <div class="services-card">
                         <img src="assets/images/service-dev.png" alt="service-dev">
                         <div class="services-card_text">
                             <h3>Intégration HTML/CSS/Javascript</h3>
@@ -414,7 +417,7 @@
                                 <img src="https://picsum.photos/id/1/600/300" alt="slide-1">
                                 <div class="slide-content_text">
                                     <h3>Design du site web</h3>
-                                    <a href="/assets/uploads/pdf/maquette_sinbad_lot_2.pdf" target="_blank"
+                                    <a href="/assets/sinbad/uploads/pdf/maquette_sinbad_lot_2.pdf" target="_blank"
                                         rel="noopener noreferrer">Voir maquette</a>
                                 </div>
                             </div>
@@ -456,18 +459,14 @@
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-card">
-                        <img src="assets/images/sophie-manou.jpg" alt="sophie-manou">
-                        <div class="testimonial-content">
-                            <p class="testimonial-name">Sophie CHARTREAU</p>
-                            <p class="testimonial-feedback">Content du travail réalisé</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <img src="assets/images/martin-sinbad.jpg" alt="martin-sinbad">
-                        <div class="testimonial-content">
-                            <p class="testimonial-name">Martin LE BARS</p>
-                            <p class="testimonial-feedback">Jeffry a su m'accompagner sur la refonte de mon site web en
-                                étant force de proposition et en mettant en oeuvre</p>
+                        <p class="testimonial-feedback">" Jeffry a su m'accompagner sur la refonte de mon site web en
+                            étant force de proposition et en mettant en oeuvre "</p>
+                        <div class="testimonial-profile">
+                            <img src="assets/images/martin-sinbad.jpg" alt="martin-sinbad">
+                            <div class="testimonial-profile_text">
+                                <p class="testimonial-name">Martin LE BARS</p>
+                                <p class="testimonial-position">CEO Sinbad Conseil</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -571,7 +570,7 @@
                 turnstileToken: fd.get("cf-turnstile-response")
             };
 
-            const r = await fetch("/assets/js/api/contact", {
+            const r = await fetch("assets/js/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)

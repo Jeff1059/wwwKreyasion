@@ -12,6 +12,57 @@ section {
     padding-inline: 0.75rem;
 }
 
+#cover {
+    position: relative;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 6rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/assets/images/legal-cover.png);
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .page-header {
+        position: relative;
+        display: flex;
+        margin-bottom: 2rem;
+        padding: 5rem 0 5rem 0;
+        z-index: 2;
+
+        .section-title {
+            text-align: left;
+            margin-bottom: 0;
+            filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
+        }
+
+
+
+    }
+
+}
+
+
+
 #banner {
 
     position: relative;
@@ -82,8 +133,10 @@ span {
     filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
 
     img {
-        max-width: 100%;
+        max-width: 400px;
         height: auto;
+        margin: 0 auto;
+        padding: 2rem 3rem 2rem 3rem;
     }
 }
 
@@ -103,64 +156,7 @@ span {
 }
 
 
-.flex {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: space-between;
-}
 
-.left {
-    align-items: flex-start !important;
-}
-
-.profil-design {
-    flex: 0 0 51%;
-    max-width: 51%;
-    padding-top: 2rem;
-}
-
-.profil-card {
-    position: relative;
-    box-sizing: border-box;
-    margin: 50px 0 0 50px;
-    z-index: 1;
-    border-radius: 16px;
-    background-color: var(--surface-color);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-}
-
-.profil-card_text {
-    padding: 20px 20px 20px 20px;
-
-    h3 {
-        padding-left: 100px;
-    }
-
-    p {
-        padding-left: 100px;
-    }
-}
-
-.profil-card_image {
-    z-index: 2;
-    position: absolute;
-    border-radius: 16px;
-}
-
-.parcours {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.competences-grid {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    padding-inline: 1rem;
-    gap: 4rem;
-}
 
 .direction {
     display: flex;
@@ -176,10 +172,6 @@ span {
         justify-content: center;
     }
 
-    #banner {
-        min-height: 80vh;
-    }
-
     .competences-grid {
         padding-top: 4rem;
         gap: 3.25rem;
@@ -192,6 +184,10 @@ span {
 }
 
 @media screen and (max-width: 900px) {
+
+    #banner {
+        height: fit-content;
+    }
 
     section {
         padding-top: 2rem;
@@ -237,16 +233,15 @@ span {
 }
 
 
-@media screen and (max-width: 600px) {
-
-    .competences-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-}
+@media screen and (max-width: 600px) {}
 
 @media screen and (max-width: 410px) {
     #banner {
+
+        #banner {
+            height: 100vh;
+        }
+
         img {
             max-width: 80%;
         }
@@ -259,7 +254,7 @@ span {
 
     .profil-card_text p {
         padding-top: 1rem;
-        padding-left: 0px;
+        padding-left: 0 !important;
     }
 
     .profil-card_text h3 {

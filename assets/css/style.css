@@ -206,7 +206,12 @@ body {
   overflow-wrap: break-word !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 2rem;
 }
 
@@ -216,7 +221,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .banner-content_text h1 {
   font-size: 3rem;
-  line-height: 3rem;
 }
 
 .card-content_text p {
@@ -244,6 +248,47 @@ section {
   max-width: 1400px;
   margin-inline: auto;
   padding-inline: 0.75rem;
+}
+
+#cover {
+  position: relative;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: 6rem;
+}
+#cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/legal-cover.png);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+#cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+#cover .page-header {
+  position: relative;
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 5rem 0 5rem 0;
+  z-index: 2;
+}
+#cover .page-header .section-title {
+  text-align: left;
+  margin-bottom: 0;
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
 }
 
 #banner {
@@ -311,8 +356,10 @@ span {
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
 }
 .banner-content img {
-  max-width: 100%;
+  max-width: 400px;
   height: auto;
+  margin: 0 auto;
+  padding: 2rem 3rem 2rem 3rem;
 }
 
 .banner-content_text {
@@ -328,62 +375,6 @@ span {
   border-bottom: 2px solid var(--accent-color);
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  justify-content: space-between;
-}
-
-.left {
-  align-items: flex-start !important;
-}
-
-.profil-design {
-  flex: 0 0 51%;
-  max-width: 51%;
-  padding-top: 2rem;
-}
-
-.profil-card {
-  position: relative;
-  box-sizing: border-box;
-  margin: 50px 0 0 50px;
-  z-index: 1;
-  border-radius: 16px;
-  background-color: var(--surface-color);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-}
-
-.profil-card_text {
-  padding: 20px 20px 20px 20px;
-}
-.profil-card_text h3 {
-  padding-left: 100px;
-}
-.profil-card_text p {
-  padding-left: 100px;
-}
-
-.profil-card_image {
-  z-index: 2;
-  position: absolute;
-  border-radius: 16px;
-}
-
-.parcours {
-  display: flex;
-  flex-direction: column;
-}
-
-.competences-grid {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  padding-inline: 1rem;
-  gap: 4rem;
-}
-
 .direction {
   display: flex;
   flex-direction: row;
@@ -395,9 +386,6 @@ span {
   .flex {
     justify-content: center;
   }
-  #banner {
-    min-height: 80vh;
-  }
   .competences-grid {
     padding-top: 4rem;
     gap: 3.25rem;
@@ -407,6 +395,10 @@ span {
   }
 }
 @media screen and (max-width: 900px) {
+  #banner {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   section {
     padding-top: 2rem;
   }
@@ -442,12 +434,10 @@ span {
          column-gap: 2rem;
   }
 }
-@media screen and (max-width: 600px) {
-  .competences-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 @media screen and (max-width: 410px) {
+  #banner #banner {
+    height: 100vh;
+  }
   #banner img {
     max-width: 80%;
   }
@@ -456,7 +446,7 @@ span {
   }
   .profil-card_text p {
     padding-top: 1rem;
-    padding-left: 0px;
+    padding-left: 0 !important;
   }
   .profil-card_text h3 {
     margin-bottom: 2rem;
@@ -481,6 +471,59 @@ span {
 .main-btn:hover {
   color: var(--alternative-text-color);
   background: var(--second-btn-color);
+}
+
+/* Section Profile */
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.parcours {
+  display: flex;
+  flex-direction: column;
+}
+
+.competences-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding-inline: 1rem;
+  gap: 4rem;
+}
+
+.profil-design {
+  flex: 0 0 auto;
+  max-width: 50%;
+  padding-top: 2rem;
+}
+
+.profil-card {
+  position: relative;
+  box-sizing: border-box;
+  margin: 50px 0 0 50px;
+  z-index: 1;
+  border-radius: 16px;
+  background-color: var(--surface-color);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.profil-card_text {
+  padding: 20px 20px 20px 20px;
+}
+.profil-card_text h3 {
+  padding-left: 100px;
+}
+.profil-card_text p {
+  padding-left: 100px;
+}
+
+.profil-card_image {
+  z-index: 2;
+  position: absolute;
+  border-radius: 16px;
 }
 
 .story {
@@ -531,27 +574,7 @@ span {
   width: 100%;
 }
 
-.card-content_btn {
-  display: flex;
-  justify-content: center;
-}
-.card-content_btn .main-btn {
-  font-size: 12px;
-  padding: 8px 16px 8px 16px;
-}
-
-.competences-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.competences-pills {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
+/* Section Competences */
 #competences {
   position: relative;
 }
@@ -591,6 +614,28 @@ span {
   white-space: nowrap;
 }
 
+.card-content_btn {
+  display: flex;
+  justify-content: center;
+}
+.card-content_btn .main-btn {
+  font-size: 12px;
+  padding: 8px 16px 8px 16px;
+}
+
+.competences-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.competences-pills {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Section Realisations */
 .work-content {
   display: flex;
   flex-direction: row;
@@ -693,48 +738,7 @@ span {
   border-radius: 50%;
 }
 
-#cover {
-  position: relative;
-  padding-bottom: 0;
-  padding-top: 0;
-  margin-top: 6rem;
-}
-#cover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(/assets/images/legal-cover.png);
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-#cover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-.page-header {
-  position: relative;
-  display: flex;
-  margin-bottom: 2rem;
-  padding: 5rem 0 5rem 0;
-  z-index: 2;
-}
-.page-header .section-title {
-  text-align: left;
-  margin-bottom: 0;
-  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
-}
-
+/*Avis*/
 #testimonials .container {
   display: flex;
   flex-wrap: wrap;
@@ -747,10 +751,11 @@ span {
 #testimonials .testimonial {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   gap: 2rem;
   width: 80%;
   justify-content: space-around;
-  padding: 2rem;
+  padding: 4rem 2rem 4rem 2rem;
 }
 #testimonials .testimonial-title {
   position: relative;
@@ -764,13 +769,40 @@ span {
 }
 #testimonials .testimonial-card {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--neutral-light);
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: 400px;
+  height: 100%;
+}
+#testimonials .testimonial-profile {
+  display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
   justify-content: flex-start;
-  border-radius: 16px;
-  background-color: var(--neutral-light);
-  padding: 1rem;
+}
+#testimonials .testimonial-profile img {
+  display: block;
+  height: auto;
+  width: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+#testimonials .testimonial-profile_text {
+  text-align: left;
+  font-size: 12px;
+}
+#testimonials .testimonial-profile_text .testimonial-name {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+#testimonials .testimonial-profile_text .testimonial-position {
+  font-style: italic;
 }
 #testimonials .testimonial-content {
   text-align: left;
@@ -783,12 +815,6 @@ span {
 }
 #testimonials .testimonial-feedback {
   font-style: italic;
-}
-
-.testimonial img {
-  border-radius: 50%;
-  max-width: 150px;
-  height: auto;
 }
 
 .form-btn_area {
@@ -889,10 +915,11 @@ span {
 }
 #contact .faq-content {
   position: relative;
-  background-color: var(--faq-bg);
+  background-color: var(--main-color);
   margin-bottom: 2rem;
   padding: 0 1rem 0 1rem;
   border-radius: 16px;
+  color: var(--alternative-text-color);
 }
 #contact .faq-content h4 {
   margin: 0;
@@ -1088,6 +1115,7 @@ footer .footer-bottom a {
 #services .services-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 #services .services-card {
   position: relative;
@@ -1097,6 +1125,9 @@ footer .footer-bottom a {
   opacity: 1;
   border-radius: 16px;
   border: 1px solid var(--main-color);
+  max-width: 400px;
+  min-height: 500px;
+  margin: 0 auto;
 }
 #services .services-card::before {
   content: "";
@@ -1112,13 +1143,6 @@ footer .footer-bottom a {
   border-radius: 16px;
   z-index: -1;
 }
-#services .services-card:hover {
-  z-index: 4;
-  box-shadow: 0px 0px 10px rgba(245, 229, 229, 0.5);
-  font-size: 110%;
-  transition: all 0.5s ease-in-out;
-  rotate: 0deg;
-}
 #services .services-card img {
   display: block;
   width: auto;
@@ -1132,21 +1156,6 @@ footer .footer-bottom a {
 #services .services-card .services-card_text h3 {
   text-align: center;
 }
-#services .service-1 {
-  rotate: -2deg;
-  z-index: 1;
-}
-#services .service-2 {
-  margin-top: 1rem;
-  rotate: 2deg;
-  margin-left: -2rem;
-  z-index: 2;
-}
-#services .service-3 {
-  rotate: -4deg;
-  margin-left: -2rem;
-  z-index: 3;
-}
 
 @media screen and (max-width: 1300px) {
   #competences .container:before {
@@ -1159,28 +1168,6 @@ footer .footer-bottom a {
     flex-direction: row;
     justify-content: center;
     gap: 4rem;
-  }
-  #services .services-card:hover {
-    z-index: auto;
-    box-shadow: none;
-    font-size: inherit;
-    transition: none;
-    rotate: unset;
-  }
-  #services .service-1 {
-    rotate: 0deg;
-    z-index: 1;
-  }
-  #services .service-2 {
-    margin-top: 0;
-    rotate: 0deg;
-    margin-left: 0;
-    z-index: 1;
-  }
-  #services .service-3 {
-    rotate: 0deg;
-    margin-left: 0;
-    z-index: 1;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -1197,6 +1184,10 @@ footer .footer-bottom a {
   }
 }
 @media screen and (max-width: 900px) {
+  .profil-design {
+    max-width: 100%;
+    padding-top: 2rem;
+  }
   .story {
     padding-left: 0;
     flex-direction: column;
@@ -1272,6 +1263,9 @@ footer .footer-bottom a {
   }
 }
 @media screen and (max-width: 600px) {
+  .competences-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
   #testimonials .testimonial {
     grid-template-columns: repeat(1, 1fr);
     gap: 3rem;

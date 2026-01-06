@@ -6,6 +6,11 @@
             "extensionName": ".css",
             "savePath": "/assets/css",
             "savePathReplacementPairs": null
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/assets/css"
         }
     ],
     "liveSassCompile.settings.generateMap": false

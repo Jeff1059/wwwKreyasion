@@ -29,7 +29,7 @@ function generateEmailHtml(prenom, nom, details, isClient) {
 
     // Intro message
     const intro = isClient
-        ? `Bonjour ${prenom},<br><br>Nous avons bien reçu votre demande et nous vous en remercions. Nous reviendrons vers vous dans les plus brefs délais.<br><br>Voici un récapitulatif de votre message :`
+        ? `Bonjour ${prenom},<br><br>Nous avons bien reçu votre demande.<br><br>Nous reviendrons vers vous dans les plus brefs délais.<br><br>Voici un récapitulatif de votre message :`
         : `Vous avez reçu une nouvelle demande de la part de <strong>${prenom} ${nom}</strong>.`;
 
     // Fields to display
@@ -63,12 +63,13 @@ function generateEmailHtml(prenom, nom, details, isClient) {
             .content { padding: 30px; }
             .footer { background-color: ${COLORS.lightGray}; color: ${COLORS.text}; padding: 15px; text-align: center; font-size: 12px; }
             .button { display: inline-block; padding: 10px 20px; background-color: ${COLORS.accent}; color: #ffffff; text-decoration: none; border-radius: 4px; margin-top: 20px; }
+            .img { display: block; margin: 0 auto; }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="header">
-                <img src="https://kreasyon-design.fr/assets/images/logo-kreasyon.png" alt="Logo Kreasyon Design" style="width: 105px; height: auto;">
+                <img src="https://kreasyon-design.com/assets/images/logo-kreasyon.png" alt="Logo Kreasyon Design" style="width: 105px; height: auto;">
             </div>
             <div class="content">
                 <h2 style="color: ${COLORS.accent}; margin-top: 0;">${title}</h2>

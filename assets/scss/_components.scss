@@ -20,6 +20,63 @@
 
 }
 
+/* Section Profile */
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.parcours {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.competences-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 1rem;
+    gap: 4rem;
+}
+
+
+.profil-design {
+    flex: 0 0 auto;
+    max-width: 50%;
+    padding-top: 2rem;
+}
+
+.profil-card {
+    position: relative;
+    box-sizing: border-box;
+    margin: 50px 0 0 50px;
+    z-index: 1;
+    border-radius: 16px;
+    background-color: var(--surface-color);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.profil-card_text {
+    padding: 20px 20px 20px 20px;
+
+    h3 {
+        padding-left: 100px;
+    }
+
+    p {
+        padding-left: 100px;
+    }
+}
+
+.profil-card_image {
+    z-index: 2;
+    position: absolute;
+    border-radius: 16px;
+}
 
 .story {
     display: flex;
@@ -78,28 +135,7 @@
     }
 }
 
-.card-content_btn {
-    display: flex;
-    justify-content: center;
-
-    .main-btn {
-        font-size: 12px;
-        padding: 8px 16px 8px 16px;
-    }
-}
-
-.competences-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.competences-pills {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
+/* Section Competences */
 
 #competences {
 
@@ -146,6 +182,30 @@
         white-space: nowrap;
     }
 }
+
+.card-content_btn {
+    display: flex;
+    justify-content: center;
+
+    .main-btn {
+        font-size: 12px;
+        padding: 8px 16px 8px 16px;
+    }
+}
+
+.competences-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.competences-pills {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Section Realisations */
 
 .work-content {
     display: flex;
@@ -258,55 +318,7 @@
     border-radius: 50%;
 }
 
-#cover {
-    position: relative;
-    padding-bottom: 0;
-    padding-top: 0;
-    margin-top: 6rem;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(/assets/images/legal-cover.png);
-        background-size: cover;
-        background-position: center;
-        z-index: 0;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-    }
-
-}
-
-
-.page-header {
-    position: relative;
-    display: flex;
-    margin-bottom: 2rem;
-    padding: 5rem 0 5rem 0;
-    z-index: 2;
-
-    .section-title {
-        text-align: left;
-        margin-bottom: 0;
-        filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
-    }
-
-
-
-}
+/*Avis*/
 
 #testimonials {
 
@@ -325,10 +337,11 @@
     .testimonial {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
         gap: 2rem;
         width: 80%;
         justify-content: space-around;
-        padding: 2rem;
+        padding: 4rem 2rem 4rem 2rem;
     }
 
     .testimonial-title {
@@ -345,13 +358,45 @@
 
     .testimonial-card {
         display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+        background-color: var(--neutral-light);
+        border-radius: 16px;
+        padding: 1rem;
+        max-width: 400px;
+        height: 100%;
+    }
+
+    .testimonial-profile {
+        display: flex;
         flex-direction: row;
         gap: 1rem;
         align-items: center;
         justify-content: flex-start;
-        border-radius: 16px;
-        background-color: var(--neutral-light);
-        padding: 1rem;
+
+        img {
+            display: block;
+            height: auto;
+            width: 50px;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+    }
+
+    .testimonial-profile_text {
+        text-align: left;
+        font-size: 12px;
+
+        .testimonial-name {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-position {
+            font-style: italic;
+        }
     }
 
     .testimonial-content {
@@ -369,12 +414,6 @@
         font-style: italic;
     }
 
-}
-
-.testimonial img {
-    border-radius: 50%;
-    max-width: 150px;
-    height: auto;
 }
 
 .form-btn_area {
@@ -490,10 +529,11 @@
 
     .faq-content {
         position: relative;
-        background-color: var(--faq-bg);
+        background-color: var(--main-color);
         margin-bottom: 2rem;
         padding: 0 1rem 0 1rem;
         border-radius: 16px;
+        color: var(--alternative-text-color);
 
         h4 {
             margin: 0;
@@ -723,6 +763,7 @@ footer {
     .services-area {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 3rem
     }
 
     .services-card {
@@ -733,6 +774,9 @@ footer {
         opacity: 1;
         border-radius: 16px;
         border: 1px solid var(--main-color);
+        max-width: 400px;
+        min-height: 500px;
+        margin: 0 auto;
 
         &::before {
             content: "";
@@ -747,14 +791,6 @@ footer {
             filter: blur(10px);
             border-radius: 16px;
             z-index: -1;
-        }
-
-        &:hover {
-            z-index: 4;
-            box-shadow: 0px 0px 10px rgba(245, 229, 229, 0.5);
-            font-size: 110%;
-            transition: all 0.5s ease-in-out;
-            rotate: 0deg;
         }
     }
 
@@ -778,24 +814,6 @@ footer {
         }
     }
 
-    .service-1 {
-        rotate: -2deg;
-        z-index: 1;
-    }
-
-    .service-2 {
-        margin-top: 1rem;
-        rotate: 2deg;
-        margin-left: -2rem;
-        z-index: 2;
-    }
-
-    .service-3 {
-        rotate: -4deg;
-        margin-left: -2rem;
-        z-index: 3;
-    }
-
 }
 
 @media screen and (max-width: 1300px) {
@@ -814,36 +832,6 @@ footer {
         gap: 4rem;
     }
 
-    #services {
-
-        .services-card {
-            &:hover {
-                z-index: auto;
-                box-shadow: none;
-                font-size: inherit;
-                transition: none;
-                rotate: unset;
-            }
-        }
-
-        .service-1 {
-            rotate: 0deg;
-            z-index: 1;
-        }
-
-        .service-2 {
-            margin-top: 0;
-            rotate: 0deg;
-            margin-left: 0;
-            z-index: 1;
-        }
-
-        .service-3 {
-            rotate: 0deg;
-            margin-left: 0;
-            z-index: 1;
-        }
-    }
 }
 
 
@@ -871,6 +859,11 @@ footer {
 
 
 @media screen and (max-width: 900px) {
+
+    .profil-design {
+        max-width: 100%;
+        padding-top: 2rem;
+    }
 
     .story {
         padding-left: 0;
@@ -980,6 +973,10 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+
+    .competences-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     #testimonials {
 
