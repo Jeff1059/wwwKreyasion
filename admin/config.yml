@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: Jeff1059/wwwKreyasion # Exemple: passion-kreasyon/mon-site
+  branch: main # Votre branche principale
+  base_url: https://www.kreyasion-design.com
+  auth_endpoint: api/auth/auth
+  auth_callback_endpoint: api/auth/callback
+
+media_folder: "assets/images" # Où seront stockées les images envoyées
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Mes Pages"
+    files:
+      - label: "Accueil"
+        name: "index"
+        file: "index.html"
+        fields:
+          - {label: "Titre principal", name: "title", widget: "string"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
