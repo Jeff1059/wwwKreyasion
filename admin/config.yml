@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: Jeff1059/wwwKreyasion # Exemple: passion-kreasyon/mon-site
-  branch: main # Votre branche principale
-  base_url: https://www.kreyasion-design.com
+  repo: Jeff1059/wwwKreyasion
+  branch: main
+  base_url: https://www.kreyasion-design.fr
   auth_endpoint: api/auth/auth
   auth_callback_endpoint: api/auth/callback
 
-media_folder: "assets/images" # Où seront stockées les images envoyées
+media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
