@@ -546,7 +546,7 @@ span {
   color: var(--alternative-text-color);
   background-color: var(--main-color);
 }
-.icon svg {
+.icon img {
   position: absolute;
   left: 14px;
   top: 14px;
