@@ -110,7 +110,7 @@ const CMS = {
     if (parcoursContainer && data.parcours) {
       const parcoursHTML = data.parcours.map(item => `
         <div class="story">
-          <div class="icon">${item.icon}</div>
+          <div class="icon">${item.image}</div>
           <div class="story-text">
             <p><span>${item.value}</span></p>
             <p>${item.label}</p>
