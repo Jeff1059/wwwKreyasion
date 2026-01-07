@@ -192,40 +192,43 @@ const CMS = {
   },
 
   /**
-   * Render - Section Réalisations
-   */
+ * Render - Section Réalisations
+ */
   renderRealisations(data) {
     const section = document.querySelector('#realisations');
     if (!section) return;
 
+    // Titre de la section
     const title = section.querySelector('[data-cms="realisations.title"]');
-    if (title && data.sectionTitle) title.innerHTML = data.sectionTitle.replace(/(\w+)$/, '<span>$1</span>');
-
-    // Pour l'instant, on gère le premier item
-    const item = data.items?.[0];
-    if (!item) return;
-
-    const clientName = section.querySelector('[data-cms="realisations.client"]');
-    const clientLogo = section.querySelector('[data-cms="realisations.logo"]');
-    const description = section.querySelector('[data-cms="realisations.description"]');
-    const techContainer = section.querySelector('[data-cms="realisations.technologies"]');
-    const sliderContainer = section.querySelector('[data-cms="realisations.slides"]');
-
-    if (clientName) clientName.textContent = item.client;
-    if (clientLogo) clientLogo.src = item.logo;
-    if (description) description.textContent = item.description;
-
-    if (techContainer && item.technologies) {
-      techContainer.innerHTML = item.technologies.map(tech =>
-        `<div class="margin-none">${tech}</div>`
-      ).join('');
+    if (title && data.sectionTitle) {
+      title.innerHTML = data.sectionTitle.replace(/(\w+)$/, '<span>$1</span>');
     }
 
-    if (sliderContainer && item.slides) {
-      sliderContainer.innerHTML = item.slides.map((slide, idx) => `
+    // Container principal
+    const realisationsContainer = section.querySelector('[data-cms="realisations.items"]');
+    if (!realisationsContainer || !data.items) return;
+
+    // Générer le HTML pour chaque réalisation
+    const realisationsHTML = data.items.map(item => `
+    <div class="work-content_text">
+      <a href="${item.url}">
+        <div class="work-content_client_desc">
+          <h3 class="client">${item.client}</h3>
+          <div class="wrapper-logo">
+            <img src="${item.logo}" class="client-logo" alt="${item.client}">
+          </div>
+        </div>
+      </a>
+      <p>${item.description}</p>
+      <div class="pill-name">
+        ${item.technologies.map(tech => `<div class="margin-none">${tech}</div>`).join('')}
+      </div>
+    </div>
+    <div class="slider">
+      ${item.slides.map((slide, idx) => `
         <div class="slide${idx === 0 ? ' active' : ''}">
           <div class="slide-content">
-            <img src="${slide.image}" alt="${slide.title}">
+            <img src="${slide.image}" alt="slide-${slide.number}">
             <div class="slide-content_text">
               <h3>${slide.title}</h3>
               <a href="${slide.linkUrl}" target="_blank" rel="noopener noreferrer">${slide.linkText}</a>
@@ -233,12 +236,17 @@ const CMS = {
           </div>
           <div class="slide-number">${slide.number}</div>
         </div>
-      `).join('');
+      `).join('')}
+    </div>
+  `).join('');
 
-      // Réinitialiser le slider
-      this.initSlider(sliderContainer);
-    }
+    realisationsContainer.innerHTML = realisationsHTML;
+
+    // Réinitialiser le slider pour chaque réalisation
+    const sliders = section.querySelectorAll('.slider');
+    sliders.forEach(slider => this.initSlider(slider));
   },
+
 
   /**
    * Render - Section Témoignages
