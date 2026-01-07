@@ -1,4 +1,4 @@
-// Endpoint OAuth pour Decap CMS avec GitHub
+// Endpoint OAuth pour Decap CMS avec GitHub (mode popup)
 export default async function handler(req, res) {
   const { code } = req.query;
 
@@ -30,15 +30,49 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // Rediriger vers le CMS avec le token
     if (data.access_token) {
-      res.redirect(`/admin/#access_token=${data.access_token}&token_type=bearer`);
+      // Pour Decap CMS en mode popup: envoyer le token au parent window via postMessage
+      const script = `
+        <html>
+          <head><title>Authentification réussie</title></head>
+          <body>
+            <script>
+              (function() {
+                function receiveMessage(e) {
+                  console.log("receiveMessage %o", e);
+                  window.opener.postMessage(
+                    'authorization:github:success:${JSON.stringify({ token: data.access_token, provider: 'github' })}',
+                    e.origin
+                  );
+                  window.close();
+                }
+                window.addEventListener("message", receiveMessage, false);
+                window.opener.postMessage("authorizing:github", "*");
+              })();
+            </script>
+          </body>
+        </html>
+      `;
+      res.setHeader('Content-Type', 'text/html');
+      res.send(script);
     } else {
       console.error('GitHub OAuth error:', data);
-      res.status(400).json({
-        error: 'Échec de l\'authentification',
-        details: data.error_description || data.error
-      });
+      const errorScript = `
+        <html>
+          <head><title>Erreur d'authentification</title></head>
+          <body>
+            <script>
+              window.opener.postMessage(
+                'authorization:github:error:${JSON.stringify({ error: data.error_description || data.error || 'Unknown error' })}',
+                '*'
+              );
+              window.close();
+            </script>
+          </body>
+        </html>
+      `;
+      res.setHeader('Content-Type', 'text/html');
+      res.send(errorScript);
     }
   } catch (error) {
     console.error('Erreur OAuth:', error);
