@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jeff1059/wwwKreyasion
+  repo: Jeff1059/wwwKreyasion
   branch: main
   auth_endpoint: api/auth-cms
   base_url: https://www.kreasyon-design.fr
