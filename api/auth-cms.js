@@ -2,13 +2,19 @@
 export default async function handler(req, res) {
   const { code } = req.query;
 
-  // Vérifier que le code OAuth est présent
+  // Étape 1: Si pas de code, rediriger vers GitHub pour autorisation
   if (!code) {
-    return res.status(400).json({ error: 'Code OAuth manquant' });
+    const clientId = process.env.OAUTH_CLIENT_ID;
+    const redirectUri = 'https://www.kreasyon-design.fr/api/auth-cms';
+    const scope = 'repo,user';
+
+    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
+
+    return res.redirect(githubAuthUrl);
   }
 
+  // Étape 2: Échanger le code contre un token d'accès
   try {
-    // Échanger le code contre un token d'accès
     const response = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
@@ -28,7 +34,11 @@ export default async function handler(req, res) {
     if (data.access_token) {
       res.redirect(`/admin/#access_token=${data.access_token}&token_type=bearer`);
     } else {
-      res.status(400).json({ error: 'Échec de l\'authentification' });
+      console.error('GitHub OAuth error:', data);
+      res.status(400).json({
+        error: 'Échec de l\'authentification',
+        details: data.error_description || data.error
+      });
     }
   } catch (error) {
     console.error('Erreur OAuth:', error);
