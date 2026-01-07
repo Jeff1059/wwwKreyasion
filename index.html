@@ -13,6 +13,12 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet">
     <title>Kreasyon | Création sites web TPE/PME - Développeur freelance</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+        function enableSubmit() {
+            document.getElementById("submit-button").disabled = false;
+        }
+    </script>
 </head>
 
 <body data-cms-page="index">
@@ -228,10 +234,12 @@
                         <input type="email" name="email" id="email" placeholder="Email*" required>
                         <textarea name="demande" id="demande" placeholder="Description de votre besoin"></textarea>
                         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACJ-zFe3667bncKz"></div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACJ-zFe3667bncKz" data-callback="enableSubmit">
+                        </div>
                         <div class="form-btn_area">
                             <button type="reset" class="main-btn form-btn_annuler">Effacer</button>
-                            <button type="submit" class="main-btn form-btn_send">Envoyer</button>
+                            <button type="submit" class="main-btn form-btn_send" id="submit-button"
+                                disabled>Envoyer</button>
                         </div>
                     </form>
                 </div>
