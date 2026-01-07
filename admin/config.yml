@@ -72,7 +72,7 @@ collections:
             name: "parcours"
             widget: "list"
             fields:
-              - {label: "Icône", name: "icone", widget: "image"}
+              - {label: "Icône", name: "icon", widget: "image"}
               - {label: "Valeur", name: "value", widget: "string"}
               - {label: "Description", name: "label", widget: "string"}
 
@@ -92,6 +92,7 @@ collections:
             widget: "list"
             fields:
               - {label: "ID", name: "id", widget: "string"}
+              - {label: "Icône", name: "icon", widget: "image"}
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Description (HTML autorisé)", name: "description", widget: "text"}
               - {label: "Image", name: "image", widget: "image"}

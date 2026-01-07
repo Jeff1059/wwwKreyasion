@@ -110,7 +110,7 @@ const CMS = {
     if (parcoursContainer && data.parcours) {
       const parcoursHTML = data.parcours.map(item => `
         <div class="story">
-          <div class="icon"><img src="${item.icone}" alt=""></div>
+          <div class="icon"><img src="${item.icon}" alt=""></div>
           <div class="story-text">
             <p><span>${item.value}</span></p>
             <p>${item.label}</p>
@@ -175,7 +175,7 @@ const CMS = {
     if (cardsContainer && data.cards) {
       const cardsHTML = data.cards.map(card => `
         <div class="card">
-          <div class="icon"></div>
+          <div class="icon">${card.icon}</div>
           <div class="card-content">
             <div class="card-content_text">
               <h3>${card.title}</h3>

@@ -35,6 +35,7 @@
     "cards": [
         {
             "id": "cadrage",
+            "icon": "/assets/images/icon-cadrage.svg",
             "title": "Cadrage du besoin",
             "items": [
                 "animation d'atelier"
@@ -43,6 +44,7 @@
         },
         {
             "id": "conception",
+            "icon": "/assets/images/icon-conception.svg",
             "title": "Conception",
             "items": [
                 "Choix des visuels",
@@ -53,6 +55,7 @@
         },
         {
             "id": "dev",
+            "icon": "/assets/images/icon-dev.svg",
             "title": "Développement",
             "items": [
                 "Création des modèle statiques",
