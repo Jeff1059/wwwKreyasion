@@ -5,7 +5,7 @@
         "destination": "/maintenance.html",
         "permanent": false
        }
-   ]
+   ],
     "rewrites": [
         {
             "source": "/api/(.*)",
