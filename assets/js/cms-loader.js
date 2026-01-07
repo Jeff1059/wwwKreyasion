@@ -256,7 +256,9 @@ const CMS = {
     if (!section) return;
 
     const title = section.querySelector('[data-cms="testimonials.title"]');
+    const image = section.querySelector('[data-cms="testimonials.image"]');
     if (title && data.sectionTitle) title.innerHTML = `<span>${data.sectionTitle}</span>`;
+    if (image && data.image) image.src = data.image;
 
     const container = section.querySelector('[data-cms="testimonials.items"]');
     if (container && data.items) {
