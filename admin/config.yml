@@ -72,7 +72,7 @@ collections:
             name: "parcours"
             widget: "list"
             fields:
-              - {label: "Icône", name: "image", widget: "image"}
+              - {label: "Icône", name: "icone", widget: "image"}
               - {label: "Valeur", name: "value", widget: "string"}
               - {label: "Description", name: "label", widget: "string"}
 
@@ -94,7 +94,7 @@ collections:
               - {label: "ID", name: "id", widget: "string"}
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Description (HTML autorisé)", name: "description", widget: "text"}
-              - {label: "Image", name: "icone", widget: "image"}
+              - {label: "Image", name: "image", widget: "image"}
 
   # ───────────────────────────────────────────────────────
   # SECTION COMPÉTENCES
