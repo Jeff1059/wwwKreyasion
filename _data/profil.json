@@ -10,7 +10,7 @@
             "label": "Missions de coordination / transformation digitale"
         },
         {
-            "icone": "/assets/images/icon-diplome.svg",
+            "icon": "/assets/images/icon-diplome.svg",
             "value": "2022",
             "label": "Diplôme d'ingénieur généraliste"
         }
