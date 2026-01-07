@@ -11,12 +11,10 @@
 <body>
     <script type="module">
         import CMS from 'https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js';
-        import config from './config/index.js';
+        import config from 'assets/config/index.js';
 
         CMS.init({ config });
-    </script>
-    <script>
-        CMS.registerPreviewStyle("/assets/css/style.css");
+        CMS.registerPreviewStyle("assets/css/style.css");
     </script>
 </body>
 
