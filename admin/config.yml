@@ -8,46 +8,142 @@ backend:
 # URL de votre site
 site_url: https://www.kreasyon-design.fr
 
-# Dossier où les images seront stockées
+# Dossier des médias
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
-# Configuration des collections (vos pages à éditer)
+# Localisation FR
+locale: "fr"
+
+# Configuration des collections
 collections:
-  # Collection pour les pages principales
-  - name: "pages"
-    label: "Pages principales"
+
+  # ═══════════════════════════════════════════════════════
+  # PAGES PRINCIPALES (attention: édition HTML brut limité)
+  # ═══════════════════════════════════════════════════════
+  - name: "settings"
+    label: "⚙️ Paramètres du site"
     files:
-      # Page d'accueil
-      - label: "Page d'accueil"
-        name: "homepage"
-        file: "index.html"
+      - label: "Informations de contact"
+        name: "contact_info"
+        file: "_data/settings.json"
         fields:
-          - {label: "Titre", name: "title", widget: "string", default: "Accueil"}
-          - {label: "Contenu HTML", name: "body", widget: "markdown", required: false}
-          
-      # Mentions légales
-      - label: "Mentions légales"
-        name: "legal"
-        file: "mentions-legales.html"
+          - {label: "Email", name: "email", widget: "string", default: "contact@kreasyon-design.com"}
+          - {label: "Téléphone", name: "phone", widget: "string", required: false}
+          - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
+          - {label: "GitHub URL", name: "github", widget: "string", required: false}
+
+  # ═══════════════════════════════════════════════════════
+  # CONTENU ÉDITABLE - Services
+  # ═══════════════════════════════════════════════════════
+  - name: "services"
+    label: "🛠️ Services"
+    folder: "_data/services"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Ordre d'affichage", name: "order", widget: "number", default: 1}
+
+  # ═══════════════════════════════════════════════════════
+  # RÉALISATIONS / Portfolio
+  # ═══════════════════════════════════════════════════════
+  - name: "realisations"
+    label: "🎨 Réalisations"
+    folder: "_data/realisations"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Nom du client", name: "client", widget: "string"}
+      - {label: "Logo client", name: "logo", widget: "image", required: false}
+      - {label: "Description du projet", name: "description", widget: "text"}
+      - {label: "Technologies utilisées", name: "technologies", widget: "list", field: {label: "Tech", name: "tech", widget: "string"}}
+      - {label: "URL du site", name: "url", widget: "string", required: false}
+      - label: "Slides"
+        name: "slides"
+        widget: "list"
         fields:
           - {label: "Titre", name: "title", widget: "string"}
-          - {label: "Contenu", name: "body", widget: "markdown"}
-          
-      # Politique de confidentialité
-      - label: "Politique de confidentialité"
-        name: "privacy"
-        file: "politique-confidentialite.html"
-        fields:
-          - {label: "Titre", name: "title", widget: "string"}
-          - {label: "Contenu", name: "body", widget: "markdown"}
-  
-  # Collection pour les pages Sinbad
-  - name: "sinbad"
-    label: "Pages Sinbad"
-    folder: "sinbad"
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Lien", name: "link", widget: "string", required: false}
+
+  # ═══════════════════════════════════════════════════════
+  # TÉMOIGNAGES
+  # ═══════════════════════════════════════════════════════
+  - name: "testimonials"
+    label: "💬 Témoignages"
+    folder: "_data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Nom", name: "name", widget: "string"}
+      - {label: "Poste", name: "position", widget: "string"}
+      - {label: "Entreprise", name: "company", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Témoignage", name: "testimonial", widget: "text"}
+
+  # ═══════════════════════════════════════════════════════
+  # FAQ
+  # ═══════════════════════════════════════════════════════
+  - name: "faq"
+    label: "❓ FAQ"
+    folder: "_data/faq"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Question", name: "question", widget: "string"}
+      - {label: "Réponse", name: "answer", widget: "text"}
+      - {label: "Ordre", name: "order", widget: "number", default: 1}
+
+  # ═══════════════════════════════════════════════════════
+  # COMPÉTENCES
+  # ═══════════════════════════════════════════════════════
+  - name: "competences"
+    label: "🧠 Compétences"
+    folder: "_data/competences"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Catégorie", name: "category", widget: "select", options: ["Framework", "CMS", "Langage", "UX/UI"]}
+      - {label: "Compétences", name: "skills", widget: "list", field: {label: "Skill", name: "skill", widget: "string"}}
+
+  # ═══════════════════════════════════════════════════════
+  # PAGES LÉGALES (Markdown)
+  # ═══════════════════════════════════════════════════════
+  - name: "legal"
+    label: "📜 Pages légales"
+    folder: "_content/legal"
     create: false
-    extension: "html"
+    extension: "md"
     fields:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # ═══════════════════════════════════════════════════════
+  # BLOG (si vous voulez en ajouter un)
+  # ═══════════════════════════════════════════════════════
+  - name: "blog"
+    label: "📝 Blog"
+    folder: "_content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Image de couverture", name: "thumbnail", widget: "image", required: false}
+      - {label: "Résumé", name: "excerpt", widget: "text", required: false}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
