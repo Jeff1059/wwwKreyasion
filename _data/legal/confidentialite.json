@@ -1,0 +1,31 @@
+{
+    "pageTitle": "Politique de Confidentialité | Kreasyon Design",
+    "headerTitle": "Politique de Confidentialité",
+    "sections": [
+        {
+            "id": "introduction",
+            "title": "Introduction",
+            "content": "La présente politique de confidentialité décrit comment Kreyasion Design collecte, utilise et protège vos données personnelles."
+        },
+        {
+            "id": "collecte",
+            "title": "Données collectées",
+            "content": "Nous collectons uniquement les données que vous nous fournissez via le formulaire de contact : nom, prénom, entreprise, email et votre message."
+        },
+        {
+            "id": "utilisation",
+            "title": "Utilisation des données",
+            "content": "Vos données sont utilisées uniquement pour répondre à vos demandes de contact. Elles ne sont jamais revendues à des tiers."
+        },
+        {
+            "id": "conservation",
+            "title": "Conservation des données",
+            "content": "Vos données sont conservées pendant la durée nécessaire au traitement de votre demande, puis supprimées."
+        },
+        {
+            "id": "droits",
+            "title": "Vos droits",
+            "content": "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Contactez-nous à contact@kreyasion-design.com."
+        }
+    ]
+}

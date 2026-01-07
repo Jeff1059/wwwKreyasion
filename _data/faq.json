@@ -1,0 +1,24 @@
+{
+    "sectionTitle": "FAQ",
+    "image": "/assets/images/faq.png",
+    "items": [
+        {
+            "id": "temps",
+            "question": "Combien de temps faut-il pour développer un site web ?",
+            "answer": "Tout dépend du projet, mais en moyenne, le développement d'un site web peut prendre entre 2 et 4 semaines.",
+            "order": 1
+        },
+        {
+            "id": "cout",
+            "question": "Combien coûte le développement d'un site web ?",
+            "answer": "Le coût du développement d'un site web varie en fonction de plusieurs facteurs, notamment le nombre de pages, la complexité du design et le nombre de fonctionnalités. En moyenne, le développement d'un site web peut coûter entre 500 et 5000 euros.",
+            "order": 2
+        },
+        {
+            "id": "procurer",
+            "question": "Comment puis-je me procurer un site web ?",
+            "answer": "Pour me procurer un site web, il faut me contacter via le formulaire de contact en haut de la page.",
+            "order": 3
+        }
+    ]
+}

@@ -5,145 +5,226 @@ backend:
   auth_endpoint: api/auth-cms
   base_url: https://www.kreasyon-design.fr
 
-# URL de votre site
 site_url: https://www.kreasyon-design.fr
+locale: "fr"
 
-# Dossier des médias
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
-# Localisation FR
-locale: "fr"
+# ═══════════════════════════════════════════════════════
+# COLLECTIONS - Structure alignée avec les fichiers JSON
+# ═══════════════════════════════════════════════════════
 
-# Configuration des collections
 collections:
-
-  # ═══════════════════════════════════════════════════════
-  # PAGES PRINCIPALES (attention: édition HTML brut limité)
-  # ═══════════════════════════════════════════════════════
+  # ───────────────────────────────────────────────────────
+  # PARAMÈTRES GLOBAUX DU SITE
+  # ───────────────────────────────────────────────────────
   - name: "settings"
     label: "⚙️ Paramètres du site"
     files:
-      - label: "Informations de contact"
-        name: "contact_info"
-        file: "_data/settings.json"
+      - label: "Configuration générale"
+        name: "site"
+        file: "_data/site.json"
         fields:
-          - {label: "Email", name: "email", widget: "string", default: "contact@kreasyon-design.com"}
-          - {label: "Téléphone", name: "phone", widget: "string", required: false}
-          - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
-          - {label: "GitHub URL", name: "github", widget: "string", required: false}
+          - {label: "Titre du site", name: "title", widget: "string"}
+          - {label: "Description SEO", name: "description", widget: "text"}
+          - {label: "URL canonique", name: "canonical", widget: "string"}
+          - label: "Bannière d'accueil"
+            name: "banner"
+            widget: "object"
+            fields:
+              - {label: "Titre principal", name: "title", widget: "string"}
+              - {label: "Sous-titre", name: "subtitle", widget: "text"}
+              - {label: "Texte du bouton", name: "cta", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+          - label: "Réseaux sociaux"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "GitHub URL", name: "github", widget: "string", required: false}
+              - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - {label: "Texte marque", name: "trademark", widget: "string"}
 
-  # ═══════════════════════════════════════════════════════
-  # CONTENU ÉDITABLE - Services
-  # ═══════════════════════════════════════════════════════
+  # ───────────────────────────────────────────────────────
+  # SECTION PROFIL
+  # ───────────────────────────────────────────────────────
+  - name: "profil"
+    label: "👤 Mon Profil"
+    files:
+      - label: "Profil"
+        name: "profil"
+        file: "_data/profil.json"
+        fields:
+          - {label: "Titre de section", name: "sectionTitle", widget: "string"}
+          - {label: "Photo de profil", name: "image", widget: "image"}
+          - {label: "Citation", name: "citation", widget: "string"}
+          - {label: "Description (HTML autorisé)", name: "description", widget: "text"}
+          - label: "Parcours"
+            name: "parcours"
+            widget: "list"
+            fields:
+              - {label: "Icône (briefcase, diploma)", name: "icon", widget: "string"}
+              - {label: "Valeur (ex: 3 ans)", name: "value", widget: "string"}
+              - {label: "Description", name: "label", widget: "string"}
+
+  # ───────────────────────────────────────────────────────
+  # SECTION SERVICES
+  # ───────────────────────────────────────────────────────
   - name: "services"
-    label: "🛠️ Services"
-    folder: "_data/services"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Ordre d'affichage", name: "order", widget: "number", default: 1}
-
-  # ═══════════════════════════════════════════════════════
-  # RÉALISATIONS / Portfolio
-  # ═══════════════════════════════════════════════════════
-  - name: "realisations"
-    label: "🎨 Réalisations"
-    folder: "_data/realisations"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - {label: "Nom du client", name: "client", widget: "string"}
-      - {label: "Logo client", name: "logo", widget: "image", required: false}
-      - {label: "Description du projet", name: "description", widget: "text"}
-      - {label: "Technologies utilisées", name: "technologies", widget: "list", field: {label: "Tech", name: "tech", widget: "string"}}
-      - {label: "URL du site", name: "url", widget: "string", required: false}
-      - label: "Slides"
-        name: "slides"
-        widget: "list"
+    label: "🛠️ Mes Services"
+    files:
+      - label: "Services"
+        name: "services"
+        file: "_data/services.json"
         fields:
-          - {label: "Titre", name: "title", widget: "string"}
-          - {label: "Image", name: "image", widget: "image"}
-          - {label: "Lien", name: "link", widget: "string", required: false}
+          - {label: "Titre de section", name: "sectionTitle", widget: "string"}
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description (HTML autorisé)", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
 
-  # ═══════════════════════════════════════════════════════
-  # TÉMOIGNAGES
-  # ═══════════════════════════════════════════════════════
+  # ───────────────────────────────────────────────────────
+  # SECTION COMPÉTENCES
+  # ───────────────────────────────────────────────────────
+  - name: "competences"
+    label: "🧠 Mes Compétences"
+    files:
+      - label: "Compétences"
+        name: "competences"
+        file: "_data/competences.json"
+        fields:
+          - {label: "Titre de section", name: "sectionTitle", widget: "string"}
+          - label: "Pills (catégories)"
+            name: "pills"
+            widget: "list"
+            fields:
+              - {label: "Catégorie", name: "category", widget: "string"}
+              - {label: "Compétences", name: "skills", widget: "list", field: {label: "Skill", name: "skill", widget: "string"}}
+          - label: "Cards (étapes)"
+            name: "cards"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Éléments", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+              - {label: "Texte bouton", name: "cta", widget: "string"}
+
+  # ───────────────────────────────────────────────────────
+  # SECTION RÉALISATIONS
+  # ───────────────────────────────────────────────────────
+  - name: "realisations"
+    label: "🎨 Mes Réalisations"
+    files:
+      - label: "Réalisations"
+        name: "realisations"
+        file: "_data/realisations.json"
+        fields:
+          - {label: "Titre de section", name: "sectionTitle", widget: "string"}
+          - label: "Projets"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Nom du client", name: "client", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "URL du site", name: "url", widget: "string", required: false}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Technologies", name: "technologies", widget: "list", field: {label: "Tech", name: "tech", widget: "string"}}
+              - label: "Slides"
+                name: "slides"
+                widget: "list"
+                fields:
+                  - {label: "Numéro", name: "number", widget: "number"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Texte du lien", name: "linkText", widget: "string"}
+                  - {label: "URL du lien", name: "linkUrl", widget: "string"}
+
+  # ───────────────────────────────────────────────────────
+  # SECTION TÉMOIGNAGES
+  # ───────────────────────────────────────────────────────
   - name: "testimonials"
     label: "💬 Témoignages"
-    folder: "_data/testimonials"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - {label: "Nom", name: "name", widget: "string"}
-      - {label: "Poste", name: "position", widget: "string"}
-      - {label: "Entreprise", name: "company", widget: "string"}
-      - {label: "Photo", name: "photo", widget: "image", required: false}
-      - {label: "Témoignage", name: "testimonial", widget: "text"}
+    files:
+      - label: "Témoignages"
+        name: "testimonials"
+        file: "_data/testimonials.json"
+        fields:
+          - {label: "Titre de section", name: "sectionTitle", widget: "string"}
+          - {label: "Image de section", name: "image", widget: "image"}
+          - label: "Témoignages"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Poste", name: "position", widget: "string"}
+              - {label: "Photo", name: "photo", widget: "image"}
+              - {label: "Témoignage", name: "testimonial", widget: "text"}
 
-  # ═══════════════════════════════════════════════════════
-  # FAQ
-  # ═══════════════════════════════════════════════════════
+  # ───────────────────────────────────────────────────────
+  # SECTION FAQ
+  # ───────────────────────────────────────────────────────
   - name: "faq"
     label: "❓ FAQ"
-    folder: "_data/faq"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - {label: "Question", name: "question", widget: "string"}
-      - {label: "Réponse", name: "answer", widget: "text"}
-      - {label: "Ordre", name: "order", widget: "number", default: 1}
+    files:
+      - label: "FAQ"
+        name: "faq"
+        file: "_data/faq.json"
+        fields:
+          - {label: "Titre de section", name: "sectionTitle", widget: "string"}
+          - {label: "Image", name: "image", widget: "image"}
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Réponse", name: "answer", widget: "text"}
+              - {label: "Ordre", name: "order", widget: "number"}
 
-  # ═══════════════════════════════════════════════════════
-  # COMPÉTENCES
-  # ═══════════════════════════════════════════════════════
-  - name: "competences"
-    label: "🧠 Compétences"
-    folder: "_data/competences"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - {label: "Catégorie", name: "category", widget: "select", options: ["Framework", "CMS", "Langage", "UX/UI"]}
-      - {label: "Compétences", name: "skills", widget: "list", field: {label: "Skill", name: "skill", widget: "string"}}
-
-  # ═══════════════════════════════════════════════════════
-  # PAGES LÉGALES (Markdown)
-  # ═══════════════════════════════════════════════════════
+  # ───────────────────────────────────────────────────────
+  # PAGES LÉGALES
+  # ───────────────────────────────────────────────────────
   - name: "legal"
     label: "📜 Pages légales"
-    folder: "_content/legal"
-    create: false
-    extension: "md"
-    fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
-  # ═══════════════════════════════════════════════════════
-  # BLOG (si vous voulez en ajouter un)
-  # ═══════════════════════════════════════════════════════
-  - name: "blog"
-    label: "📝 Blog"
-    folder: "_content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    extension: "md"
-    fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Date de publication", name: "date", widget: "datetime"}
-      - {label: "Image de couverture", name: "thumbnail", widget: "image", required: false}
-      - {label: "Résumé", name: "excerpt", widget: "text", required: false}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
+    files:
+      - label: "Mentions légales"
+        name: "mentions-legales"
+        file: "_data/legal/mentions-legales.json"
+        fields:
+          - {label: "Titre de la page", name: "pageTitle", widget: "string"}
+          - {label: "Titre affiché", name: "headerTitle", widget: "string"}
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu (HTML autorisé)", name: "content", widget: "text"}
+      - label: "Politique de confidentialité"
+        name: "confidentialite"
+        file: "_data/legal/confidentialite.json"
+        fields:
+          - {label: "Titre de la page", name: "pageTitle", widget: "string"}
+          - {label: "Titre affiché", name: "headerTitle", widget: "string"}
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu (HTML autorisé)", name: "content", widget: "text"}

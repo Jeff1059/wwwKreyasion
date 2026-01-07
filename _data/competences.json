@@ -1,0 +1,64 @@
+{
+    "sectionTitle": "Mes Compétences",
+    "pills": [
+        {
+            "category": "Framework",
+            "skills": [
+                "Bootstrap",
+                "Tailwind"
+            ]
+        },
+        {
+            "category": "CMS",
+            "skills": [
+                "CMS Made Simple",
+                "Wordpress"
+            ]
+        },
+        {
+            "category": "Langage",
+            "skills": [
+                "HTML 5",
+                "CSS",
+                "Javascript"
+            ]
+        },
+        {
+            "category": "UX/UI",
+            "skills": [
+                "Canva",
+                "Lunacy",
+                "Affinity"
+            ]
+        }
+    ],
+    "cards": [
+        {
+            "id": "cadrage",
+            "title": "Cadrage du besoin",
+            "items": [
+                "animation d'atelier"
+            ],
+            "cta": "Me contacter"
+        },
+        {
+            "id": "conception",
+            "title": "Conception",
+            "items": [
+                "Choix des visuels",
+                "Définition des fonctionnalité",
+                "Création d'une maquette"
+            ],
+            "cta": "Me contacter"
+        },
+        {
+            "id": "dev",
+            "title": "Développement",
+            "items": [
+                "Création des modèle statiques",
+                "Intégration CMS"
+            ],
+            "cta": "Me contacter"
+        }
+    ]
+}

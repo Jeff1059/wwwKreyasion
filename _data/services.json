@@ -1,0 +1,23 @@
+{
+    "sectionTitle": "Mes Services",
+    "items": [
+        {
+            "id": "web",
+            "title": "Création de votre site vitrine",
+            "description": "Pour indépendants, TPE/PME et associations : un site clair, rapide et simple à administrer.<br><br>Accompagnement sur le choix du CMS, de l'hébergeur et du nom de domaine, selon le budget, les objectifs et le niveau d'autonomie souhaité.",
+            "image": "/assets/images/service-web.png"
+        },
+        {
+            "id": "uxui",
+            "title": "Refonte & amélioration UX",
+            "description": "Structure des pages, messages, parcours utilisateur et hiérarchie de l'information.<br><br>Validation via maquettes et définition des fonctionnalités essentielles, puis phase de tests/recette et corrections.",
+            "image": "/assets/images/service-uxui.png"
+        },
+        {
+            "id": "dev",
+            "title": "Intégration HTML/CSS/Javascript",
+            "description": "Intégration des templates à votre CMS pour un rendu moderne, responsive et cohérent.<br><br>Optimisations de base : performance, lisibilité, et cohérence visuelle",
+            "image": "/assets/images/service-dev.png"
+        }
+    ]
+}

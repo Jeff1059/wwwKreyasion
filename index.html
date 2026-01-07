@@ -15,7 +15,7 @@
     <title>Kreasyon | Création sites web TPE/PME - Développeur freelance</title>
 </head>
 
-<body>
+<body data-cms-page="index">
 
     <header class="header">
         <div class="container navbar">
@@ -146,13 +146,12 @@
         <section id="banner" class="banner">
             <div class="container">
                 <div class="banner-content">
-                    <img class="banner-content_image" src="assets/images/cover-head.png" alt="bannière">
+                    <img class="banner-content_image" data-cms="banner.image" src="assets/images/cover-head.png"
+                        alt="bannière">
                     <div class="banner-content_text">
-                        <h1>Création de sites web modernes & efficaces</h1>
-                        <p>Je conçois des sites web professionnels, rapides et simples à administrer pour les
-                            indépendants,
-                            TPE/PME
-                            et associations.</p>
+                        <h1 data-cms="banner.title">Création de sites web modernes & efficaces</h1>
+                        <p data-cms="banner.subtitle">Je conçois des sites web professionnels, rapides et simples à
+                            administrer pour les indépendants, TPE/PME et associations.</p>
                         <a class="main-btn" href="#contact">Me contacter</a>
                     </div>
                 </div>
@@ -161,11 +160,11 @@
 
         <section id="profil" class="">
             <div class="container">
-                <h2 class="undertitle">Mon <span>Profil</span></h2>
+                <h2 class="undertitle" data-cms="profil.title">Mon <span>Profil</span></h2>
                 <div class="flex">
                     <div class="profil-design">
-                        <img class="profil-card_image" src="assets/images/jg-profil.jpg" alt="" height="230"
-                            width="153">
+                        <img class="profil-card_image" data-cms="profil.image" src="assets/images/jg-profil.jpg" alt=""
+                            height="230" width="153">
                         <div class="profil-card">
                             <div class="profil-card_content">
                                 <div class="profil-card_text">
@@ -227,8 +226,8 @@
 
         <section id="services" class="in">
             <div class="container">
-                <h2 class="undertitle">Mes <span>Services</span></h2>
-                <div class="services-area">
+                <h2 class="undertitle" data-cms="services.title">Mes <span>Services</span></h2>
+                <div class="services-area" data-cms="services.items">
                     <div class="services-card">
                         <img src="assets/images/service-web.png" alt="service-web">
                         <div class="services-card_text">
@@ -272,9 +271,9 @@
 
         <section id="competences" class="in">
             <div class="container">
-                <h2 class="undertitle">Mes <span>Compétences</span></h2>
+                <h2 class="undertitle" data-cms="competences.title">Mes <span>Compétences</span></h2>
                 <div class="competences-content">
-                    <div class="competences-pills">
+                    <div class="competences-pills" data-cms="competences.pills">
                         <div class="pills-area">
                             <div class="pill-section">
                                 <p>Framework :</p>
@@ -314,7 +313,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="competences-grid">
+                    <div class="competences-grid" data-cms="competences.cards">
                         <div class="card">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48 " height="48"
@@ -391,14 +390,15 @@
 
         <section id="realisations" class="in">
             <div class="container">
-                <h2 class="undertitle">Mes <span>Réalisations</span></h2>
+                <h2 class="undertitle" data-cms="realisations.title">Mes <span>Réalisations</span></h2>
                 <div class="work-content">
                     <div class="work-content_text">
                         <a href="https://www.sinbadconseil.fr/">
                             <div class="work-content_client_desc">
-                                <h3 class="client">Sinbad conseil</h3>
+                                <h3 class="client" data-cms="realisations.client">Sinbad conseil</h3>
                                 <div class="wrapper-logo">
-                                    <img src="assets/images/sinbad-logo.png" class="client-logo" alt="sinbad-conseil">
+                                    <img data-cms="realisations.logo" src="assets/images/sinbad-logo.png"
+                                        class="client-logo" alt="sinbad-conseil">
                                 </div>
                             </div>
                         </a>
@@ -412,7 +412,7 @@
                             <div class="margin-none">Bootstrap 4.1</div>
                         </div>
                     </div>
-                    <div class="slider">
+                    <div class="slider" data-cms="realisations.slides">
                         <div class="slide active">
                             <div class="slide-content">
                                 <img src="https://picsum.photos/id/1/600/300" alt="slide-1">
@@ -455,10 +455,10 @@
         <section id="testimonials" class="in">
             <div class="container">
                 <div class="testimonial-title">
-                    <h2 class="undertitle"><span>Avis</span></h2>
+                    <h2 class="undertitle" data-cms="testimonials.title"><span>Avis</span></h2>
                     <img src="assets/images/feedback.png" alt="avis-image">
                 </div>
-                <div class="testimonial">
+                <div class="testimonial" data-cms="testimonials.items">
                     <div class="testimonial-card">
                         <p class="testimonial-feedback">" Jeffry a su m'accompagner sur la refonte de mon site web en
                             étant force de proposition et en mettant en oeuvre "</p>
@@ -496,8 +496,8 @@
                 <div id="faq" class="faq">
                     <div class="faq-area">
                         <img src="assets/images/faq.png" alt="faq-image">
-                        <h3>FAQ</h3>
-                        <div class="faq-content">
+                        <h3 data-cms="faq.title">FAQ</h3>
+                        <div data-cms="faq.items">
                             <h4 class="faq-title">Combien de temps faut-il pour développer un site web ?</h4>
                             <div class="faq-text active">
                                 <div>
@@ -668,6 +668,8 @@
 
     </script>
 
+    <!-- CMS Loader -->
+    <script src="/assets/js/cms-loader.js"></script>
 
 </body>
 

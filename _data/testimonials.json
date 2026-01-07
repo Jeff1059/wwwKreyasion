@@ -1,0 +1,13 @@
+{
+    "sectionTitle": "Avis",
+    "image": "/assets/images/feedback.png",
+    "items": [
+        {
+            "id": "martin",
+            "name": "Martin LE BARS",
+            "position": "CEO Sinbad Conseil",
+            "photo": "/assets/images/martin-sinbad.jpg",
+            "testimonial": "Jeffry a su m'accompagner sur la refonte de mon site web en étant force de proposition et en mettant en oeuvre"
+        }
+    ]
+}

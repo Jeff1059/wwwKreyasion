@@ -1,0 +1,21 @@
+{
+    "pageTitle": "Mentions Légales | Kreasyon Design",
+    "headerTitle": "Mentions Légales & Politique de Confidentialité",
+    "sections": [
+        {
+            "id": "editeur",
+            "title": "1. Éditeur du site",
+            "content": "<strong>Kreyasion Design</strong><br>Portfolio professionnel présentant mes compétences en design web<br>Statut : Micro-Entreprise<br>Adresse : Rennes, Bretagne, France<br>Email : <a href=\"mailto:contact@kreyasion-design.com\">contact@kreyasion-design.com</a>"
+        },
+        {
+            "id": "hebergement",
+            "title": "2. Hébergement",
+            "content": "<strong>Vercel, Inc.</strong><br>340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br><a href=\"https://vercel.com\" target=\"_blank\" rel=\"noopener\">vercel.com</a>"
+        },
+        {
+            "id": "propriete",
+            "title": "3. Propriété intellectuelle",
+            "content": "Tous droits réservés. Législation française/internationale sur le droit d'auteur."
+        }
+    ]
+}

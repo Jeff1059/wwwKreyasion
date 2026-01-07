@@ -1,0 +1,21 @@
+{
+    "title": "Kreasyon | Création sites web TPE/PME - Développeur freelance",
+    "description": "Création sites web modernes pour TPE/PME. WordPress, CMS, responsive.",
+    "canonical": "https://www.kreasyon-design.fr/",
+    "banner": {
+        "title": "Création de sites web modernes & efficaces",
+        "subtitle": "Je conçois des sites web professionnels, rapides et simples à administrer pour les indépendants, TPE/PME et associations.",
+        "cta": "Me contacter",
+        "image": "/assets/images/cover-head.png"
+    },
+    "social": {
+        "github": "#",
+        "linkedin": "#"
+    },
+    "contact": {
+        "email": "contact@kreasyon-design.com"
+    },
+    "footer": {
+        "trademark": "Kreasyon est une marque déposée"
+    }
+}
