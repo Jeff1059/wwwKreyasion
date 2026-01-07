@@ -1,5 +1,5 @@
 export default {
-    name: "settings",
+    name: "setting",
     label: "⚙️ Configuration globale",
     files: [
         {

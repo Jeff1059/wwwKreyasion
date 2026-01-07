@@ -1,6 +1,6 @@
 import backend from './backend.js';
-import settings from './settings.js';
-import pages from './pages.js';
+import settings from './setting.js';
+import pages from './page.js';
 
 export default {
     backend,

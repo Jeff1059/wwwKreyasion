@@ -6,8 +6,8 @@ import testimonials from './sections/testimonials.js';
 import faq from './sections/faq.js';
 
 export default {
-    name: "pages",
-    label: "📄 Pages",
+    name: "page",
+    label: "📄 Page",
     label_singular: "Page",
     folder: "content/pages",
     create: true,
