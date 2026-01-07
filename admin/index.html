@@ -10,12 +10,23 @@
 
 <body>
     <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+    <script>
+        // DEBUG: Minimal Configuration to test CMS loading
+        var config = {
+            backend: { name: 'test-repo' },
+            media_folder: 'assets/images',
+            collections: []
+        };
+        console.log("Initializing CMS with minimal config", config);
+        CMS.init({ config: config, load_config_file: false });
+    </script>
+    <!-- 
     <script type="module">
         import config from './config/index.js';
-
         CMS.registerPreviewStyle("/assets/css/style.css");
         CMS.init({ config, load_config_file: false });
-    </script>
+    </script> 
+    -->
 </body>
 
 </html>
