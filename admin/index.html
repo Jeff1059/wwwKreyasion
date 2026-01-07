@@ -9,16 +9,8 @@
 </head>
 
 <body>
-    <script>
-        window.onerror = function (message, source, lineno, colno, error) {
-            document.body.innerHTML += '<div style="color:red; background:white; padding:20px; z-index:9999; position:relative;">Error: ' + message + ' at ' + source + ':' + lineno + '</div>';
-        };
-        window.addEventListener('unhandledrejection', function (event) {
-            document.body.innerHTML += '<div style="color:red; background:white; padding:20px; z-index:9999; position:relative;">Promise Rejection: ' + event.reason + '</div>';
-        });
-    </script>
+    <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
     <script type="module">
-        import CMS from 'https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js';
         import config from './config/index.js';
 
         CMS.registerPreviewStyle("/assets/css/style.css");
