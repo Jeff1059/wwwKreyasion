@@ -72,8 +72,8 @@ collections:
             name: "parcours"
             widget: "list"
             fields:
-              - {label: "Icône (briefcase, diploma)", name: "icon", widget: "string"}
-              - {label: "Valeur (ex: 3 ans)", name: "value", widget: "string"}
+              - {label: "Icône", name: "icon", widget: "image"}
+              - {label: "Valeur", name: "value", widget: "string"}
               - {label: "Description", name: "label", widget: "string"}
 
   # ───────────────────────────────────────────────────────
