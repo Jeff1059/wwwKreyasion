@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: jeff1059/wwwKreasyon
+  repo: jeff1059/wwwKreyasion
   branch: main
   auth_endpoint: api/auth-cms
-  base_url: https://www.kreyasion-design.fr
+  base_url: https://www.kreasyon-design.fr
 
 # URL de votre site
-site_url: https://www.kreyasion-design.fr
+site_url: https://www.kreasyon-design.fr
 
 # Dossier où les images seront stockées
 media_folder: "assets/images"
