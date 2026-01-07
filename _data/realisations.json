@@ -22,14 +22,14 @@
                 {
                     "number": 2,
                     "title": "Gestionnaire offres emplois",
-                    "image": "https://picsum.photos/id/1/600/300",
+                    "image": "/assets/images/gestionnaire-offres.png",
                     "linkText": "Voir",
                     "linkUrl": "/sinbad/maquette-offres.html"
                 },
                 {
                     "number": 3,
                     "title": "Parcours consultant",
-                    "image": "https://picsum.photos/id/1/600/300",
+                    "image": "/assets/images/consultant.png",
                     "linkText": "Création page parcours consultant",
                     "linkUrl": "/sinbad/maquette-candidat.html"
                 }
