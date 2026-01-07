@@ -15,7 +15,7 @@
                 {
                     "number": 1,
                     "title": "Design du site web",
-                    "image": "assets/images/maquette.png",
+                    "image": "/assets/images/maquette.png",
                     "linkText": "Voir maquette",
                     "linkUrl": "/assets/sinbad/uploads/pdf/maquette_sinbad_lot_2.pdf"
                 },
