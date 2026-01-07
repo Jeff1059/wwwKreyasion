@@ -121,7 +121,6 @@ collections:
               - {label: "ID", name: "id", widget: "string"}
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Éléments", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
-              - {label: "Texte bouton", name: "cta", widget: "string"}
 
   # ───────────────────────────────────────────────────────
   # SECTION RÉALISATIONS

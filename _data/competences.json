@@ -39,8 +39,7 @@
             "title": "Cadrage du besoin",
             "items": [
                 "animation d'atelier"
-            ],
-            "cta": "Me contacter"
+            ]
         },
         {
             "id": "conception",
@@ -50,8 +49,7 @@
                 "Choix des visuels",
                 "Définition des fonctionnalité",
                 "Création d'une maquette"
-            ],
-            "cta": "Me contacter"
+            ]
         },
         {
             "id": "dev",
@@ -60,8 +58,7 @@
             "items": [
                 "Création des modèle statiques",
                 "Intégration CMS"
-            ],
-            "cta": "Me contacter"
+            ]
         }
     ]
 }

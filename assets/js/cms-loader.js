@@ -181,9 +181,6 @@ const CMS = {
               <h3>${card.title}</h3>
               ${card.items.map(item => `<p>- ${item}</p>`).join('')}
             </div>
-            <div class="card-content_btn">
-              <a class="main-btn" href="#contact">${card.cta}</a>
-            </div>
           </div>
         </div>
       `).join('');
