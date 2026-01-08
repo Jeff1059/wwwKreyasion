@@ -1,64 +1,64 @@
 {
-    "sectionTitle": "Mes Compétences",
-    "pills": [
-        {
-            "category": "Framework",
-            "skills": [
-                "Bootstrap",
-                "Tailwind"
-            ]
-        },
-        {
-            "category": "CMS",
-            "skills": [
-                "CMS Made Simple",
-                "Wordpress"
-            ]
-        },
-        {
-            "category": "Langage",
-            "skills": [
-                "HTML 5",
-                "CSS",
-                "Javascript"
-            ]
-        },
-        {
-            "category": "UX/UI",
-            "skills": [
-                "Canva",
-                "Lunacy",
-                "Affinity"
-            ]
-        }
-    ],
-    "cards": [
-        {
-            "id": "cadrage",
-            "icon": "/assets/images/icon-cadrage.svg",
-            "title": "Cadrage du besoin",
-            "items": [
-                "animation d'atelier"
-            ]
-        },
-        {
-            "id": "conception",
-            "icon": "/assets/images/icon-conception.svg",
-            "title": "Conception",
-            "items": [
-                "Choix des visuels",
-                "Définition des fonctionnalité",
-                "Création d'une maquette"
-            ]
-        },
-        {
-            "id": "dev",
-            "icon": "/assets/images/icon-dev.svg",
-            "title": "Développement",
-            "items": [
-                "Création des modèle statiques",
-                "Intégration CMS"
-            ]
-        }
-    ]
+  "sectionTitle": "Mes Compétences",
+  "pills": [
+    {
+      "category": "Framework",
+      "skills": [
+        "Bootstrap",
+        "Tailwind"
+      ]
+    },
+    {
+      "category": "CMS",
+      "skills": [
+        "CMS Made Simple",
+        "Wordpress"
+      ]
+    },
+    {
+      "category": "Langage",
+      "skills": [
+        "HTML 5",
+        "CSS",
+        "Javascript"
+      ]
+    },
+    {
+      "category": "UX/UI",
+      "skills": [
+        "Canva",
+        "Lunacy",
+        "Affinity"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cadrage",
+      "icon": "/assets/images/icon-cadrage.svg",
+      "title": "Cadrage du besoin",
+      "items": [
+        "animation d'atelier"
+      ]
+    },
+    {
+      "id": "conception",
+      "icon": "/assets/images/icon-conception.svg",
+      "title": "Conception",
+      "items": [
+        "Choix des visuels",
+        "Définition des fonctionnalités",
+        "Création d'une maquette"
+      ]
+    },
+    {
+      "id": "dev",
+      "icon": "/assets/images/icon-dev.svg",
+      "title": "Développement",
+      "items": [
+        "Création des modèles statiques",
+        "Intégration CMS"
+      ]
+    }
+  ]
 }
