@@ -1,1 +1,1 @@
-.fade-in-left{opacity:0;transform:translateY(20px);animation:fade-in-left .5s linear}.fade-in-left.animate{opacity:1;transform:translateY(0)}
+.fade-in-left{opacity:0;transform:translateY(40px);transition:opacity .6s ease-out,transform .6s ease-out}.fade-in-left.animate{opacity:1;transform:translateY(0)}
