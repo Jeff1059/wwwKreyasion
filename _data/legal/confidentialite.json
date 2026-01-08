@@ -1,46 +1,46 @@
 {
-    "pageTitle": "Politique de Confidentialité | Kreasyon Design",
-    "headerTitle": "Politique de Confidentialité",
-    "sections": [
+  "pageTitle": "Politique de Confidentialité | Kreasyon Design",
+  "headerTitle": "Politique de Confidentialité",
+  "sections": [
+    {
+      "title": "1. Éditeur du site",
+      "content": "**Kreasyon Design**<br><br>Jeffry GROS-DÉSORMEAUX<br><br>Portfolio professionnel - Rennes, Bretagne, France<br><br>Email : [contact@kreasyon-design.com](mailto:contact@kreasyon-design.com)"
+    },
+    {
+      "title": "2. Protection des données personnelles (RGPD)",
+      "content": "Dans le cadre de l'utilisation du formulaire de contact présent sur ce site, nous sommes amenés à collecter certaines données personnelles.",
+      "subsections": [
         {
-            "title": "1. Éditeur du site",
-            "content": "**Kreasyon Design**<br><br>Jeffry GROS-DÉSORMEAUX<br><br>Portfolio professionnel - Rennes, Bretagne, France<br><br>Email : [contact@kreasyon-design.com](mailto:contact@kreasyon-design.com)"
+          "title": "2.1. Données collectées",
+          "content": "Les données collectées sont : Nom, Prénom, Nom de l'entreprise (facultatif), Adresse email, et le contenu de votre message."
         },
         {
-            "title": "2. Protection des données personnelles (RGPD)",
-            "content": "Dans le cadre de l'utilisation du formulaire de contact présent sur ce site, nous sommes amenés à collecter certaines données personnelles.",
-            "subsections": [
-                {
-                    "title": "2.1. Données collectées",
-                    "content": "Les données collectées sont : Nom, Prénom, Nom de l'entreprise (facultatif), Adresse email, et le contenu de votre message."
-                },
-                {
-                    "title": "2.2. Finalité de la collecte",
-                    "content": "Ces informations sont recueillies uniquement dans le but de :<br><br>- Répondre à votre demande de contact ou de devis.<br>- Établir une relation commerciale si votre demande aboutit à un projet.<br><br>Ces données **ne sont jamais vendues, louées ou cédées à des tiers** à des fins commerciales."
-                },
-                {
-                    "title": "2.3. Services Tiers",
-                    "content": "Pour assurer le bon fonctionnement et la sécurité du site, nous utilisons les services suivants :<br><br>- **Cloudflare Turnstile** : Pour protéger le formulaire contre le spam et les robots.<br>- **Resend** : Pour l'envoi technique des emails de notification et de confirmation."
-                },
-                {
-                    "title": "2.4. Durée de conservation",
-                    "content": "Les données sont conservées pour une durée maximale de 3 ans après le dernier contact, sauf si une relation commerciale est engagée (facturation, etc.)."
-                },
-                {
-                    "title": "2.5. Vos droits",
-                    "content": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d’un droit d’accès, de modification, de rectification et de suppression des données qui vous concernent. Pour exercer ce droit, veuillez nous contacter par email à : [contact@kreasyon-design.fr](mailto:contact@kreasyon-design.fr)."
-                }
-            ]
+          "title": "2.2. Finalité de la collecte",
+          "content": "Ces informations sont recueillies uniquement dans le but de : \n\n- Répondre à votre demande de contact ou de devis.\n- Établir une relation commerciale si votre demande aboutit à un projet.\n\nCes données **ne sont jamais vendues, louées ou cédées à des tiers** à des fins commerciales."
         },
         {
-            "title": "3. Cookies et gestion du consentement",
-            "content": "Un bandeau de gestion des cookies vous permet de contrôler les traceurs déposés :<br><br>- **Cookies essentiels** : Toujours actifs (navigation, sécurité)<br>- **Cookies analytics** : Activés seulement après votre consentement explicite<br><br>Vous pouvez modifier vos choix à tout moment via le bandeau cookies.",
-            "subsections": [
-                {
-                    "title": "3.1. Outils d'analyse",
-                    "content": "En cas d'acceptation des cookies analytics, nous utilisons :<br><br>- Google Analytics : Mesure anonyme de fréquentation<br>- Cookies : _ga, _gid (13 mois maximum)<br>- Données : Pages vues, sessions (IP anonymisée)<br><br>Ces outils sont désactivés par défaut jusqu'à consentement."
-                }
-            ]
+          "title": "2.3. Services Tiers",
+          "content": "Pour assurer le bon fonctionnement et la sécurité du site, nous utilisons les services suivants :\n\n* **Cloudflare Turnstile** : Pour protéger le formulaire contre le spam et les robots\n* **Resend** : Pour l'envoi technique des emails de notification et de confirmation."
+        },
+        {
+          "title": "2.4. Durée de conservation",
+          "content": "Les données sont conservées pour une durée maximale de 3 ans après le dernier contact, sauf si une relation commerciale est engagée (facturation, etc.)."
+        },
+        {
+          "title": "2.5. Vos droits",
+          "content": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d’un droit d’accès, de modification, de rectification et de suppression des données qui vous concernent. Pour exercer ce droit, veuillez nous contacter par email à : [contact@kreasyon-design.fr](mailto:contact@kreasyon-design.fr)."
         }
-    ]
+      ]
+    },
+    {
+      "title": "3. Cookies et gestion du consentement",
+      "content": "Un bandeau de gestion des cookies vous permet de contrôler les traceurs déposés :\n\n* **Cookies essentiels** : Toujours actifs (navigation, sécurité) \n* **Cookies analytics** : Activés seulement après votre consentement explicite\n\nVous pouvez modifier vos choix à tout moment via le bandeau cookies.",
+      "subsections": [
+        {
+          "title": "3.1. Outils d'analyse",
+          "content": "En cas d'acceptation des cookies analytics, nous utilisons :<br><br>- Google Analytics : Mesure anonyme de fréquentation<br>- Cookies : _ga, _gid (13 mois maximum)<br>- Données : Pages vues, sessions (IP anonymisée)<br><br>Ces outils sont désactivés par défaut jusqu'à consentement."
+        }
+      ]
+    }
+  ]
 }
