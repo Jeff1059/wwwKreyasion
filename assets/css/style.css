@@ -1335,18 +1335,20 @@ footer .footer-bottom a {
 @keyframes fade-in-left {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-100px);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
-.fade-in-left {
+.reveal {
   opacity: 0;
   will-change: opacity, transform;
 }
-
-.fade-in-left.animate {
-  animation: fade-in-left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+.reveal.animate {
+  opacity: 1;
+}
+.reveal.animate.fade-in-left {
+  animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
 }

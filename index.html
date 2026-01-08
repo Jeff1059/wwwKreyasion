@@ -164,7 +164,7 @@
             </div>
         </section>
 
-        <section id="profil" class="fade-in-left">
+        <section id="profil" class="reveal fade-in-left">
             <div class="container">
                 <h2 class="undertitle" data-cms="profil.title"></h2>
                 <div class="flex">
@@ -185,7 +185,7 @@
             </div>
         </section>
 
-        <section id="services" class="in fade-in-left">
+        <section id="services" class="in reveal fade-in-left">
             <div class="container">
                 <h2 class="undertitle" data-cms="services.title">Mes <span>Services</span></h2>
                 <div class="services-area" data-cms="services.items">
@@ -193,7 +193,7 @@
             </div>
         </section>
 
-        <section id="competences" class="in fade-in-left">
+        <section id="competences" class="in reveal fade-in-left">
             <div class="container">
                 <h2 class="undertitle" data-cms="competences.title">Mes <span>Compétences</span></h2>
                 <div class="competences-content">
@@ -205,7 +205,7 @@
             </div>
         </section>
 
-        <section id="realisations" class="in fade-in-left">
+        <section id="realisations" class="in reveal fade-in-left">
             <div class="container">
                 <h2 class="undertitle" data-cms="realisations.title">Mes <span>Réalisations</span></h2>
                 <div class="work-content" data-cms="realisations.items">
@@ -213,7 +213,7 @@
             </div>
         </section>
 
-        <section id="testimonials" class="in fade-in-left">
+        <section id="testimonials" class="in reveal fade-in-left">
             <div class="container">
                 <div class="testimonial-title">
                     <h2 class="undertitle" data-cms="testimonials.title"><span>Avis</span></h2>
@@ -224,7 +224,7 @@
             </div>
         </section>
 
-        <section id="contact" class="in fade-in-left">
+        <section id="contact" class="in reveal fade-in-left">
             <div class="container">
                 <div class="form">
                     <h2>Me contacter</h2>
@@ -395,14 +395,14 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
-                    observer.unobserve(entry.target); // Optimisation : on arrête d'observer une fois animé
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.1 // Déclenche quand 10% de l'élément est visible
+            threshold: 0.1
         });
 
-        document.querySelectorAll('.fade-in-left').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
     <!-- CMS Loader -->
