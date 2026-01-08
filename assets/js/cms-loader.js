@@ -314,13 +314,34 @@ const CMS = {
 
     if (title && data.headerTitle) title.textContent = data.headerTitle;
 
+    // Fonction helper pour parser le markdown (utilise 'marked' si dispo, sinon texte brut)
+    const parseMD = (text) => {
+      if (!text) return '';
+      if (typeof marked !== 'undefined') {
+        return marked.parse(text);
+      }
+      return text.replace(/\n/g, '<br>');
+    };
+
     if (container && data.sections) {
-      const sectionsHTML = data.sections.map(section => `
+      const sectionsHTML = data.sections.map(section => {
+        const subContent = section.subsections
+          ? section.subsections.map(sub => `
+              <div class="legal-subsection">
+                <h3>${sub.title}</h3>
+                <div class="legal-content">${parseMD(sub.content)}</div>
+              </div>
+            `).join('')
+          : '';
+
+        return `
         <div class="legal-item">
           <h2>${section.title}</h2>
-          <p>${section.content}</p>
+          <div class="legal-content">${parseMD(section.content)}</div>
+          ${subContent}
         </div>
-      `).join('');
+      `;
+      }).join('');
       container.innerHTML = sectionsHTML;
     }
   },

@@ -231,9 +231,15 @@ collections:
             name: "sections"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
               - { label: "Titre", name: "title", widget: "string" }
-              - { label: "Contenu (HTML autorisé)", name: "content", widget: "text" }
+              - { label: "Contenu", name: "content", widget: "markdown" }
+              - label: "Sous-Rubriques"
+                name: "subsections"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Contenu", name: "content", widget: "markdown" }
 
       - label: "Politique de confidentialité"
         name: "confidentialite"
@@ -246,6 +252,12 @@ collections:
             name: "sections"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
               - { label: "Titre", name: "title", widget: "string" }
-              - { label: "Contenu (HTML autorisé)", name: "content", widget: "text" }
+              - { label: "Contenu", name: "content", widget: "markdown" }
+              - label: "Sous-Rubriques"
+                name: "subsections"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Contenu", name: "content", widget: "markdown" }
