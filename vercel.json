@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        {
+            "source": "/blog.html",
+            "destination": "/en-construction.html",
+            "permanent": false
+        }
+    ],
     "rewrites": [
         {
             "source": "/api/(.*)",
@@ -12,6 +19,15 @@
                 {
                     "key": "Content-Type",
                     "value": "text/yaml"
+                }
+            ]
+        },
+        {
+            "source": "/en-construction.html",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-cache, no-store, must-revalidate"
                 }
             ]
         }
