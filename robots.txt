@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /en-construction.html
+Disallow: /assets/
+Disallow: /_data/
+
+Sitemap: https://www.kreasyon-design.fr/sitemap.xml
