@@ -4,7 +4,7 @@
   "sections": [
     {
       "title": "1. Éditeur du site",
-      "content": "**Kreasyon Design**<br><br>Jeffry GROS-DÉSORMEAUX<br><br>Portfolio professionnel - Rennes, Bretagne, France<br><br>Email : [contact@kreasyon-design.com](mailto:contact@kreasyon-design.com)"
+      "content": "**Kreasyon Design**\n\nJeffry GROS-DÉSORMEAUX\\\nPortfolio professionnel - Rennes, Bretagne, France\\\nEmail : [contact@kreasyon-design.com](mailto:contact@kreasyon-design.com)"
     },
     {
       "title": "2. Protection des données personnelles (RGPD)",
@@ -20,7 +20,7 @@
         },
         {
           "title": "2.3. Services Tiers",
-          "content": "Pour assurer le bon fonctionnement et la sécurité du site, nous utilisons les services suivants :\n\n* **Cloudflare Turnstile** : Pour protéger le formulaire contre le spam et les robots\n* **Resend** : Pour l'envoi technique des emails de notification et de confirmation."
+          "content": "Pour assurer le bon fonctionnement et la sécurité du site, nous utilisons les services suivants :\n\n\n\n* **Cloudflare Turnstile** : Pour protéger le formulaire contre le spam et les robots\n* **Resend** : Pour l'envoi technique des emails de notification et de confirmation."
         },
         {
           "title": "2.4. Durée de conservation",
@@ -38,7 +38,7 @@
       "subsections": [
         {
           "title": "3.1. Outils d'analyse",
-          "content": "En cas d'acceptation des cookies analytics, nous utilisons :<br><br>- Google Analytics : Mesure anonyme de fréquentation<br>- Cookies : _ga, _gid (13 mois maximum)<br>- Données : Pages vues, sessions (IP anonymisée)<br><br>Ces outils sont désactivés par défaut jusqu'à consentement."
+          "content": "En cas d'acceptation des cookies analytics, nous utilisons :\n\n*  Google Analytics : Mesure anonyme de fréquentation\n*  Cookies : _ga, _gid (13 mois maximum)\n*  Données : Pages vues, sessions (IP anonymisée)\n\nCes outils sont désactivés par défaut jusqu'à consentement."
         }
       ]
     }
