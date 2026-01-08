@@ -390,6 +390,17 @@
         });
 
     </script>
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+    </script>
 
     <!-- CMS Loader -->
     <script src="/assets/js/cms-loader.js"></script>
