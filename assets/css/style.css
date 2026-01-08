@@ -1333,7 +1333,8 @@ footer .footer-bottom a {
   }
 }
 .fade-in-left {
-  animation: fade-in-left 0.8s linear 0.4s both opacity 0;
+  animation: fade-in-left 0.8s linear 0.4s both;
+  opacity: 0;
 }
 
 .fade-in-left.animate {

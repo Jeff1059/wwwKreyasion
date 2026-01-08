@@ -1,5 +1,6 @@
 .fade-in-left {
-    animation: fade-in-left .8s linear .4s both opacity 0;
+    animation: fade-in-left .8s linear .4s both;
+    opacity: 0;
 }
 
 .fade-in-left.animate {
