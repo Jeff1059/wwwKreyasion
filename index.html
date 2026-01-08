@@ -391,12 +391,15 @@
 
     </script>
     <script>
-        const observer = new IntersectionObserver(entries => {
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
+                    observer.unobserve(entry.target); // Optimisation : on arrête d'observer une fois animé
                 }
             });
+        }, {
+            threshold: 0.1 // Déclenche quand 10% de l'élément est visible
         });
 
         document.querySelectorAll('.fade-in-left').forEach(el => observer.observe(el));
