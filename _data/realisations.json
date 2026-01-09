@@ -1,39 +1,39 @@
 {
-    "sectionTitle": "Mes Réalisations",
-    "items": [
+  "sectionTitle": "Mes Réalisations",
+  "items": [
+    {
+      "id": "sinbad",
+      "client": "Sinbad conseil",
+      "logo": "/assets/images/sinbad-logo.png",
+      "url": "https://www.sinbadconseil.fr/",
+      "description": "Refonte du siteweb d'origine avec un passage d'une landing page vers un siteweb avec plusieurs rubriques: création de templates, intégration d'un gestionnaire d'offres d'emploi sur mesure",
+      "technologies": [
+        "CMS Made Simple",
+        "Bootstrap 4.1"
+      ],
+      "slides": [
         {
-            "id": "sinbad",
-            "client": "Sinbad conseil",
-            "logo": "/assets/images/sinbad-logo.png",
-            "url": "https://www.sinbadconseil.fr/",
-            "description": "Refonte du siteweb d'origine avec un passage d'une landing page vers un siteweb avec plusieurs rubriques: création de templates, intégration d'un gestionnaire d'offres d'emploi sur mesure",
-            "technologies": [
-                "CMS Made Simple",
-                "Bootstrap 4.1"
-            ],
-            "slides": [
-                {
-                    "number": 1,
-                    "title": "Design du site web",
-                    "image": "/assets/images/maquette.png",
-                    "linkText": "Voir maquette",
-                    "linkUrl": "/assets/sinbad/uploads/pdf/maquette_sinbad_lot_2.pdf"
-                },
-                {
-                    "number": 2,
-                    "title": "Gestionnaire offres emplois",
-                    "image": "/assets/images/gestionnaire-offres.png",
-                    "linkText": "Voir",
-                    "linkUrl": "/sinbad/maquette-offres.html"
-                },
-                {
-                    "number": 3,
-                    "title": "Parcours consultant",
-                    "image": "/assets/images/consultant.png",
-                    "linkText": "Création page parcours consultant",
-                    "linkUrl": "/sinbad/maquette-candidat.html"
-                }
-            ]
+          "number": 1,
+          "title": "Design du site web",
+          "image": "/assets/images/maquette.jpg",
+          "linkText": "Voir maquette",
+          "linkUrl": "/assets/sinbad/uploads/pdf/maquette_sinbad_lot_2.pdf"
+        },
+        {
+          "number": 2,
+          "title": "Gestionnaire offres emplois",
+          "image": "/assets/images/gestionnaire-offres.png",
+          "linkText": "Voir",
+          "linkUrl": "/sinbad/maquette-offres.html"
+        },
+        {
+          "number": 3,
+          "title": "Parcours consultant",
+          "image": "/assets/images/consultant.png",
+          "linkText": "Création page parcours consultant",
+          "linkUrl": "/sinbad/maquette-candidat.html"
         }
-    ]
+      ]
+    }
+  ]
 }
