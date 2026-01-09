@@ -22,7 +22,7 @@
         {
           "number": 2,
           "title": "Gestionnaire offres emplois",
-          "image": "/assets/images/gestionnaire-offres.png",
+          "image": "/assets/images/offres.jpg",
           "linkText": "Voir",
           "linkUrl": "/sinbad/maquette-offres.html"
         },
