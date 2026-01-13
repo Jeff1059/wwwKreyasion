@@ -593,7 +593,7 @@
 footer {
     margin-top: 5rem;
     padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
     background-color: var(--surface-color);
     border-top-left-radius: 250px 100px;
 
@@ -601,7 +601,7 @@ footer {
     .footer-bottom {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         text-align: center;
         padding-top: 2rem;
