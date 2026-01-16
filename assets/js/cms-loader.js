@@ -135,11 +135,11 @@ const CMS = {
     if (container && data.items) {
       const servicesHTML = data.items.map(item => `
         <div class="services-card">
-          <img src="${item.image}" alt="${item.title}">
-          <div class="services-card_text">
+          <div class="services-card_head">
+            <img src="${item.image}" alt="${item.title}">
             <h3>${item.title}</h3>
-            <p>${item.description}</p>
           </div>
+          <p>${item.description}</p>
         </div>
       `).join('');
       container.innerHTML = servicesHTML;
@@ -224,6 +224,7 @@ const CMS = {
     <div class="slider">
       ${item.slides.map((slide, idx) => `
         <div class="slide${idx === 0 ? ' active' : ''}">
+        <em class="slide-badge">Voir</em>
           <div class="slide-content">
             <img src="${slide.image}" alt="slide-${slide.number}">
             <div class="slide-content_text">

@@ -373,6 +373,7 @@ span {
   width: 10rem;
   height: 1rem;
   border-bottom: 2px solid var(--accent-color);
+  margin-bottom: 4rem;
 }
 
 .direction {
@@ -476,9 +477,10 @@ span {
 /* Section Profile */
 .flex {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  justify-content: space-between;
+  gap: 4rem;
+  justify-content: center;
 }
 
 .parcours {
@@ -487,17 +489,17 @@ span {
 }
 
 .competences-grid {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  padding-inline: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 4rem;
 }
 
 .profil-design {
-  flex: 0 0 auto;
-  max-width: 50%;
-  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
 }
 
 .profil-card {
@@ -511,7 +513,7 @@ span {
 }
 
 .profil-card_text {
-  padding: 20px 20px 20px 20px;
+  padding: 2rem 1.5rem 2rem 1.5rem;
 }
 .profil-card_text h3 {
   padding-left: 100px;
@@ -528,11 +530,13 @@ span {
 
 .story {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  text-align: center;
   gap: 0.9rem;
+}
+.story:not(:last-child) {
+  margin-bottom: 2rem;
 }
 .story .story-text span {
   font-weight: 700;
@@ -560,6 +564,7 @@ span {
   width: 250px;
   height: 250px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  margin-inline: 1rem;
 }
 .card .icon {
   position: absolute;
@@ -582,7 +587,7 @@ span {
   position: absolute;
   top: 3rem;
   left: 0;
-  right: 65%;
+  right: 55%;
   bottom: 3rem;
   z-index: -2;
   background-color: var(--shape-bg);
@@ -593,6 +598,15 @@ span {
 
 .margin-none {
   margin-left: 0 !important;
+}
+
+.pills-area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  width: auto;
 }
 
 .pill-section {
@@ -625,33 +639,43 @@ span {
 
 .competences-content {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
 .competences-pills {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 1 25%;
+  gap: 2rem;
 }
 
 /* Section Realisations */
 .work-content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 .work-content a {
   text-decoration: none;
   color: var(--main-color);
-  padding-left: 1rem;
   color: var(--main-color);
 }
 .work-content a:hover {
   color: var(--accent-color);
+}
+
+.work-content_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 30%;
 }
 
 .slider {
@@ -676,6 +700,18 @@ span {
   padding: 0;
 }
 
+.slide-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-color);
+  color: var(--alternative-text-color);
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border-radius: 1rem;
+  font-weight: 700;
+}
+
 .slide.active {
   flex: 3 1 0 !important;
 }
@@ -698,13 +734,15 @@ span {
 }
 
 .slide-content_text {
+  display: none;
   position: absolute;
-  background-color: hsla(0, 4%, 15%, 0.7);
+  background-color: hsla(0, 4%, 15%, 0.9);
   color: var(--main-color);
   border-radius: 1rem;
   padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   bottom: 1.5rem;
   left: 1.5rem;
+  width: 75%;
 }
 
 .slide-title {
@@ -721,6 +759,9 @@ span {
 
 .slide.active .slide-title {
   display: none;
+}
+.slide.active .slide-content_text {
+  display: block;
 }
 
 .slide-number {
@@ -1112,21 +1153,24 @@ footer .footer-bottom a {
 }
 
 #services .services-area {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 3rem;
 }
 #services .services-card {
   position: relative;
   z-index: 0;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
   background-color: var(--shape);
   opacity: 1;
   border-radius: 16px;
   border: 1px solid var(--main-color);
-  max-width: 400px;
-  min-height: 500px;
-  margin: 0 auto;
+  width: 400px;
+  height: auto;
 }
 #services .services-card::before {
   content: "";
@@ -1142,10 +1186,20 @@ footer .footer-bottom a {
   border-radius: 16px;
   z-index: -1;
 }
-#services .services-card img {
+#services .services-card_head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#services .services-card_head h3 {
+  margin-bottom: 0;
+}
+#services .services-card_head img {
   display: block;
   width: auto;
-  height: 195px;
+  max-height: 90px;
   margin: 0 auto;
 }
 #services .services-card .services-card_text {
@@ -1160,51 +1214,8 @@ footer .footer-bottom a {
   #competences .container:before {
     display: none;
   }
-  .competences-content {
-    flex-direction: column;
-  }
-  .competences-pills {
-    flex-direction: row;
-    justify-content: center;
-    gap: 4rem;
-  }
-}
-@media screen and (max-width: 1200px) {
-  #competences .flex {
-    align-items: center;
-  }
-  .work-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  #services .services-area {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-  }
 }
 @media screen and (max-width: 900px) {
-  .profil-design {
-    max-width: 100%;
-    padding-top: 2rem;
-  }
-  .story {
-    padding-left: 0;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .story-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  #competences .flex {
-    align-items: center;
-  }
-  .competences-pills {
-    flex-direction: column;
-    gap: 0;
-  }
   .slider {
     flex-direction: column;
   }
@@ -1240,9 +1251,6 @@ footer .footer-bottom a {
   }
 }
 @media screen and (max-width: 800px) {
-  #services .services-area {
-    grid-template-columns: repeat(1, 1fr);
-  }
   #contact::before {
     display: none;
   }
@@ -1259,9 +1267,6 @@ footer .footer-bottom a {
   }
 }
 @media screen and (max-width: 600px) {
-  .competences-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
   #testimonials .testimonial {
     grid-template-columns: repeat(1, 1fr);
     gap: 3rem;

@@ -15,7 +15,7 @@
         },
         {
             "id": "dev",
-            "title": "Intégration HTML/CSS/Javascript",
+            "title": "Intégration HTML / CSS / Javascript",
             "description": "Intégration des templates à votre CMS pour un rendu moderne, responsive et cohérent.<br><br>Optimisations de base : performance, lisibilité, et cohérence visuelle",
             "image": "/assets/images/service-dev.png"
         }
