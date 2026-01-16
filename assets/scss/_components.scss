@@ -486,15 +486,17 @@
 
     .container {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 3rem;
+
     }
 
     .form {
         position: relative;
         display: flex;
         flex-direction: column;
-        flex: 0 0 auto;
-        width: 50%;
+        flex: 1 1 43%;
         background-color: var(--surface-color);
         color: var(--main-color);
         padding: 3rem 1rem 3rem 1rem;
@@ -555,9 +557,7 @@
         width: 100%;
     }
 
-    .faq {
-        width: 40%;
-    }
+
 
     .faq-area {
         display: flex;
@@ -940,26 +940,12 @@ footer {
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 780px) {
 
     #contact {
 
         &::before {
             display: none;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .form {
-            width: 100%;
-        }
-
-        .faq {
-            flex: 0 0 auto;
-            width: 100%;
         }
 
     }
