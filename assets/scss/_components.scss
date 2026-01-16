@@ -557,7 +557,11 @@
         width: 100%;
     }
 
-
+    .faq {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 49%;
+    }
 
     .faq-area {
         display: flex;

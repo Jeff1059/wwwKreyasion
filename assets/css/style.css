@@ -938,6 +938,11 @@ span {
 #contact input#email {
   width: 100%;
 }
+#contact .faq {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 49%;
+}
 #contact .faq-area {
   display: flex;
   flex-direction: column;
