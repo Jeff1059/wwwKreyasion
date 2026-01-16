@@ -6,7 +6,7 @@
       "client": "Sinbad conseil",
       "logo": "/assets/images/sinbad-logo.png",
       "url": "https://www.sinbadconseil.fr/",
-      "description": "Refonte du siteweb d'origine avec un passage d'une landing page vers un siteweb avec plusieurs rubriques: création de templates, intégration d'un gestionnaire d'offres d'emploi sur mesure",
+      "description": "* Conception et refonte du site : objectifs, fonctionnalités essentielles, conception fonctionnelle par modules\n* UX & contenu : maquettes Canva, intégration textes/images/logos/formulaires\n* Pilotage & qualité : points hebdomadaires, tests",
       "technologies": [
         "CMS Made Simple",
         "Bootstrap 4.1"
