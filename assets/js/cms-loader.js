@@ -8,6 +8,19 @@ const CMS = {
   basePath: '/_data',
 
   /**
+   * Parse le markdown en HTML
+   * Utilise marked.js si disponible, sinon convertit les sauts de ligne
+   */
+  parseMD(text) {
+    if (!text) return '';
+    if (typeof marked !== 'undefined') {
+      return marked.parse(text);
+    }
+    // Fallback simple: convertir les sauts de ligne
+    return text.replace(/\n/g, '<br>');
+  },
+
+  /**
    * Charge un fichier JSON
    */
   async loadJSON(filename) {
@@ -103,7 +116,7 @@ const CMS = {
     if (title && data.sectionTitle) title.innerHTML = data.sectionTitle.replace(/(\w+)$/, '<span>$1</span>');
     if (image && data.image) image.src = data.image;
     if (citation && data.citation) citation.textContent = `"${data.citation}"`;
-    if (description && data.description) description.innerHTML = data.description;
+    if (description && data.description) description.innerHTML = this.parseMD(data.description);
 
     // Parcours
     const parcoursContainer = section.querySelector('[data-cms="profil.parcours"]');
@@ -139,7 +152,7 @@ const CMS = {
             <img src="${item.image}" alt="${item.title}">
             <h3>${item.title}</h3>
           </div>
-          <p>${item.description}</p>
+          <div class="description">${this.parseMD(item.description)}</div>
         </div>
       `).join('');
       container.innerHTML = servicesHTML;
@@ -216,7 +229,7 @@ const CMS = {
           </div>
         </div>
       </a>
-      <p>${item.description}</p>
+      <div class="description">${this.parseMD(item.description)}</div>
       <div class="pill-name">
         ${item.technologies.map(tech => `<div class="margin-none">${tech}</div>`).join('')}
       </div>
@@ -315,22 +328,13 @@ const CMS = {
 
     if (title && data.headerTitle) title.textContent = data.headerTitle;
 
-    // Fonction helper pour parser le markdown (utilise 'marked' si dispo, sinon texte brut)
-    const parseMD = (text) => {
-      if (!text) return '';
-      if (typeof marked !== 'undefined') {
-        return marked.parse(text);
-      }
-      return text.replace(/\n/g, '<br>');
-    };
-
     if (container && data.sections) {
       const sectionsHTML = data.sections.map(section => {
         const subContent = section.subsections
           ? section.subsections.map(sub => `
               <div class="legal-subsection">
                 <h3>${sub.title}</h3>
-                <div class="legal-content">${parseMD(sub.content)}</div>
+                <div class="legal-content">${this.parseMD(sub.content)}</div>
               </div>
             `).join('')
           : '';
@@ -338,7 +342,7 @@ const CMS = {
         return `
         <div class="legal-item">
           <h2>${section.title}</h2>
-          <div class="legal-content">${parseMD(section.content)}</div>
+          <div class="legal-content">${this.parseMD(section.content)}</div>
           ${subContent}
         </div>
       `;

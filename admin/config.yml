@@ -67,7 +67,7 @@ collections:
           - { label: "Titre de section", name: "sectionTitle", widget: "string" }
           - { label: "Photo de profil", name: "image", widget: "image" }
           - { label: "Citation", name: "citation", widget: "string" }
-          - { label: "Description (HTML autorisé)", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "markdown" }
 
           - label: "Parcours"
             name: "parcours"
@@ -96,7 +96,7 @@ collections:
               - { label: "ID", name: "id", widget: "string" }
               - { label: "Icône", name: "icon", widget: "image" }
               - { label: "Titre", name: "title", widget: "string" }
-              - { label: "Description (HTML autorisé)", name: "description", widget: "text" }
+              - { label: "Description", name: "description", widget: "markdown" }
               - { label: "Image", name: "image", widget: "image" }
 
   # ==========================================
