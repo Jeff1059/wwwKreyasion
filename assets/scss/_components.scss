@@ -274,6 +274,11 @@
 
     a {
         padding: 0;
+        color: var(--accent-color);
+
+        &:hover {
+            color: var(--white);
+        }
     }
 }
 

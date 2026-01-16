@@ -695,6 +695,10 @@ span {
 }
 .slide a {
   padding: 0;
+  color: var(--accent-color);
+}
+.slide a:hover {
+  color: var(--white);
 }
 
 .slide-badge {
