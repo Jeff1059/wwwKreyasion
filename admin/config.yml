@@ -152,7 +152,7 @@ collections:
               - { label: "Nom du client", name: "client", widget: "string" }
               - { label: "Logo", name: "logo", widget: "image" }
               - { label: "URL du site", name: "url", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Description", name: "description", widget: "markdown" }
 
               - label: "Technologies"
                 name: "technologies"
