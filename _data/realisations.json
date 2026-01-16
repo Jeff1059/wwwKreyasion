@@ -23,14 +23,14 @@
           "number": 2,
           "title": "Gestionnaire offres emplois",
           "image": "/assets/images/offres.jpg",
-          "linkText": "Voir",
+          "linkText": "Voir page",
           "linkUrl": "/sinbad/maquette-offres.html"
         },
         {
           "number": 3,
           "title": "Parcours consultant",
           "image": "/assets/images/consultant.png",
-          "linkText": "Création page parcours consultant",
+          "linkText": "Voir page",
           "linkUrl": "/sinbad/maquette-candidat.html"
         }
       ]
