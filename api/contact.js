@@ -69,7 +69,7 @@ function generateEmailHtml(prenom, nom, details, isClient) {
     <body>
         <div class="container">
             <div class="header">
-                <img src="https://www.kreasyon-design.fr/assets/images/logo-kreasyon.png" alt="Logo Kreasyon Design" style="width: 105px; height: auto;">
+                <img src="https://www.kreasyon-design.fr/assets/images/logo-kreasyon.svg" alt="Logo Kreasyon Design" style="width: 105px; height: auto;">
             </div>
             <div class="content">
                 <h2 style="color: ${COLORS.accent}; margin-top: 0;">${title}</h2>
