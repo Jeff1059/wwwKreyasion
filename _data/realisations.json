@@ -6,7 +6,7 @@
       "client": "Sinbad conseil",
       "logo": "/assets/images/sinbad-logo.png",
       "url": "https://www.sinbadconseil.fr/",
-      "description": "\\- Conception et refonte du site : objectifs, fonctionnalités essentielles, conception fonctionnelle par modules\\\n\\\n\\- UX & contenu : maquettes Canva, intégration textes/images/logos/formulaires\\\n\\\n\\- Pilotage & qualité : points hebdomadaires, tests",
+      "description": "- Conception et refonte du site : objectifs, fonctionnalités essentielles, conception fonctionnelle par modules\\\n\n- UX & contenu : maquettes Canva, intégration textes/images/logos/formulaires\\\n\n- Pilotage & qualité : points hebdomadaires, tests",
       "technologies": [
         "CMS Made Simple",
         "Bootstrap 4.1"
