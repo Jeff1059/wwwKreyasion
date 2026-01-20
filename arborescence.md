@@ -6,27 +6,48 @@
 wwwKreyasion/
 ├── 📄 index.html                          # Page d'accueil principale
 ├── 📄 maintenance.html                    # Page de maintenance
+├── 📄 en-construction.html                # Page en construction
 ├── 📄 mentions-legales.html               # Mentions légales
 ├── 📄 politique-confidentialite.html      # Politique de confidentialité
 ├── 📄 package.json                        # Configuration NPM
-├── 📄 package-lock.json                   # Verrouillage des dépendances
 ├── 📄 README.md                           # Documentation
+├── 📄 arborescence.md                     # Documentation de l'arborescence
+├── 📄 vercel.json                         # Configuration Vercel
+├── 📄 _vercel.json                        # Configuration Vercel alternative
+├── 📄 robots.txt                          # Directives pour robots crawlers
+├── 📄 sitemap.xml                         # Plan du site
+├── 📄 maquette.png                        # Maquette du site
+│
+├── 📂 _data/                              # Données JSON structurées
+│   ├── 📄 competences.json                # Compétences
+│   ├── 📄 faq.json                        # Questions fréquentes
+│   ├── 📄 profil.json                     # Profil
+│   ├── 📄 realisations.json               # Réalisations
+│   ├── 📄 services.json                   # Services
+│   ├── 📄 site.json                       # Données du site
+│   ├── 📄 testimonials.json               # Témoignages
+│   ├── 📂 legal/                          # Données légales
+│   └── 📂 services/                       # Données services détaillées
+│
+├── 📂 content/                            # Contenus structurés
+│   ├── 📂 pages/                          # Contenus de pages
+│   └── 📂 template/                       # Templates de contenu
 │
 ├── 📂 admin/                              # Interface d'administration
-│   ├── 📄 config.yml                      # Configuration admin
-│   └── 📄 index.html                      # Page admin
+│   ├── 📄 config.yml                      # Configuration admin principale
+│   ├── 📄 index.html                      # Page admin
+│   └── 📂 config/                         # Configurations détaillées
 │
-├── 📂 api/                                # API Backend (JavaScript)
-│   ├── 📄 auth.js                         # Authentification
-│   ├── 📄 callback.js                     # Callback OAuth
-│   └── 📄 contact.js                      # Formulaire de contact
+├── � api/                                # API Backend (JavaScript)
+│   ├── 📄 contact.js                      # Formulaire de contact
+│   └── 📄 test-contact.js                 # Tests formulaire de contact
 │
 ├── 📂 assets/                             # Ressources statiques
 │   ├── 📂 css/                            # Feuilles de style compilées
 │   │   ├── 📄 style.css                   # CSS principal
 │   │   └── 📄 style.min.css               # CSS minifié
 │   │
-│   ├── 📂 scss/                           # Sources SCSS
+│   ├── 📂 scss/                           # Sources SCSS (9 fichiers)
 │   │   ├── 📄 style.scss                  # Point d'entrée SCSS
 │   │   ├── 📄 _variables.scss             # Variables
 │   │   ├── 📄 _resets.scss                # Reset CSS
@@ -34,40 +55,51 @@ wwwKreyasion/
 │   │   ├── 📄 _header.scss                # Header
 │   │   ├── 📄 _layouts.scss               # Layouts
 │   │   ├── 📄 _components.scss            # Composants
-│   │   └── 📄 _legal.scss                 # Pages légales
+│   │   ├── 📄 _legal.scss                 # Pages légales
+│   │   └── ...                            # Autres fichiers SCSS
 │   │
-│   ├── 📂 images/                         # Images du site
+│   ├── 📂 images/                         # Images du site (14 fichiers)
 │   │   ├── 📄 favicon.ico                 # Favicon
 │   │   ├── 📄 apple-touch-icon.png        # Icône Apple
 │   │   ├── 📄 logo-kreasyon.svg           # Logo SVG
 │   │   ├── 📄 logo-kreasyon.png           # Logo PNG
 │   │   ├── 📄 cover-head.png              # Image header
 │   │   ├── 📄 service-*.png               # Images services
-│   │   ├── 📄 *.jpg                       # Photos profils
-│   │   └── 📂 maquette-sinbad/            # (vide)
+│   │   └── 📄 *.jpg                       # Photos profils
 │   │
-│   ├── 📂 js/                             # JavaScript principal (vide)
+│   ├── 📂 js/                             # JavaScript principal (3 fichiers)
+│   │   └── ...                            # Scripts JavaScript
 │   │
 │   └── 📂 sinbad/                         # Assets projet Sinbad
-│       ├── 📂 css/
-│       │   ├── 📄 style-sinbad.css        # CSS Sinbad
-│       │   └── 📄 vendor-sinbad.css       # CSS vendors
-│       ├── 📂 js/
-│       │   ├── 📄 app.js                  # App principale
-│       │   ├── 📄 carousel.js             # Carousel
-│       │   ├── 📄 jobs.js                 # Gestion offres
-│       │   └── 📄 vendor-sinbad.js        # JS vendors
-│       └── 📂 uploads/
+│       ├── 📂 css/                        # CSS Sinbad
+│       │   ├── 📄 style-sinbad.css
+│       │   └── 📄 vendor-sinbad.css
+│       ├── 📂 js/                         # JavaScript Sinbad
+│       │   ├── 📄 app.js
+│       │   ├── 📄 carousel.js
+│       │   ├── 📄 jobs.js
+│       │   └── 📄 vendor-sinbad.js
+│       └── 📂 uploads/                    # Fichiers uploadés
 │           └── 📂 pdf/
 │               └── 📄 maquette_sinbad_lot_2.pdf
+│
+├── 📂 css/                                # CSS supplémentaire (dossier racine)
 │
 ├── 📂 sinbad/                             # Pages Sinbad
 │   ├── 📄 maquette-candidat.html          # Maquette candidat
 │   └── 📄 maquette-offres.html            # Maquette offres
 │
-├── 📂 node_modules/                       # Dépendances NPM
-├── 📂 .git/                               # Git
-└── 📂 .vscode/                            # Config VS Code
+├── 📂 tarteaucitron/                      # Gestion des cookies (48 fichiers)
+│   ├── 📄 tarteaucitron.js                # Script principal
+│   ├── 📄 tarteaucitron.min.js            # Version minifiée
+│   ├── 📄 tarteaucitron.services.js       # Services
+│   ├── 📄 tarteaucitron.services.min.js   # Services minifiés
+│   ├── 📂 lang/                           # 36 langues
+│   ├── 📂 css/                            # Styles tarteaucitron
+│   └── ...                                # Autres fichiers
+│
+├── 📂 .git/                               # Contrôle de version Git
+└── 📂 .vscode/                            # Configuration VS Code
 ```
 
 ---

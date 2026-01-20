@@ -82,6 +82,11 @@
             "partnersList": true /* Afficher le détail du nombre de partenaires sur la bandeau */
         });
     </script>
+    <script>
+        tarteaucitron.user.gtagUa = 'G-FBDKWKVLFC';
+        tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    </script>
 </head>
 
 <body data-cms-page="confidentialite">
@@ -234,126 +239,12 @@
                     <a href="mentions-legales.html">Mentions légales</a>
                     <a href="politique-confidentialite.html">Politique de confidentialité</a>
                 </div>
-                <p class="footer-legal">2026 - <strong>Kreasyon</strong> est une marque déposée</p>
+                <p class="footer-legal"><strong>Kreasyon Design</strong> - Tous droits réservés - 2026</p>
             </div>
         </div>
     </footer>
 
-
-    <script>
-        const formEl = document.getElementById("contact-form");
-
-        formEl.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const fd = new FormData(formEl);
-
-            const payload = {
-                nom: fd.get("Nom"),
-                prenom: fd.get("Prenom"),
-                entreprise: fd.get("Entreprise"),
-                email: fd.get("email"),
-                demande: fd.get("demande"),
-                turnstileToken: fd.get("cf-turnstile-response")
-            };
-
-            const r = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            });
-
-            const txt = await r.text();
-            if (r.ok) {
-                formEl.reset();
-                alert("Message envoyé.");
-            } else {
-                console.log("Erreur API:", r.status, txt);
-                alert("Erreur d’envoi (captcha ou serveur).");
-            }
-        });
-    </script>
-    <script>
-        // --- Menu burger ---
-        const menuBurger = document.querySelector(".nav-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        const navHeader = document.querySelector(".header");
-        const headerText = document.querySelector('.banner-content_text');
-
-        function closeMenu() {
-            navLinks.classList.remove('mobile-menu');
-            navHeader.classList.remove('overlay');
-        }
-
-        menuBurger.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-menu');
-            navHeader.classList.toggle('overlay');
-            navLinks.querySelector.toggle('li');
-        });
-
-        // Fermer le menu quand on clique sur l'overlay
-        navHeader.addEventListener('click', (e) => {
-            // on vérifie que le header est en mode overlay
-            // et qu'on clique bien sur le fond (pas sur un élément interne)
-            if (navHeader.classList.contains('overlay') && e.target === navHeader) {
-                closeMenu();
-            }
-        });
-
-
-        // Fermer le menu quand on clique sur un lien/bouton du header
-        navLinks.addEventListener('click', (e) => {
-            if (e.target.closest("a")) {
-                closeMenu();
-            }
-        });
-
-        // --- Header dynamique au scroll ---
-        function toggleBackgroundHeader() {
-            if (!navHeader) return;
-
-            const scroll = window.scrollY;
-            const boxHeight = navHeader.offsetHeight;
-            const headerHeight = navHeader.offsetHeight;
-            const offset = 300; // ton offset
-
-            if (scroll >= boxHeight - headerHeight + offset) {
-                navHeader.classList.add('bg-scroll');
-            } else {
-                navHeader.classList.remove('bg-scroll');
-            }
-        }
-
-        window.addEventListener('scroll', toggleBackgroundHeader);
-        window.addEventListener('load', toggleBackgroundHeader);
-        window.addEventListener('resize', toggleBackgroundHeader);
-        toggleBackgroundHeader();
-    </script>
-    <script>
-        document.querySelectorAll('.slider').forEach(function (slider) {
-            const slides = slider.querySelectorAll('.slide');
-
-            slides.forEach(function (slide) {
-                slide.addEventListener('click', function () {
-                    const active = slider.querySelector('.slide.active');
-                    if (active) {
-                        active.classList.remove('active');
-                    }
-                    slide.classList.add('active');
-                });
-            });
-        });
-
-        document.querySelectorAll('.faq-content').forEach((item) => {
-            const title = item.querySelector('.faq-title');
-            const text = item.querySelector('.faq-text');
-
-            title.addEventListener('click', () => {
-                text.classList.toggle('active');
-            });
-        });
-
-    </script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Markdown Parser -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
