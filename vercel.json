@@ -1,11 +1,11 @@
 {
-    "redirects": [
-        {
-            "source": "/blog.html",
-            "destination": "/en-construction.html",
-            "permanent": false
-        }
-    ],
+  "redirects": [
+    {
+      "source": "/blog/:path*",
+      "destination": "/en-construction.html",
+      "permanent": false
+    }
+  ],
     "rewrites": [
         {
             "source": "/api/(.*)",
