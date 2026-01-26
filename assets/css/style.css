@@ -334,10 +334,6 @@ section {
   margin-bottom: 2rem;
 }
 
-span {
-  color: var(--accent-color);
-}
-
 .banner-content {
   display: flex;
   justify-content: space-between;
@@ -357,6 +353,9 @@ span {
   flex-direction: column;
 }
 
+.undertitle span {
+  color: var(--accent-color);
+}
 .undertitle::after {
   content: "";
   display: block;
@@ -1050,15 +1049,19 @@ footer .footer-nav a:not(:last-child)::after {
   gap: 2rem;
 }
 
-footer a,
-footer span {
+footer .social a,
+footer .social span,
+footer .footer-nav a,
+footer .footer-nav span {
   text-decoration: none;
   color: var(--main-color);
   padding-left: 1rem;
   color: var(--main-color);
 }
-footer a:hover,
-footer span:hover {
+footer .social a:hover,
+footer .social span:hover,
+footer .footer-nav a:hover,
+footer .footer-nav span:hover {
   color: var(--accent-color);
 }
 footer .footer-bottom {
@@ -1073,7 +1076,7 @@ footer .footer-legal span {
 
 .icon-github {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 2rem !important;
   cursor: pointer;
 }
 .icon-github::before {
@@ -1098,7 +1101,7 @@ footer .footer-legal span {
 
 .icon-linkedin {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 2rem !important;
   cursor: pointer;
 }
 .icon-linkedin::before {

@@ -707,15 +707,19 @@ footer {
 footer {
 
 
-    a,
-    span {
-        text-decoration: none;
-        color: var(--main-color);
-        padding-left: 1rem;
-        color: var(--main-color);
+    .social,
+    .footer-nav {
 
-        &:hover {
-            color: var(--accent-color);
+        a,
+        span {
+            text-decoration: none;
+            color: var(--main-color);
+            padding-left: 1rem;
+            color: var(--main-color);
+
+            &:hover {
+                color: var(--accent-color);
+            }
         }
     }
 
@@ -737,7 +741,7 @@ footer {
 .icon-github {
 
     position: relative;
-    padding-left: 2rem;
+    padding-left: 2rem !important;
     cursor: pointer;
 
 
@@ -763,7 +767,7 @@ footer {
 .icon-linkedin {
 
     position: relative;
-    padding-left: 2rem;
+    padding-left: 2rem !important;
     cursor: pointer;
 
     &::before {
