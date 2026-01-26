@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/((?!maintenance.html).*)",
-      "destination": "/maintenance.html",
+      "source": "/blog/:path*",
+      "destination": "/en-construction.html",
       "permanent": false
     }
   ]
