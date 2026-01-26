@@ -1,16 +1,4 @@
 {
-    "redirects": [
-        {
-            "source": "/blog/",
-            "destination": "/en-construction.html",
-            "permanent": false
-        },
-        {
-            "source": "/blog/:path*",
-            "destination": "/en-construction.html",
-            "permanent": false
-        }
-    ],
     "rewrites": [
         {
             "source": "/api/(.*)",
