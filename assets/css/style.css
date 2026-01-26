@@ -666,6 +666,9 @@ section {
   align-items: flex-start;
   flex: 1 1 30%;
 }
+.work-content_text .description li {
+  margin-bottom: 1rem;
+}
 
 .slider {
   display: flex;
@@ -1152,7 +1155,7 @@ footer .footer-legal span {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   gap: 1rem;
 }
 

@@ -250,6 +250,10 @@
     flex-direction: column;
     align-items: flex-start;
     flex: 1 1 30%;
+
+    .description li {
+        margin-bottom: 1rem;
+    }
 }
 
 
@@ -816,7 +820,7 @@ footer {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     gap: 1rem;
 }
 
