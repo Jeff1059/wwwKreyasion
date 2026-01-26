@@ -1,5 +1,6 @@
 {
   "redirects": [
+     {
       "source": "/blog/",
       "destination": "/en-construction.html",
       "permanent": false
