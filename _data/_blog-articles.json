@@ -1,0 +1,32 @@
+{
+    "articles": [
+        {
+            "id": "organisation-pages-web",
+            "title": "Organisation de ses pages web",
+            "description": "To be quite frank, with the exception of the basic feature would facilitate the development of The Disposition of Personnel Program (especially those in The Role of the Operational Procedures).",
+            "image": "/assets/images/blog/organisation-pages-web.jpg",
+            "readTime": "5 min",
+            "date": "2026-01-26",
+            "slug": "organisation-pages-web",
+            "category": "Développement Web",
+            "url": "/blog/organisation-pages-web.html"
+        }
+    ],
+    "categories": [
+        {
+            "id": "developpement-web",
+            "name": "Développement Web",
+            "count": 1
+        },
+        {
+            "id": "design",
+            "name": "Design",
+            "count": 0
+        },
+        {
+            "id": "seo",
+            "name": "SEO",
+            "count": 0
+        }
+    ]
+}

@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" data-cms="page.meta_desc">
-    <link rel="canonical" href="https://www.kreasyon-design.fr/politique-confidentialite.html">
+    <link rel="canonical" href="https://www.kreasyon-design.fr/mentions-legales.html">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet">
     <title data-cms="page.meta_title"></title>
-
     <!-- Balises sociales -->
     <meta property="og:title" data-cms="page.meta_title" content="">
     <meta property="og:description" data-cms="page.meta_desc" content="">
@@ -90,7 +89,7 @@
     </script>
 </head>
 
-<body data-cms-page="confidentialite">
+<body data-cms-page="blog">
 
     <header class="header">
         <div class="container navbar">
@@ -216,19 +215,34 @@
         <img data-cms="page.coverImage" alt="">
         <div class="container">
             <div class="page-header">
-                <h1 class="section-title" data-cms="legal.title">Politique de Confidentialité
-                </h1>
+                <h1 class="section-title" data-cms="page.headerTitle">Blog</h1>
+                <p data-cms="page.meta_desc"></p>
             </div>
         </div>
     </section>
 
-    <main id="legal">
+    <main id="blog-list">
         <section>
-            <div class="container boxed" data-cms="legal.sections">
+            <div class="container">
+                <h2>Liste des articles</h2>
+                <div class="blog-layout">
+                    <!-- Articles List -->
+                    <div class="blog-articles" data-cms="blog.articles">
+                        <div class="blog-empty">
+                            <h3>Chargement des articles...</h3>
+                        </div>
+                    </div>
+
+                    <!-- Category Table of Contents Sidebar -->
+                    <aside class="blog-toc">
+                        <h3>Catégories</h3>
+                        <nav data-cms="blog.categories">
+                        </nav>
+                    </aside>
+                </div>
             </div>
         </section>
     </main>
-
 
     <footer>
         <div class="container">
@@ -256,6 +270,8 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- CMS Loader -->
     <script src="/assets/js/cms-loader.js"></script>
+    <!-- Blog Loader -->
+    <script src="/assets/js/blog-loader.js"></script>
 
 </body>
 

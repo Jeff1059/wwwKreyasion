@@ -53,6 +53,10 @@ const CMS = {
       case 'index':
         await this.loadHomePage();
         break;
+      case 'blog':
+      case 'blog-article':
+        // Géré par blog-loader.js pour le contenu, mais cms-loader gère les meta
+        break;
       case 'mentions-legales':
         await this.loadLegalPage('mentions-legales');
         break;
@@ -71,7 +75,13 @@ const CMS = {
 
     // Charger les données selon la page
     if (pageName === 'index') {
-      pageData = siteData; // Les meta sont directement dans site.json
+      pageData = siteData;
+    } else if (pageName === 'blog') {
+      pageData = await this.loadJSON('blog.json');
+    } else if (pageName === 'blog-article') {
+      // Pour les articles, blog-loader.js s'en charge dynamiquement
+      // mais on peut charger siteData pour avoir le footer correct
+      pageData = siteData;
     } else if (pageName === 'mentions-legales' || pageName === 'confidentialite') {
       pageData = await this.loadJSON(`legal/${pageName}.json`);
     }
@@ -83,6 +93,8 @@ const CMS = {
       // Mettre à jour via data-cms (cohérent avec le reste du site)
       this.setDataCms('page.meta_title', metaTitle);
       this.setDataCms('page.meta_desc', pageData.meta_description);
+      this.setDataCms('page.coverImage', pageData.coverImage);
+      this.setDataCms('page.headerTitle', pageData.headerTitle);
     }
 
     // Charger les paramètres généraux globaux
@@ -380,8 +392,11 @@ const CMS = {
 
     const title = document.querySelector('[data-cms="legal.title"]');
     const container = document.querySelector('[data-cms="legal.sections"]');
+    const coverImage = document.querySelector('[data-cms="page.coverImage"]');
 
     if (title && data.headerTitle) title.textContent = data.headerTitle;
+
+    if (coverImage && data.coverImage) coverImage.src = data.coverImage;
 
     if (container && data.sections) {
       const sectionsHTML = data.sections.map(section => {

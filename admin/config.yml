@@ -231,6 +231,7 @@ collections:
           - { label: "Titre de la page", name: "pageTitle", widget: "string", hint: "Utilisé comme meta title" }
           - { label: "Meta Description", name: "meta_description", widget: "text", hint: "Description SEO" }
           - { label: "Titre affiché", name: "headerTitle", widget: "string" }
+          - { label: "Image de couverture", name: "coverImage", widget: "image" }
 
           - label: "Sections"
             name: "sections"
@@ -253,6 +254,7 @@ collections:
           - { label: "Titre de la page", name: "pageTitle", widget: "string", hint: "Utilisé comme meta title" }
           - { label: "Meta Description", name: "meta_description", widget: "text", hint: "Description SEO" }
           - { label: "Titre affiché", name: "headerTitle", widget: "string" }
+          - { label: "Image de couverture", name: "coverImage", widget: "image" }
 
           - label: "Sections"
             name: "sections"
@@ -267,3 +269,30 @@ collections:
                 fields:
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Contenu", name: "content", widget: "markdown" }
+
+  # ==========================================
+  # BLOG
+  # ==========================================
+  - name: "blog"
+    label: "📰 Blog"
+    files:
+      - label: "Gestion du Blog et Articles"
+        name: "blog"
+        file: "_data/blog.json"
+        fields:
+          - { label: "Titre de la page", name: "headerTitle", widget: "string", hint: "Titre affiché sur la page blog" }
+          - { label: "Meta Description", name: "meta_description", widget: "text", hint: "Description SEO" }
+          - { label: "Image de couverture", name: "coverImage", widget: "image" }
+          
+          - label: "Articles"
+            name: "articles"
+            widget: "list"
+            fields:
+              - { label: "ID / Slug", name: "id", widget: "string", hint: "Identifiant unique (ex: mon-article-web)" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date", format: "DD/MM/YYYY" }
+              - { label: "Catégorie", name: "category", widget: "string" }
+              - { label: "Temps de lecture", name: "readTime", widget: "string" }
+              - { label: "Image de couverture", name: "image", widget: "image" }
+              - { label: "Description courte", name: "description", widget: "text" }
+              - { label: "Contenu complet", name: "content", widget: "markdown" }
