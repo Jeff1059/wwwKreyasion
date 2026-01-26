@@ -46,6 +46,9 @@ const CMS = {
     const page = document.body.dataset.cmsPage || 'index';
     console.log(`[CMS] Initialisation pour la page: ${page}`);
 
+    // Charger les paramètres de page (meta, bannière)
+    await this.loadPageMeta(page);
+
     switch (page) {
       case 'index':
         await this.loadHomePage();
@@ -57,6 +60,62 @@ const CMS = {
         await this.loadLegalPage('confidentialite');
         break;
     }
+  },
+
+  /**
+   * Charge les métadonnées de la page courante
+   */
+  async loadPageMeta(pageName) {
+    let pageData = null;
+    const siteData = await this.loadJSON('site.json');
+
+    // Charger les données selon la page
+    if (pageName === 'index') {
+      pageData = siteData; // Les meta sont directement dans site.json
+    } else if (pageName === 'mentions-legales' || pageName === 'confidentialite') {
+      pageData = await this.loadJSON(`legal/${pageName}.json`);
+    }
+
+    if (pageData) {
+      // Utiliser meta_title si disponible, sinon pageTitle
+      const metaTitle = pageData.meta_title || pageData.pageTitle;
+
+      // Mettre à jour via data-cms (cohérent avec le reste du site)
+      this.setDataCms('page.meta_title', metaTitle);
+      this.setDataCms('page.meta_desc', pageData.meta_description);
+    }
+
+    // Charger les paramètres généraux globaux
+    if (siteData) {
+      this.renderGlobalSettings(siteData);
+    }
+  },
+
+  /**
+   * Helper pour définir le contenu des éléments avec data-cms
+   */
+  setDataCms(selector, value) {
+    if (!value) return;
+
+    const elements = document.querySelectorAll(`[data-cms="${selector}"]`);
+    elements.forEach(el => {
+      // Pour les meta tags, utiliser setAttribute
+      if (el.tagName === 'META') {
+        el.setAttribute('content', value);
+      } else {
+        // Pour les autres éléments (title, etc.), utiliser textContent
+        el.textContent = value;
+      }
+    });
+  },
+
+  /**
+   * Render - Paramètres généraux globaux (nom du site, année)
+   */
+  renderGlobalSettings(data) {
+    this.setDataCms('site.name', data.siteName);
+    this.setDataCms('site.year', data.year);
+    this.setDataCms('footer.trademark', data.footer?.trademark);
   },
 
   /**
@@ -84,10 +143,10 @@ const CMS = {
   },
 
   /**
-   * Render - Site global (banner, etc.)
+   * Render - Site global (banner d'accueil)
    */
   renderSite(data) {
-    // Banner
+    // Banner d'accueil (page index uniquement)
     const bannerTitle = document.querySelector('[data-cms="banner.title"]');
     const bannerSubtitle = document.querySelector('[data-cms="banner.subtitle"]');
     const bannerImage = document.querySelector('[data-cms="banner.image"]');
@@ -95,10 +154,6 @@ const CMS = {
     if (bannerTitle && data.banner?.title) bannerTitle.textContent = data.banner.title;
     if (bannerSubtitle && data.banner?.subtitle) bannerSubtitle.textContent = data.banner.subtitle;
     if (bannerImage && data.banner?.image) bannerImage.src = data.banner.image;
-
-    // Footer
-    const trademark = document.querySelector('[data-cms="footer.trademark"]');
-    if (trademark && data.footer?.trademark) trademark.innerHTML = `<strong>Kreasyon</strong> ${data.footer.trademark}`;
   },
 
   /**
