@@ -1,5 +1,11 @@
 {
   "redirects": [
+      "source": "/blog/",
+      "destination": "/en-construction.html",
+      "permanent": false
+    }
+  ],
+  "redirects": [
     {
       "source": "/blog/:path*",
       "destination": "/en-construction.html",
