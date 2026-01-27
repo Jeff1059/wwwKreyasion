@@ -1,0 +1,25 @@
+{
+    "copyright": "© 2026 Kreasyon Design - Tous droits réservés",
+    "links": [
+        {
+            "label": "Mentions légales",
+            "url": "/mentions-legales"
+        },
+        {
+            "label": "Politique de confidentialité",
+            "url": "/politique-confidentialite"
+        }
+    ],
+    "social": [
+        {
+            "platform": "linkedin",
+            "url": "#",
+            "class": "icon-linkedin"
+        },
+        {
+            "platform": "github",
+            "url": "#",
+            "class": "icon-github"
+        }
+    ]
+}

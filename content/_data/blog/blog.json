@@ -1,7 +1,11 @@
 {
+    "meta": {
+        "title": "Le Blog Kreasyon Design | Conseils Web & Design",
+        "description": "Retrouvez mes conseils et astuces sur le développement web, l'UX/UI Design et la stratégie digitale pour booster votre visibilité en ligne.",
+        "canonical": "https://www.kreasyon-design.fr/blog/index.html"
+    },
     "headerTitle": "Mon Blog",
-    "meta_description": "Conseils et astuces sur le développement web et le design.",
-    "coverImage": "../assets/images/cover-blog-design.jpg",
+    "coverImage": "/assets/images/cover-blog-design.jpg",
     "articles": [
         {
             "id": "organisation-pages-web",
@@ -9,7 +13,7 @@
             "date": "26/01/2026",
             "category": "Développement",
             "readTime": "5 min",
-            "image": "../assets/images/blog/organisation-pages-web.jpg",
+            "image": "/assets/images/blog/organisation-pages-web.jpg",
             "description": "Apprenez à structurer vos pages HTML de manière sémantique et optimisée pour le SEO.",
             "content": "## Introduction\n\nBien structurer sa page web est essentiel...\n\n### Pourquoi la sémantique ?\n\nLa sémantique permet aux moteurs de recherche de mieux comprendre votre contenu."
         }

@@ -18,205 +18,156 @@ collections:
   - name: "settings"
     label: "⚙️ Paramètres du site"
     files:
-      - label: "Configuration générale"
-        name: "site"
-        file: "_data/site.json"
+      - label: "SEO & Header (Meta)"
+        name: "head"
+        file: "content/_data/homepage/head.json"
         fields:
-          - { label: "Titre du site", name: "title", widget: "string" }
-          - { label: "Meta Title (SEO)", name: "meta_title", widget: "string", hint: "Titre SEO pour la page d'accueil" }
-          - { label: "Meta Description (SEO)", name: "meta_description", widget: "text", hint: "Description SEO pour la page d'accueil" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Titre SEO", name: "title", widget: "string" }
+          - { label: "Description SEO", name: "description", widget: "text" }
           - { label: "URL canonique", name: "canonical", widget: "string" }
-          - { label: "Nom du site", name: "siteName", widget: "string", hint: "Nom affiché du site (ex: Kreasyon Design)" }
-          - { label: "Année", name: "year", widget: "string", hint: "Année affichée dans le footer" }
+          - { label: "OG Title", name: "og:title", widget: "string", required: false }
+          - { label: "OG Description", name: "og:description", widget: "text", required: false }
+          - { label: "OG Image", name: "og:image", widget: "image", required: false }
 
-          - label: "Bannière d'accueil"
-            name: "banner"
+      - label: "Bannière d'accueil (Hero)"
+        name: "hero"
+        file: "content/_data/homepage/hero.json"
+        fields:
+          - { label: "Titre principal", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "text" }
+          - label: "CTA (Bouton)"
+            name: "cta"
             widget: "object"
             fields:
-              - { label: "Titre principal", name: "title", widget: "string" }
-              - { label: "Sous-titre", name: "subtitle", widget: "text" }
-              - { label: "Texte du bouton", name: "cta", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Texte", name: "text", widget: "string" }
+              - { label: "Lien", name: "link", widget: "string", hint: "Ex: #contact ou /blog.html" }
+          - { label: "Image", name: "image", widget: "image" }
 
+      - label: "Pied de page (Footer)"
+        name: "footer"
+        file: "content/_data/homepage/footer.json"
+        fields:
+          - { label: "Copyright / Texte", name: "copyright", widget: "string" }
+          - label: "Liens du footer"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Classe CSS", name: "class", widget: "string", required: false }
           - label: "Réseaux sociaux"
             name: "social"
-            widget: "object"
+            widget: "list"
             fields:
-              - { label: "GitHub URL", name: "github", widget: "string", required: false }
-              - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
-
-          - label: "Contact"
-            name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Email", name: "email", widget: "string" }
-
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Texte marque", name: "trademark", widget: "string" }
+              - { label: "Plateforme", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Classe icône", name: "class", widget: "string" }
 
   # ==========================================
-  # PROFIL
+  # SECTIONS HOME PAGE
   # ==========================================
-  - name: "profil"
-    label: "👤 Mon Profil"
+  - name: "homepage_sections"
+    label: "🏠 Sections Accueil"
     files:
       - label: "Profil"
         name: "profil"
-        file: "_data/profil.json"
+        file: "content/_data/homepage/profil.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "string" }
+          - { label: "Titre de section", name: "sectionTitle", widget: "code" }
           - { label: "Photo de profil", name: "image", widget: "image" }
           - { label: "Citation", name: "citation", widget: "string" }
           - { label: "Description", name: "description", widget: "markdown" }
-
           - label: "Parcours"
             name: "parcours"
             widget: "list"
             fields:
               - { label: "Icône", name: "icon", widget: "image" }
               - { label: "Valeur", name: "value", widget: "string" }
-              - { label: "Description", name: "label", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
 
-  # ==========================================
-  # SERVICES
-  # ==========================================
-  - name: "services"
-    label: "💼 Mes Services"
-    files:
       - label: "Services"
         name: "services"
-        file: "_data/services.json"
+        file: "content/_data/homepage/services.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "string" }
-
-          - label: "Services"
+          - { label: "Titre de section", name: "sectionTitle", widget: "code" }
+          - label: "Liste des services"
             name: "items"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Icône", name: "icon", widget: "image" }
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "markdown" }
               - { label: "Image", name: "image", widget: "image" }
 
-  # ==========================================
-  # COMPETENCES
-  # ==========================================
-  - name: "competences"
-    label: "🎯 Mes Compétences"
-    files:
       - label: "Compétences"
         name: "competences"
-        file: "_data/competences.json"
+        file: "content/_data/homepage/competences.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "string" }
-
+          - { label: "Titre de section", name: "sectionTitle", widget: "code" }
           - label: "Pills (catégories)"
             name: "pills"
             widget: "list"
             fields:
               - { label: "Catégorie", name: "category", widget: "string" }
-              - label: "Compétences"
-                name: "skills"
-                widget: "list"
-                field: { label: "Skill", name: "skill", widget: "string" }
-
-          - label: "Cards (étapes)"
+              - { label: "Compétences", name: "skills", widget: "list", field: { label: "Skill", widget: "string" } }
+          - label: "Cards (en détails)"
             name: "cards"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Icône", name: "icon", widget: "image" }
               - { label: "Titre", name: "title", widget: "string" }
-              - label: "Éléments"
-                name: "items"
-                widget: "list"
-                field: { label: "Item", name: "item", widget: "string" }
+              - { label: "Éléments (virgules)", name: "items", widget: "string" }
 
-  # ==========================================
-  # REALISATIONS
-  # ==========================================
-  - name: "realisations"
-    label: "🚀 Mes Réalisations"
-    files:
       - label: "Réalisations"
         name: "realisations"
-        file: "_data/realisations.json"
+        file: "content/_data/homepage/realisations.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "string" }
-
+          - { label: "Titre de section", name: "sectionTitle", widget: "code" }
           - label: "Projets"
             name: "items"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Nom du client", name: "client", widget: "string" }
+              - { label: "Client", name: "client", widget: "string" }
               - { label: "Logo", name: "logo", widget: "image" }
-              - { label: "URL du site", name: "url", widget: "string", required: false }
+              - { label: "URL", name: "url", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "markdown" }
-
-              - label: "Technologies"
-                name: "technologies"
-                widget: "list"
-                field: { label: "Tech", name: "tech", widget: "string" }
-
+              - { label: "Technologies", name: "technologies", widget: "list", field: { label: "Tech", widget: "string" } }
               - label: "Slides"
                 name: "slides"
                 widget: "list"
                 fields:
-                  - { label: "Numéro", name: "number", widget: "number" }
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Image", name: "image", widget: "image" }
-                  - { label: "Texte du lien", name: "linkText", widget: "string" }
-                  - { label: "URL du lien", name: "linkUrl", widget: "string" }
+                  - { label: "Texte lien", name: "linkText", widget: "string" }
+                  - { label: "URL lien", name: "linkUrl", widget: "string" }
 
-  # ==========================================
-  # TEMOIGNAGES
-  # ==========================================
-  - name: "testimonials"
-    label: "💬 Témoignages"
-    files:
       - label: "Témoignages"
         name: "testimonials"
-        file: "_data/testimonials.json"
+        file: "content/_data/homepage/testimonials.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "string" }
-          - { label: "Image de section", name: "image", widget: "image" }
-
-          - label: "Témoignages"
+          - { label: "Titre de section", name: "sectionTitle", widget: "code" }
+          - { label: "Image latérale", name: "image", widget: "image" }
+          - label: "Liste des témoignages"
             name: "items"
             widget: "list"
             fields:
               - { label: "ID", name: "id", widget: "string" }
               - { label: "Nom", name: "name", widget: "string" }
-              - { label: "Poste", name: "position", widget: "string" }
+              - { label: "Poste / Entreprise", name: "position", widget: "string" }
               - { label: "Photo", name: "photo", widget: "image" }
               - { label: "Témoignage", name: "testimonial", widget: "text" }
 
-  # ==========================================
-  # FAQ
-  # ==========================================
-  - name: "faq"
-    label: "❓ FAQ"
-    files:
       - label: "FAQ"
         name: "faq"
-        file: "_data/faq.json"
+        file: "content/_data/homepage/faq.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "string" }
+          - { label: "Titre de section", name: "sectionTitle", widget: "code" }
           - { label: "Image", name: "image", widget: "image" }
-
           - label: "Questions"
             name: "items"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
               - { label: "Question", name: "question", widget: "string" }
               - { label: "Réponse", name: "answer", widget: "text" }
-              - { label: "Ordre", name: "order", widget: "number" }
 
   # ==========================================
   # PAGES LEGALES
@@ -226,13 +177,17 @@ collections:
     files:
       - label: "Mentions légales"
         name: "mentions-legales"
-        file: "_data/legal/mentions-legales.json"
+        file: "content/_data/legal/mentions-legales.json"
         fields:
-          - { label: "Titre de la page", name: "pageTitle", widget: "string", hint: "Utilisé comme meta title" }
-          - { label: "Meta Description", name: "meta_description", widget: "text", hint: "Description SEO" }
-          - { label: "Titre affiché", name: "headerTitle", widget: "string" }
+          - label: "SEO / Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Titre SEO", name: "title", widget: "string" }
+              - { label: "Description SEO", name: "description", widget: "text" }
+              - { label: "URL canonique", name: "canonical", widget: "string" }
+          - { label: "Titre affiché (H1)", name: "headerTitle", widget: "string" }
           - { label: "Image de couverture", name: "coverImage", widget: "image" }
-
           - label: "Sections"
             name: "sections"
             widget: "list"
@@ -248,14 +203,18 @@ collections:
                   - { label: "Contenu", name: "content", widget: "markdown" }
 
       - label: "Politique de confidentialité"
-        name: "confidentialite"
-        file: "_data/legal/confidentialite.json"
+        name: "politique-confidentialite"
+        file: "content/_data/legal/politique-confidentialite.json"
         fields:
-          - { label: "Titre de la page", name: "pageTitle", widget: "string", hint: "Utilisé comme meta title" }
-          - { label: "Meta Description", name: "meta_description", widget: "text", hint: "Description SEO" }
-          - { label: "Titre affiché", name: "headerTitle", widget: "string" }
+          - label: "SEO / Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Titre SEO", name: "title", widget: "string" }
+              - { label: "Description SEO", name: "description", widget: "text" }
+              - { label: "URL canonique", name: "canonical", widget: "string" }
+          - { label: "Titre affiché (H1)", name: "headerTitle", widget: "string" }
           - { label: "Image de couverture", name: "coverImage", widget: "image" }
-
           - label: "Sections"
             name: "sections"
             widget: "list"
@@ -278,21 +237,20 @@ collections:
     files:
       - label: "Gestion du Blog et Articles"
         name: "blog"
-        file: "_data/blog.json"
+        file: "content/_data/blog/blog.json"
         fields:
-          - { label: "Titre de la page", name: "headerTitle", widget: "string", hint: "Titre affiché sur la page blog" }
-          - { label: "Meta Description", name: "meta_description", widget: "text", hint: "Description SEO" }
+          - { label: "Titre de la page", name: "headerTitle", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
           - { label: "Image de couverture", name: "coverImage", widget: "image" }
-          
           - label: "Articles"
             name: "articles"
             widget: "list"
             fields:
-              - { label: "ID / Slug", name: "id", widget: "string", hint: "Identifiant unique (ex: mon-article-web)" }
+              - { label: "Slug", name: "id", widget: "string" }
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "date", format: "DD/MM/YYYY" }
               - { label: "Catégorie", name: "category", widget: "string" }
               - { label: "Temps de lecture", name: "readTime", widget: "string" }
-              - { label: "Image de couverture", name: "image", widget: "image" }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Description courte", name: "description", widget: "text" }
               - { label: "Contenu complet", name: "content", widget: "markdown" }
