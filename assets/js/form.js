@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             turnstileToken: fd.get("cf-turnstile-response"),
         };
 
-        const r = await fetch("api/contact", {
+        const r = await fetch("/api/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),

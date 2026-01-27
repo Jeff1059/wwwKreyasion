@@ -25,7 +25,6 @@ export async function init(page, sharedData) {
             loadJSON('/content/_data/homepage/realisations.json'),
             loadJSON('/content/_data/homepage/testimonials.json'),
             loadJSON('/content/_data/homepage/faq.json')
-
         ]);
 
         console.log('[HomeLoader] Toutes les sections chargées ✓');
@@ -53,6 +52,9 @@ export async function init(page, sharedData) {
         if (typeof initRevealAnimations === 'function') {
             initRevealAnimations();
         }
+
+        // 🆕 Initialisation du formulaire de contact
+        initContactForm();
 
         console.log('[HomeLoader] Page chargée et composants initialisés ✓');
 
@@ -383,6 +385,51 @@ function renderFAQ(data) {
         </div>
 
     `;
+}
+
+/**
+ * Initialise la gestion du formulaire de contact
+ */
+function initContactForm() {
+    const formEl = document.getElementById("contact-form");
+    if (!formEl) return;
+
+    console.log('[HomeLoader] Initialisation du formulaire de contact...');
+
+    formEl.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fd = new FormData(formEl);
+        const payload = {
+            nom: fd.get("Nom"),
+            prenom: fd.get("Prenom"),
+            entreprise: fd.get("Entreprise"),
+            email: fd.get("email"),
+            demande: fd.get("demande"),
+            turnstileToken: fd.get("cf-turnstile-response"),
+        };
+
+        const r = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+
+        const txt = await r.text();
+        if (r.ok) {
+            formEl.reset();
+            // Reset Turnstile (important si on veut renvoyer un message)
+            if (window.turnstile) turnstile.reset();
+            // Désactiver le bouton à nouveau
+            const btn = document.getElementById('submit-button');
+            if (btn) btn.disabled = true;
+
+            alert("Message envoyé.");
+        } else {
+            console.log("Erreur API:", r.status, txt);
+            alert("Erreur d’envoi (captcha ou serveur).");
+        }
+    });
 }
 
 /**
