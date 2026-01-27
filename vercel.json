@@ -17,12 +17,8 @@
             "destination": "/api/$1"
         },
         {
-            "source": "/:page/:path*",
-            "destination": "/content/pages/:page/:path*"
-        },
-        {
-            "source": "/:page",
-            "destination": "/content/pages/:page/index.html"
+            "source": "/:page*",
+            "destination": "/content/pages/:page*"
         }
     ],
     "headers": [
