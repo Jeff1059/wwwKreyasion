@@ -10,7 +10,7 @@ export async function init(page, sharedData) {
 
     try {
         // 1️⃣ PRIORITÉ : Charger et injecter les meta (SEO)
-        const meta = await loadJSON('content/_data/homepage/head.json');
+        const meta = await loadJSON('/content/_data/homepage/head.json');
         injectMeta(meta);
         console.log('[HomeLoader] Meta injectées ✓');
 
@@ -18,13 +18,13 @@ export async function init(page, sharedData) {
         console.log('[HomeLoader] Chargement des sections...');
 
         const [hero, profil, services, competences, realisations, testimonials, faq] = await Promise.all([
-            loadJSON('content/_data/homepage/hero.json'),
-            loadJSON('content/_data/homepage/profil.json'),
-            loadJSON('content/_data/homepage/services.json'),
-            loadJSON('content/_data/homepage/competences.json'),
-            loadJSON('content/_data/homepage/realisations.json'),
-            loadJSON('content/_data/homepage/testimonials.json'),
-            loadJSON('content/_data/homepage/faq.json')
+            loadJSON('/content/_data/homepage/hero.json'),
+            loadJSON('/content/_data/homepage/profil.json'),
+            loadJSON('/content/_data/homepage/services.json'),
+            loadJSON('/content/_data/homepage/competences.json'),
+            loadJSON('/content/_data/homepage/realisations.json'),
+            loadJSON('/content/_data/homepage/testimonials.json'),
+            loadJSON('/content/_data/homepage/faq.json')
 
         ]);
 
