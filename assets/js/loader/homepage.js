@@ -146,7 +146,7 @@ function renderServices(data) {
 
     servicesEl.innerHTML = `
         <div class="container">
-        <h2 class="section-heading">${data.sectionTitle}</h2>
+        <h2 class="undertitle">${data.sectionTitle}</h2>
             <div class="services-area">
                 <div class="services-card">
                     <div class="services-card_head">
