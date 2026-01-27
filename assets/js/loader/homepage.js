@@ -1,4 +1,4 @@
-// /assets/js/loaders/homepage.js
+// /assets/js/loader/homepage.js
 import { loadJSON, injectMeta, parseMD } from './utils.js';
 
 /**
