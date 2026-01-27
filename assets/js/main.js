@@ -155,3 +155,24 @@ function initFAQToggles() {
         item.dataset.faqInit = 'true';
     });
 }
+
+/**
+ * --- Cloudflare Turnstile ---
+ */
+
+// Callback appelé par Cloudflare Turnstile quand le captcha est résolu
+window.enableSubmit = function () {
+    const btn = document.getElementById('submit-button');
+    if (btn) btn.disabled = false;
+};
+
+// Fonction pour forcer le rendu si conflit avec les loaders
+window.initTurnstile = function () {
+    if (window.turnstile) {
+        console.log('[Turnstile] Initialisation explicite...');
+        turnstile.render('.cf-turnstile', {
+            sitekey: '0x4AAAAAACJ-zFe3667bncKz',
+            callback: 'enableSubmit',
+        });
+    }
+};
