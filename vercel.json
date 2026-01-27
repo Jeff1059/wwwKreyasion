@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        {
+            "source": "/content/pages/:page*",
+            "destination": "/:page*",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/api/(.*)",
