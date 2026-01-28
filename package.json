@@ -3,5 +3,8 @@
     "version": "1.0.0",
     "dependencies": {
         "resend": "^4.0.0"
+    },
+    "scripts": {
+        "sync-blog": "node assets/js/scripts/build-blog-index.js"
     }
 }

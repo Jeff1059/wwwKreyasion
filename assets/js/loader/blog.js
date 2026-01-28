@@ -23,7 +23,7 @@ async function loadBlogListing() {
     console.log('[BlogLoader] Chargement de la liste...');
 
     // Charger blog.json (contient meta + articles)
-    const data = await loadJSON('content/_data/blog/blog.json');
+    const data = await loadJSON('/content/_data/blog/blog.json');
 
     // 1️⃣ Injecter les meta de la page blog
     if (data.meta) {
@@ -54,7 +54,7 @@ async function loadBlogArticle() {
 
     try {
         // Charger l'article individuel
-        const article = await loadJSON(`content/_data/blog/posts/${articleId}.json`);
+        const article = await loadJSON(`/content/_data/blog/posts/${articleId}.json`);
 
         console.log('[BlogLoader] Article chargé:', article);
 

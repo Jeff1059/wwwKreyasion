@@ -233,24 +233,46 @@ collections:
   # BLOG
   # ==========================================
   - name: "blog"
-    label: "📰 Blog"
+    label: "📰 Blog (Listing)"
     files:
-      - label: "Gestion du Blog et Articles"
-        name: "blog"
+      - label: "Configuration & Liste"
+        name: "blog_config"
         file: "content/_data/blog/blog.json"
         fields:
-          - { label: "Titre de la page", name: "headerTitle", widget: "string" }
-          - { label: "Meta Description", name: "meta_description", widget: "text" }
-          - { label: "Image de couverture", name: "coverImage", widget: "image" }
-          - label: "Articles"
-            name: "articles"
-            widget: "list"
+          - label: "SEO / Meta"
+            name: "meta"
+            widget: "object"
             fields:
-              - { label: "Slug", name: "id", widget: "string" }
-              - { label: "Titre", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "date", format: "DD/MM/YYYY" }
-              - { label: "Catégorie", name: "category", widget: "string" }
-              - { label: "Temps de lecture", name: "readTime", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Description courte", name: "description", widget: "text" }
-              - { label: "Contenu complet", name: "content", widget: "markdown" }
+              - { label: "Titre SEO", name: "title", widget: "string" }
+              - { label: "Description SEO", name: "description", widget: "text" }
+              - { label: "URL canonique", name: "canonical", widget: "string" }
+          - { label: "Titre de la page", name: "headerTitle", widget: "string" }
+          - { label: "Image de couverture", name: "coverImage", widget: "image" }
+
+  - name: "posts"
+    label: "✍️ Articles du Blog"
+    folder: "content/_data/blog/posts"
+    create: true
+    slug: "{{id}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string" }
+      - label: "SEO / Meta"
+        name: "meta"
+        widget: "object"
+        fields:
+          - { label: "Titre SEO", name: "title", widget: "string" }
+          - { label: "Description SEO", name: "description", widget: "text" }
+          - { label: "URL canonique", name: "canonical", widget: "string" }
+          - { label: "OG Title", name: "og:title", widget: "string", required: false }
+          - { label: "OG Description", name: "og:description", widget: "text", required: false }
+          - { label: "OG Image", name: "og:image", widget: "image", required: false }
+          - { label: "OG Type", name: "og:type", widget: "string", default: "article" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Catégorie", name: "category", widget: "string" }
+      - { label: "Temps de lecture", name: "readTime", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description courte", name: "description", widget: "text" }
+      - { label: "Contenu (Markdown)", name: "content", widget: "markdown" }
