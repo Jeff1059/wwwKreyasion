@@ -3,17 +3,16 @@ layout: layouts/base.njk
 pagination:
   data: collections.postsByCategory
   size: 1
-  alias: category
-  resolve: values
-permalink: "/blog/categorie/{{ pagination.items[0] | slugify }}/"
+  alias: catData
+permalink: "/blog/categorie/{{ catData.name | slugify }}/"
 eleventyComputed:
   seo:
-    title: "Catégorie : {{ pagination.items[0] }}"
-    description: "Découvrez tous nos articles dans la catégorie {{ pagination.items[0] }}"
+    title: "Catégorie : {{ catData.name }}"
+    description: "Découvrez tous nos articles dans la catégorie {{ catData.name }}"
 ---
 
-{% set categoryName = pagination.items[0] %}
-{% set posts = collections.postsByCategory[categoryName] %}
+{% set categoryName = catData.name %}
+{% set posts = catData.posts %}
 
 <section id="cover">
     <img src="{{ blog.blog.coverImage }}" alt="">

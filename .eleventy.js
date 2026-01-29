@@ -71,7 +71,10 @@ module.exports = function (eleventyConfig) {
             postsByCat[cat].sort((a, b) => new Date(b.date) - new Date(a.date));
         });
 
-        return postsByCat;
+        // Return array of objects for easier pagination
+        return Object.entries(postsByCat).map(([key, value]) => {
+            return { name: key, posts: value };
+        });
     });
 
     // Configuration
