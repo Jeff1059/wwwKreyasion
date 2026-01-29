@@ -22,13 +22,7 @@
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https: https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.bunny.net https://challenges.cloudflare.com; font-src 'self' https://fonts.bunny.net;">
 
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script>
-        function turnstileCallback(token) {
-            if (document.getElementById('submitBtn')) {
-                document.getElementById('submitBtn').disabled = false;
-            }
-        }
-    </script>
+
 
     <!-- Balise tarteaucitron -->
     <script src="/tarteaucitron/tarteaucitron.min.js"></script>
@@ -198,5 +192,12 @@
     </footer>
 
     <script src="/assets/js/main.js"></script>
+    <script>
+        function turnstileCallback(token) {
+            if (document.getElementById('submitBtn')) {
+                document.getElementById('submitBtn').disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
