@@ -63,7 +63,7 @@ eleventyComputed:
                             </li>
                             {% for category in collections.categories %}
                                 <li class="blog-toc_category">
-                                    <a href="#">{{ category.name }} ({{ category.count }})</a>
+                                    <a href="/blog/categorie/{{ category.name | slugify }}/">{{ category.name }} ({{ category.count }})</a>
                                 </li>
                             {% endfor %}
                         </ul>

@@ -52,6 +52,28 @@ module.exports = function (eleventyConfig) {
             .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
     });
 
+    eleventyConfig.addCollection("postsByCategory", function (collectionApi) {
+        const globalData = collectionApi.getAll()[0].data;
+        const posts = globalData.blog.posts;
+        if (!posts) return {};
+
+        const postsByCat = {};
+        Object.values(posts).forEach(post => {
+            const cat = post.category || "Général";
+            if (!postsByCat[cat]) {
+                postsByCat[cat] = [];
+            }
+            postsByCat[cat].push(post);
+        });
+
+        // Sort posts inside each category
+        Object.keys(postsByCat).forEach(cat => {
+            postsByCat[cat].sort((a, b) => new Date(b.date) - new Date(a.date));
+        });
+
+        return postsByCat;
+    });
+
     // Configuration
     return {
         dir: {
