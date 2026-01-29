@@ -15,6 +15,10 @@ body {
     background-color: var(--background-color);
 }
 
+main {
+    min-height: 70vh;
+}
+
 button {
     color: unset;
     background-color: unset;
