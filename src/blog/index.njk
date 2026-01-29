@@ -61,7 +61,11 @@ eleventyComputed:
                             <li class="blog-toc_category">
                                 <a href="/blog/" class="active">Tous les articles</a>
                             </li>
-                            {# Note: In a real SSG environment, you'd typically generate category pages too #}
+                            {% for category in collections.categories %}
+                                <li class="blog-toc_category">
+                                    <a href="#">{{ category.name }} ({{ category.count }})</a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </nav>
                 </aside>

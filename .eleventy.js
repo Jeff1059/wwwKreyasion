@@ -33,6 +33,25 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("categories", function (collectionApi) {
+        const globalData = collectionApi.getAll()[0].data;
+        const posts = globalData.blog.posts;
+        if (!posts) return [];
+
+        const categoryMap = {};
+        Object.values(posts).forEach(post => {
+            const cat = post.category || "Général";
+            if (!categoryMap[cat]) {
+                categoryMap[cat] = 0;
+            }
+            categoryMap[cat]++;
+        });
+
+        return Object.entries(categoryMap)
+            .map(([name, count]) => ({ name, count }))
+            .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+    });
+
     // Configuration
     return {
         dir: {
