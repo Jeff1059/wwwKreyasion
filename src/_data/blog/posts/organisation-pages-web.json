@@ -1,19 +1,19 @@
 {
-    "meta": {
-        "title": "Organisation de ses pages web - Blog Kreasyon Design",
-        "description": "Apprenez à structurer vos pages HTML de manière sémantique et optimisée pour le SEO. Guide complet avec exemples.",
-        "canonical": "https://www.kreasyon-design.fr/blog/article.html?id=organisation-pages-web",
-        "og:title": "Organisation de ses pages web",
-        "og:description": "Structurez vos pages HTML de manière sémantique et optimisée pour le SEO.",
-        "og:image": "https://www.kreasyon-design.fr/assets/images/blog/organisation-pages-web.jpg",
-        "og:type": "article"
-    },
-    "id": "organisation-pages-web",
-    "title": "Organisation de ses pages web",
-    "date": "2026-01-26",
-    "category": "Développement",
-    "readTime": "5 min",
-    "image": "/assets/images/blog/organisation-pages-web.jpg",
-    "description": "Apprenez à structurer vos pages HTML de manière sémantique et optimisée pour le SEO.",
-    "content": "## Introduction\n\nBien structurer sa page web est essentiel...\n\n### Pourquoi la sémantique ?\n\nLa sémantique permet aux moteurs de recherche de mieux comprendre votre contenu."
+  "readTime": "5 min",
+  "meta": {
+    "title": "Organisation de ses pages web - Blog Kreasyon Design",
+    "description": "Apprenez à structurer vos pages HTML de manière sémantique et optimisée pour le SEO. Guide complet avec exemples.",
+    "canonical": "https://www.kreasyon-design.fr/blog/organisation-pages-web",
+    "og:title": "Organisation de ses pages web",
+    "og:description": "Structurez vos pages HTML de manière sémantique et optimisée pour le SEO.",
+    "og:image": "https://www.kreasyon-design.fr/assets/images/blog/organisation-pages-web.jpg",
+    "og:type": "article"
+  },
+  "date": "2026-01-26",
+  "title": "Organisation de ses pages web",
+  "content": "## Introduction\n\nBien structurer sa page web est essentiel...\n\n### Pourquoi la sémantique ?\n\nLa sémantique permet aux moteurs de recherche de mieux comprendre votre contenu.",
+  "id": "organisation-pages-web",
+  "image": "/assets/images/blog/organisation-pages-web.jpg",
+  "description": "Apprenez à structurer vos pages HTML de manière sémantique et optimisée pour le SEO.",
+  "category": "Développement"
 }
