@@ -1,0 +1,27 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set baseUrl = homepage.head.canonical -%}
+{%- if baseUrl.slice(-1) == "/" -%}
+  {%- set baseUrl = baseUrl.slice(0, -1) -%}
+{%- endif -%}
+{%- for page in collections.all -%}
+  {%- if not page.data.draft and page.url 
+      and not page.url.startsWith('/admin/') 
+      and not page.url.startsWith('/assets/') 
+      and not page.url.startsWith('/tarteaucitron/') -%}
+  <url>
+    {%- set pageUrl = page.url | url -%}
+    {%- if pageUrl != "/" and pageUrl.slice(-1) == "/" -%}
+      {%- set pageUrl = pageUrl.slice(0, -1) -%}
+    {%- endif %}
+    <loc>{{ baseUrl }}{{ pageUrl }}</loc>
+    <lastmod>{{ page.date | formatDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  {%- endif -%}
+{%- endfor %}
+</urlset>

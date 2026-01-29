@@ -7,7 +7,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/scripts");
     eleventyConfig.addPassthroughCopy("src/tarteaucitron");
-    eleventyConfig.addPassthroughCopy("src/*.xml");
     eleventyConfig.addPassthroughCopy("src/*.txt");
     eleventyConfig.addPassthroughCopy("src/*.png");
     eleventyConfig.addPassthroughCopy("src/*.ico");
