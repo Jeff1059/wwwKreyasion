@@ -90,7 +90,7 @@ collections:
         file: "src/_data/homepage/services.json"
         fields:
           - { label: "Titre de section", name: "sectionTitle", widget: "markdown" }
-          - { label: "Liste des services"
+          - label: "Liste des services"
             name: "items"
             widget: "list"
             fields:
@@ -103,7 +103,7 @@ collections:
         file: "src/_data/homepage/competences.json"
         fields:
           - { label: "Titre de section", name: "sectionTitle", widget: "markdown" }
-          - { label: "Pills (catégories)"
+          - label: "Pills (catégories)"
             name: "pills"
             widget: "list"
             fields:
@@ -122,7 +122,7 @@ collections:
         file: "src/_data/homepage/realisations.json"
         fields:
           - { label: "Titre de section", name: "sectionTitle", widget: "markdown" }
-          - { label: "Projets"
+          - label: "Projets"
             name: "items"
             widget: "list"
             fields:
@@ -188,7 +188,7 @@ collections:
               - { label: "URL canonique", name: "canonical", widget: "string" }
           - { label: "Titre affiché (H1)", name: "headerTitle", widget: "string" }
           - { label: "Image de couverture", name: "coverImage", widget: "image" }
-          - { label: "Sections"
+          - label: "Sections"
             name: "sections"
             widget: "list"
             fields:
@@ -215,7 +215,7 @@ collections:
               - { label: "URL canonique", name: "canonical", widget: "string" }
           - { label: "Titre affiché (H1)", name: "headerTitle", widget: "string" }
           - { label: "Image de couverture", name: "coverImage", widget: "image" }
-          - { label: "Sections"
+          - label: "Sections"
             name: "sections"
             widget: "list"
             fields:
