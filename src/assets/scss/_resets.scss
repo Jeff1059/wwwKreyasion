@@ -1,0 +1,27 @@
+* {
+    padding: unset;
+    margin: unset;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+}
+
+button {
+    color: unset;
+    background-color: unset;
+    border: none;
+
+}
+
+span {
+    color: unset;
+}

@@ -1,0 +1,43 @@
+---
+pagination:
+    data: collections.blogPosts
+    size: 1
+    alias: article
+permalink: "/blog/{{ article.id }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  seo:
+    title: "{{ article.meta.title }}"
+    description: "{{ article.meta.description }}"
+    canonical: "{{ article.meta.canonical }}"
+    og_title: "{{ article.meta['og:title'] }}"
+    og_description: "{{ article.meta['og:description'] }}"
+    og_image: "{{ article.meta['og:image'] }}"
+---
+
+{% set meta = article.meta %}
+
+<section id="cover">
+    <img src="{{ article.image }}" alt="">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="section-title">{{ article.title }}</h1>
+            <div class="article-meta">
+                <span>{{ article.date | formatDate }}</span> •
+                <span>{{ article.readTime }}</span> •
+                <span>{{ article.category }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main id="article-detail">
+    <section>
+        <div class="container">
+            <a href="/blog" class="article-back">Retour à la liste</a>
+            <div class="article-content">
+                {{ article.content | safe }}
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  seo:
+    title: "{{ blog.blog.meta.title }}"
+    description: "{{ blog.blog.meta.description }}"
+    canonical: "{{ blog.blog.meta.canonical }}"
+---
+
+{% set data = blog.blog %}
+{% set meta = data.meta %}
+
+<section id="cover">
+    <img src="{{ data.coverImage }}" alt="">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="section-title">{{ data.headerTitle }}</h1>
+            <p>{{ meta.description }}</p>
+        </div>
+    </div>
+</section>
+
+<main id="blog-list">
+    <section>
+        <div class="container">
+            <h2>Liste des articles</h2>
+            <div class="blog-layout">
+                <!-- Articles List -->
+                <div class="blog-articles">
+                    {% if collections.blogPosts %}
+                        {% for article in collections.blogPosts %}
+                            <a href="/blog/{{ article.id }}/" class="article-card">
+                                <div class="article-card_image">
+                                    <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
+                                </div>
+                                <div class="article-card_content">
+                                    <div class="article-card_header">
+                                        <h2 class="article-card_title">{{ article.title }}</h2>
+                                        <span class="article-card_read-time">{{ article.readTime }}</span>
+                                    </div>
+                                    <p class="article-card_description">{{ article.description }}</p>
+                                    <div class="article-card_meta">
+                                        <span>{{ article.date | formatDate }}</span> • 
+                                        <span class="article-card_category">{{ article.category }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <div class="blog-empty">
+                            <h3>Aucun article trouvé.</h3>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Category Table of Contents Sidebar -->
+                <aside class="blog-toc">
+                    <h3>Catégories</h3>
+                    <nav>
+                        <ul>
+                            <li class="blog-toc_category">
+                                <a href="/blog/" class="active">Tous les articles</a>
+                            </li>
+                            {# Note: In a real SSG environment, you'd typically generate category pages too #}
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+        </div>
+    </section>
+</main>

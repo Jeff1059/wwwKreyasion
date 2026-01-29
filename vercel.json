@@ -1,19 +1,9 @@
 {
     "redirects": [
         {
-            "source": "/content/pages/:page*",
-            "destination": "/:page*",
+            "source": "/index.html",
+            "destination": "/",
             "permanent": true
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/api/(.*)",
-            "destination": "/api/$1"
-        },
-        {
-            "source": "/:page*",
-            "destination": "/content/pages/:page*"
         }
     ],
     "headers": [
@@ -23,15 +13,6 @@
                 {
                     "key": "Content-Type",
                     "value": "text/yaml"
-                }
-            ]
-        },
-        {
-            "source": "/en-construction.html",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "no-cache, no-store, must-revalidate"
                 }
             ]
         }

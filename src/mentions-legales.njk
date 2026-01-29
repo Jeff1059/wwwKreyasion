@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  seo:
+    title: "{{ legal['mentions-legales'].meta.title }}"
+    description: "{{ legal['mentions-legales'].meta.description }}"
+    canonical: "{{ legal['mentions-legales'].meta.canonical }}"
+---
+
+{% set data = legal['mentions-legales'] %}
+{% set meta = data.meta %}
+
+<section id="cover">
+    <img src="{{ data.coverImage | replace('../', '/') }}" alt="">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="section-title">{{ data.headerTitle }}</h1>
+        </div>
+    </div>
+</section>
+
+<main id="legal">
+    <section>
+        <div class="container boxed">
+            {% for section in data.sections %}
+                <div class="legal-item">
+                    <h2>{{ section.title }}</h2>
+                    <div class="legal-content">
+                        {{ section.content | safe }}
+                        {% if section.subsections %}
+                            <div class="legal-subsections">
+                                {% for sub in section.subsections %}
+                                    <div class="legal-subsection">
+                                        <h3>{{ sub.title }}</h3>
+                                        <div class="legal-content">{{ sub.content | safe }}</div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
