@@ -12,6 +12,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/*.ico");
 
     // Add filters
+    const md = require("markdown-it")({
+        html: true,
+        breaks: true,
+        linkify: true
+    });
+
+    eleventyConfig.addFilter("markdown", (content) => {
+        return md.render(content);
+    });
+
     eleventyConfig.addFilter("formatDate", (dateObj) => {
         return DateTime.fromJSDate(new Date(dateObj), { zone: 'utc' }).setLocale('fr').toLocaleString(DateTime.DATE_FULL);
     });

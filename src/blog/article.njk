@@ -36,7 +36,7 @@ eleventyComputed:
         <div class="container">
             <a href="/blog" class="article-back">Retour à la liste</a>
             <div class="article-content">
-                {{ article.content | safe }}
+                {{ article.content | markdown | safe }}
             </div>
         </div>
     </section>
