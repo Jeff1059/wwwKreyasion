@@ -8,7 +8,7 @@ backend:
 site_url: https://www.kreasyon-design.fr
 locale: fr
 
-media_folder: "assets/images"
+media_folder: "/assets/images"
 public_folder: "/assets/images"
 
 collections:
