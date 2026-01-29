@@ -125,14 +125,18 @@
 
             <nav class="nav-links">
                 <ul>
-                    <li><a href="#profil">Mon profil</a></li>
-                    <li><a href="#services">Mes services</a></li>
-                    <li><a href="#competences">Mes compétences</a></li>
-                    <li><a href="#realisations">Mes réalisations</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    {% if page.url == '/' %}
+                        <li><a href="#profil">Mon profil</a></li>
+                        <li><a href="#services">Mes services</a></li>
+                        <li><a href="#competences">Mes compétences</a></li>
+                        <li><a href="#realisations">Mes réalisations</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    {% else %}
+                        <li><a href="/">Accueil</a></li>
+                    {% endif %}
                     <li><a href="/blog">Blog</a></li>
-                    <li><a class="main-btn d-mobile" href="#contact">Me contacter</a></li>
+                    <li><a class="main-btn d-mobile" href="{{ '/#contact' if page.url != '/' else '#contact' }}">Me contacter</a></li>
                     <li>
                         <div class="d-mobile">
                             <a href="https://github.com/Jeff1059" class="icon-github"></a>
@@ -143,7 +147,7 @@
             </nav>
 
             <div class="social-group d-desktop">
-                <a class="main-btn" href="#contact">Me contacter</a>
+                <a class="main-btn" href="{{ '/#contact' if page.url != '/' else '#contact' }}">Me contacter</a>
                 <div class="social">
                     <a href="https://github.com/Jeff1059" class="icon-github"></a>
                     <a href="https://www.linkedin.com/in/gros-desormeauxj/" class="icon-linkedin"></a>
