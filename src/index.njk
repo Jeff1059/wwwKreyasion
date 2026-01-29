@@ -13,7 +13,7 @@ eleventyComputed:
 <section id="banner" class="banner">
     <div class="container">
         <div class="banner-content">
-            <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" preload="true">
+            <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" fetchpriority="high">
             <div class="banner-content_text">
                 <h1>{{ homepage.hero.title }}</h1>
                 <p>{{ homepage.hero.subtitle }}</p>
