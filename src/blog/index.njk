@@ -27,30 +27,27 @@ eleventyComputed:
             <div class="blog-layout">
                 <!-- Articles List -->
                 <div class="blog-articles">
-                    {% if collections.blogPosts %}
-                        {% for article in collections.blogPosts %}
-                            <a href="/blog/{{ article.id }}/" class="article-card">
-                                <div class="article-card_image">
-                                    <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
+                    {% for article in collections.blogPosts %}
+                        <a href="/blog/{{ article.id }}/" class="article-card" data-category="{{ article.category | slugify }}">
+                            <div class="article-card_image">
+                                <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
+                            </div>
+                            <div class="article-card_content">
+                                <div class="article-card_header">
+                                    <h2 class="article-card_title">{{ article.title }}</h2>
+                                    <span class="article-card_read-time">{{ article.readTime }}</span>
                                 </div>
-                                <div class="article-card_content">
-                                    <div class="article-card_header">
-                                        <h2 class="article-card_title">{{ article.title }}</h2>
-                                        <span class="article-card_read-time">{{ article.readTime }}</span>
-                                    </div>
-                                    <p class="article-card_description">{{ article.description }}</p>
-                                    <div class="article-card_meta">
-                                        <span>{{ article.date | formatDate }}</span> • 
-                                        <span class="article-card_category">{{ article.category }}</span>
-                                    </div>
+                                <p class="article-card_description">{{ article.description }}</p>
+                                <div class="article-card_meta">
+                                    <span>{{ article.date | formatDate }}</span> • 
+                                    <span class="article-card_category">{{ article.category }}</span>
                                 </div>
-                            </a>
-                        {% endfor %}
-                    {% else %}
-                        <div class="blog-empty">
-                            <h3>Aucun article trouvé.</h3>
-                        </div>
-                    {% endif %}
+                            </div>
+                        </a>
+                    {% endfor %}
+                    <div id="no-articles-message" class="blog-empty" style="display: none;">
+                        <h3>Aucun article trouvé dans cette catégorie.</h3>
+                    </div>
                 </div>
 
                 <!-- Category Table of Contents Sidebar -->
@@ -59,11 +56,11 @@ eleventyComputed:
                     <nav>
                         <ul>
                             <li class="blog-toc_category">
-                                <a href="/blog/" class="active">Tous les articles</a>
+                                <a href="#" class="active category-filter" data-filter="all">Tous les articles</a>
                             </li>
                             {% for category in collections.categories %}
                                 <li class="blog-toc_category">
-                                    <a href="/blog/categorie/{{ category.name | slugify }}/">{{ category.name }} ({{ category.count }})</a>
+                                    <a href="#" class="category-filter" data-filter="{{ category.name | slugify }}">{{ category.name }} ({{ category.count }})</a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -73,3 +70,40 @@ eleventyComputed:
         </div>
     </section>
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filters = document.querySelectorAll('.category-filter');
+    const articles = document.querySelectorAll('.article-card');
+    const noArticlesMsg = document.getElementById('no-articles-message');
+
+    filters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Update active state
+            filters.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+
+            const selectedCategory = this.getAttribute('data-filter');
+            let visibleCount = 0;
+
+            articles.forEach(article => {
+                if (selectedCategory === 'all' || article.getAttribute('data-category') === selectedCategory) {
+                    article.style.display = 'flex'; // Restore original display
+                    visibleCount++;
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Show empty message if needed
+            if (visibleCount === 0) {
+                noArticlesMsg.style.display = 'block';
+            } else {
+                noArticlesMsg.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
