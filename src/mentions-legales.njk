@@ -11,7 +11,7 @@ eleventyComputed:
 {% set meta = data.meta %}
 
 <section id="cover">
-    <img src="{{ data.coverImage | replace('../', '/') }}" alt="">
+    <img src="{{ data.coverImage | replace('../', '/') }}" alt="" fetchpriority="high">
     <div class="container">
         <div class="page-header">
             <h1 class="section-title">{{ data.headerTitle }}</h1>

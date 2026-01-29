@@ -18,7 +18,7 @@ eleventyComputed:
 {% set meta = article.meta %}
 
 <section id="cover">
-    <img src="{{ article.image }}" alt="">
+    <img src="{{ article.image }}" alt="" fetchpriority="high">
     <div class="container">
         <div class="page-header">
             <h1 class="section-title">{{ article.title }}</h1>
