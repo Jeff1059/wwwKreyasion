@@ -86,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const paginationPrev = document.getElementById('pagination-prev');
     const paginationNext = document.getElementById('pagination-next');
     const paginationNumbers = document.getElementById('pagination-numbers');
+    const noArticlesMsg = document.getElementById('no-articles-message');
+    const ITEMS_PER_PAGE = 4;
+    let currentPage = 1;
 
     function renderPagination(totalItems) {
         paginationNumbers.innerHTML = '';
