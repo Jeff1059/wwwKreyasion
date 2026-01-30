@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         paginationNumbers.innerHTML = '';
         const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
-        if (totalPages <= 1) {
+        if (totalPages === 0) {
             paginationNav.style.display = 'none';
             return;
         } else {
