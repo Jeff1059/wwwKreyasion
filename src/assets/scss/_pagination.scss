@@ -11,15 +11,33 @@
         border-radius: 50px;
         background-color: var(--surface-color);
         transition: background-color 0.3s ease;
+        user-select: none;
 
         &:last-child {
             margin-right: 1rem;
         }
 
-        &:hover:focus {
+        &:hover:not(.disabled):not(.current):not(.ellipsis) {
             background-color: var(--accent-color);
+            color: #fff;
         }
 
+        &.current {
+            background-color: var(--accent-color);
+            color: #fff;
+            pointer-events: none;
+        }
 
+        &.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        &.ellipsis {
+            background-color: transparent;
+            cursor: default;
+            pointer-events: none;
+        }
     }
 }

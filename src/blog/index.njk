@@ -71,50 +71,94 @@ eleventyComputed:
     </section>
 
     <!-- Client-side Pagination Container -->
-    <nav aria-label="Pagination" class="pagination-nav" id="pagination-container"></nav>
+    <nav aria-label="Pagination" class="pagination-nav" id="main-pagination">
+        <a href="#" id="pagination-prev">Précédent</a>
+        <div id="pagination-numbers"></div>
+        <a href="#" id="pagination-next">Suivant</a>
+    </nav>
 </main>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const articles = Array.from(document.querySelectorAll('.article-card'));
     const filters = document.querySelectorAll('.category-filter');
-    const paginationContainer = document.getElementById('pagination-container');
-    const noArticlesMsg = document.getElementById('no-articles-message');
-    const ITEMS_PER_PAGE = 1;
-    let currentPage = 1;
+    const paginationNav = document.getElementById('main-pagination');
+    const paginationPrev = document.getElementById('pagination-prev');
+    const paginationNext = document.getElementById('pagination-next');
+    const paginationNumbers = document.getElementById('pagination-numbers');
 
     function renderPagination(totalItems) {
-        paginationContainer.innerHTML = '';
+        paginationNumbers.innerHTML = '';
         const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
-        if (totalPages <= 1) return;
-
-        // Prev Button
-        if (currentPage > 1) {
-            const prev = document.createElement('a');
-            prev.href = '#';
-            prev.textContent = 'Précédent';
-            prev.onclick = (e) => { e.preventDefault(); currentPage--; updateDisplay(); };
-            paginationContainer.appendChild(prev);
+        if (totalPages <= 1) {
+            paginationNav.style.display = 'none';
+            return;
+        } else {
+            paginationNav.style.display = 'flex';
         }
 
-        // Page Numbers
-        for (let i = 1; i <= totalPages; i++) {
+        const PAGES_PER_GROUP = 3;
+        const currentGroup = Math.ceil(currentPage / PAGES_PER_GROUP);
+        const totalGroups = Math.ceil(totalPages / PAGES_PER_GROUP);
+
+        // Update Prev Button
+        if (currentPage === 1) {
+            paginationPrev.classList.add('disabled');
+            paginationPrev.onclick = (e) => e.preventDefault();
+        } else {
+            paginationPrev.classList.remove('disabled');
+            paginationPrev.onclick = (e) => { e.preventDefault(); currentPage--; updateDisplay(); };
+        }
+
+        // Update Next Button
+        if (currentPage === totalPages) {
+            paginationNext.classList.add('disabled');
+            paginationNext.onclick = (e) => e.preventDefault();
+        } else {
+            paginationNext.classList.remove('disabled');
+            paginationNext.onclick = (e) => { e.preventDefault(); currentPage++; updateDisplay(); };
+        }
+
+        // Ellipsis (Previous Group)
+        if (currentGroup > 1) {
+             const dotsPrev = document.createElement('a');
+             dotsPrev.href = '#';
+             dotsPrev.textContent = '...';
+             dotsPrev.classList.add('ellipsis');
+             dotsPrev.onclick = (e) => { 
+                e.preventDefault(); 
+                currentPage = (currentGroup - 1) * PAGES_PER_GROUP; 
+                updateDisplay(); 
+             };
+             paginationNumbers.appendChild(dotsPrev);
+        }
+
+        // Page Numbers (Current Group Only)
+        const startPage = (currentGroup - 1) * PAGES_PER_GROUP + 1;
+        const endPage = Math.min(startPage + PAGES_PER_GROUP - 1, totalPages);
+
+        for (let i = startPage; i <= endPage; i++) {
             const pageLink = document.createElement('a');
             pageLink.href = '#';
             pageLink.textContent = i;
             if (i === currentPage) pageLink.classList.add('current');
             pageLink.onclick = (e) => { e.preventDefault(); currentPage = i; updateDisplay(); };
-            paginationContainer.appendChild(pageLink);
+            paginationNumbers.appendChild(pageLink);
         }
 
-        // Next Button
-        if (currentPage < totalPages) {
-            const next = document.createElement('a');
-            next.href = '#';
-            next.textContent = 'Suivant';
-            next.onclick = (e) => { e.preventDefault(); currentPage++; updateDisplay(); };
-            paginationContainer.appendChild(next);
+        // Ellipsis (Next Group)
+        if (currentGroup < totalGroups) {
+             const dotsNext = document.createElement('a');
+             dotsNext.href = '#';
+             dotsNext.textContent = '...';
+             dotsNext.classList.add('ellipsis');
+             dotsNext.onclick = (e) => { 
+                e.preventDefault(); 
+                currentPage = currentGroup * PAGES_PER_GROUP + 1; 
+                updateDisplay(); 
+             };
+             paginationNumbers.appendChild(dotsNext);
         }
     }
 

@@ -1721,10 +1721,29 @@ footer .footer-legal span {
   border-radius: 50px;
   background-color: var(--surface-color);
   transition: background-color 0.3s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #pagination-container a:last-child {
   margin-right: 1rem;
 }
-#pagination-container a:hover:focus {
+#pagination-container a:hover:not(.disabled):not(.current):not(.ellipsis) {
   background-color: var(--accent-color);
+  color: #fff;
+}
+#pagination-container a.current {
+  background-color: var(--accent-color);
+  color: #fff;
+  pointer-events: none;
+}
+#pagination-container a.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+#pagination-container a.ellipsis {
+  background-color: transparent;
+  cursor: default;
+  pointer-events: none;
 }
