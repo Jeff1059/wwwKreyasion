@@ -4,7 +4,6 @@ module.exports = function (eleventyConfig) {
     // Copy assets to dist
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/admin");
-    eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/scripts");
     eleventyConfig.addPassthroughCopy("src/tarteaucitron");
     eleventyConfig.addPassthroughCopy("src/*.txt");
