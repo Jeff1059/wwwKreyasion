@@ -1,0 +1,23 @@
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+        color: var(--main-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        background-color: var(--surface-color);
+        transition: background-color 0.3s ease;
+
+        &:last-child {
+            margin-right: 1rem;
+        }
+
+        &:hover {
+            background-color: var(--accent-color);
+        }
+    }
+}
