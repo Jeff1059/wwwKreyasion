@@ -35,7 +35,7 @@ eleventyComputed:
                     <div class="profil-card_content">
                         <div class="profil-card_text">
                             <h3>{{ homepage.profil.citation }}</h3>
-                            <p>{{ homepage.profil.description | markdown | safe }}</p>
+                            {{ homepage.profil.description | markdown | safe }}
                         </div>
                     </div>
                 </div>
