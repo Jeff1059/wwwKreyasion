@@ -1725,6 +1725,6 @@ footer .footer-legal span {
 #pagination-container a:last-child {
   margin-right: 1rem;
 }
-#pagination-container a:hover {
+#pagination-container a:hover:focus {
   background-color: var(--accent-color);
 }

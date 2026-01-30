@@ -16,8 +16,10 @@
             margin-right: 1rem;
         }
 
-        &:hover {
+        &:hover:focus {
             background-color: var(--accent-color);
         }
+
+
     }
 }
