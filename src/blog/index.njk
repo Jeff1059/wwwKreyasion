@@ -1,5 +1,5 @@
 ---
-layout: layouts/base2.njk
+layout: layouts/base.njk
 eleventyComputed:
   seo:
     title: "{{ blog.blog.meta.title }}"
@@ -11,7 +11,7 @@ eleventyComputed:
 {% set meta = data.meta %}
 
 <section id="cover">
-    <img src="{{ data.coverImage }}" alt="" fetchpriority="high">
+    <img src="{{ data.coverImage }}" alt="">
     <div class="container">
         <div class="page-header">
             <h1 class="section-title">{{ data.headerTitle }}</h1>
@@ -27,7 +27,7 @@ eleventyComputed:
             <div class="blog-layout">
                 <!-- Articles List -->
                 <div class="blog-articles">
-                    {% for article in collections.blogPosts %}
+                    {% for article in articles %}
                         <a href="/blog/{{ article.id }}/" class="article-card" data-category="{{ article.category | slugify }}">
                             <div class="article-card_image">
                                 <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
@@ -68,42 +68,60 @@ eleventyComputed:
                 </aside>
             </div>
         </div>
+        <nav aria-label="Pagination" class="pagination-nav">
+            {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" rel="prev">Précédent</a>{% endif %}
+            {% for href in pagination.hrefs %}
+                <a href="{{ href }}" {% if loop.index0 == pagination.pageNumber %}aria-current="page" class="current"{% endif %}>
+                    {{ loop.index }}
+                </a>
+            {% endfor %}
+            {% if pagination.href.next %}<a href="{{ pagination.href.next }}" rel="next">Suivant</a>{% endif %}
+        </nav>
     </section>
 </main>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const filters = document.querySelectorAll('.category-filter');
-    const articles = document.querySelectorAll('.article-card');
+    const articlesContainer = document.querySelector('.blog-articles');
     const noArticlesMsg = document.getElementById('no-articles-message');
 
-    filters.forEach(filter => {
-        filter.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // Update active state
-            filters.forEach(f => f.classList.remove('active'));
-            this.classList.add('active');
-
-            const selectedCategory = this.getAttribute('data-filter');
-            let visibleCount = 0;
-
-            articles.forEach(article => {
-                if (selectedCategory === 'all' || article.getAttribute('data-category') === selectedCategory) {
-                    article.style.display = 'flex'; // Restore original display
-                    visibleCount++;
-                } else {
-                    article.style.display = 'none';
-                }
-            });
-
-            // Show empty message if needed
-            if (visibleCount === 0) {
-                noArticlesMsg.style.display = 'block';
-            } else {
-                noArticlesMsg.style.display = 'none';
-            }
+    function applyFilter() {
+        const activeFilter = document.querySelector('.category-filter.active').dataset.filter;
+        const articles = articlesContainer.querySelectorAll('.article-card');
+        let visibleCount = 0;
+        articles.forEach(article => {
+            const show = activeFilter === 'all' || article.dataset.category === activeFilter;
+            article.style.display = show ? 'flex' : 'none';
+            if (show) visibleCount++;
         });
+        noArticlesMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    // Pagination AJAX
+    document.addEventListener('click', e => {
+        const link = e.target.closest('.pagination-nav a');
+        if (!link) return;
+        e.preventDefault();
+        const url = new URL(link.href, location.origin);
+        
+        fetch(url)
+            .then(r => r.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                articlesContainer.innerHTML = doc.querySelector('.blog-articles').innerHTML;
+                history.pushState({}, '', url);
+                applyFilter(); // Réapplique filtre
+            });
     });
+
+    // Init filtres
+    filters.forEach(f => f.addEventListener('click', e => {
+        e.preventDefault();
+        filters.forEach(ff => ff.classList.remove('active'));
+        f.classList.add('active');
+        applyFilter();
+    }));
 });
 </script>
