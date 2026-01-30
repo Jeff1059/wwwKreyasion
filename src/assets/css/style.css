@@ -1714,11 +1714,6 @@ footer .footer-legal span {
   align-items: center;
   gap: 1rem;
 }
-#pagination-container #pagination-numbers {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
 #pagination-container a {
   color: var(--main-color);
   text-decoration: none;
@@ -1743,6 +1738,15 @@ footer .footer-legal span {
   pointer-events: none;
 }
 #pagination-container a.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+#pagination-container a.ellipsis {
+  background-color: transparent;
+  cursor: default;
+  pointer-events: none;
+}er a.disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;

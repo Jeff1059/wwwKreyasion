@@ -844,10 +844,9 @@ footer {
         flex-direction: column;
 
         padding: 1.5rem;
-        background-color: var(--shape);
-        opacity: 1;
-        border-radius: 16px;
-        border: 1px solid var(--main-color);
+        border-radius: 20px;
+        background: radial-gradient(36.61% 146.4% at 50% 0%, #744737 4.49%, #4e2927 51.69%);
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1), inset -5px -5px 5px rgba(0, 0, 0, 0.1);
         width: 400px;
         height: auto;
 
