@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base2.njk
 eleventyComputed:
   seo:
     title: "{{ blog.blog.meta.title }}"
@@ -27,7 +27,7 @@ eleventyComputed:
             <div class="blog-layout">
                 <!-- Articles List -->
                 <div class="blog-articles">
-                    {% for article in articles %}
+                    {% for article in collections.blogPosts %}
                         <a href="/blog/{{ article.id }}/" class="article-card" data-category="{{ article.category | slugify }}">
                             <div class="article-card_image">
                                 <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
@@ -69,59 +69,97 @@ eleventyComputed:
             </div>
         </div>
     </section>
-    <nav aria-label="Pagination" class="pagination-nav">
-        {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" rel="prev">Précédent</a>{% endif %}
-        {% for href in pagination.hrefs %}
-            <a href="{{ href }}" {% if loop.index0 == pagination.pageNumber %}aria-current="page" class="current"{% endif %}>
-                {{ loop.index }}
-            </a>
-        {% endfor %}
-        {% if pagination.href.next %}<a href="{{ pagination.href.next }}" rel="next">Suivant</a>{% endif %}
-    </nav>
+
+    <!-- Client-side Pagination Container -->
+    <nav aria-label="Pagination" class="pagination-nav" id="pagination-container"></nav>
 </main>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const articles = Array.from(document.querySelectorAll('.article-card'));
     const filters = document.querySelectorAll('.category-filter');
-    const articlesContainer = document.querySelector('.blog-articles');
+    const paginationContainer = document.getElementById('pagination-container');
     const noArticlesMsg = document.getElementById('no-articles-message');
+    const ITEMS_PER_PAGE = 6;
+    let currentPage = 1;
 
-    function applyFilter() {
-        const activeFilter = document.querySelector('.category-filter.active').dataset.filter;
-        const articles = articlesContainer.querySelectorAll('.article-card');
-        let visibleCount = 0;
-        articles.forEach(article => {
-            const show = activeFilter === 'all' || article.dataset.category === activeFilter;
-            article.style.display = show ? 'flex' : 'none';
-            if (show) visibleCount++;
-        });
-        noArticlesMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    function renderPagination(totalItems) {
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+        if (totalPages <= 1) return;
+
+        // Prev Button
+        if (currentPage > 1) {
+            const prev = document.createElement('a');
+            prev.href = '#';
+            prev.textContent = 'Précédent';
+            prev.onclick = (e) => { e.preventDefault(); currentPage--; updateDisplay(); };
+            paginationContainer.appendChild(prev);
+        }
+
+        // Page Numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.href = '#';
+            pageLink.textContent = i;
+            if (i === currentPage) pageLink.classList.add('current');
+            pageLink.onclick = (e) => { e.preventDefault(); currentPage = i; updateDisplay(); };
+            paginationContainer.appendChild(pageLink);
+        }
+
+        // Next Button
+        if (currentPage < totalPages) {
+            const next = document.createElement('a');
+            next.href = '#';
+            next.textContent = 'Suivant';
+            next.onclick = (e) => { e.preventDefault(); currentPage++; updateDisplay(); };
+            paginationContainer.appendChild(next);
+        }
     }
 
-    // Pagination AJAX
-    document.addEventListener('click', e => {
-        const link = e.target.closest('.pagination-nav a');
-        if (!link) return;
-        e.preventDefault();
-        const url = new URL(link.href, location.origin);
+    function updateDisplay() {
+        const activeFilter = document.querySelector('.category-filter.active').dataset.filter;
         
-        fetch(url)
-            .then(r => r.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                articlesContainer.innerHTML = doc.querySelector('.blog-articles').innerHTML;
-                history.pushState({}, '', url);
-                applyFilter(); // Réapplique filtre
-            });
+        // 1. Filter articles
+        const filteredArticles = articles.filter(article => {
+            return activeFilter === 'all' || article.dataset.category === activeFilter;
+        });
+
+        // 2. Paginate
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        const visibleArticles = filteredArticles.slice(start, end);
+
+        // 3. Update DOM visibility
+        articles.forEach(article => article.style.display = 'none'); // Hide all first
+        visibleArticles.forEach(article => article.style.display = 'flex'); // Show only visible
+
+        // 4. Show/Hide Empty Message
+        noArticlesMsg.style.display = filteredArticles.length === 0 ? 'block' : 'none';
+
+        // 5. Render Pagination Controls
+        renderPagination(filteredArticles.length);
+        
+        // Scroll to top of list if changing pages (optional)
+        if (filteredArticles.length > 0) {
+            // const listTop = document.querySelector('.blog-list')?.offsetTop || 0;
+            // window.scrollTo({ top: listTop, behavior: 'smooth' });
+        }
+    }
+
+    // Init Filters
+    filters.forEach(filter => {
+        filter.addEventListener('click', (e) => {
+            e.preventDefault();
+            filters.forEach(f => f.classList.remove('active'));
+            filter.classList.add('active');
+            currentPage = 1; // Reset to page 1 on filter change
+            updateDisplay();
+        });
     });
 
-    // Init filtres
-    filters.forEach(f => f.addEventListener('click', e => {
-        e.preventDefault();
-        filters.forEach(ff => ff.classList.remove('active'));
-        f.classList.add('active');
-        applyFilter();
-    }));
+    // Initial load
+    updateDisplay();
 });
 </script>
