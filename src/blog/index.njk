@@ -68,16 +68,16 @@ eleventyComputed:
                 </aside>
             </div>
         </div>
-        <nav aria-label="Pagination" class="pagination-nav">
-            {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" rel="prev">Précédent</a>{% endif %}
-            {% for href in pagination.hrefs %}
-                <a href="{{ href }}" {% if loop.index0 == pagination.pageNumber %}aria-current="page" class="current"{% endif %}>
-                    {{ loop.index }}
-                </a>
-            {% endfor %}
-            {% if pagination.href.next %}<a href="{{ pagination.href.next }}" rel="next">Suivant</a>{% endif %}
-        </nav>
     </section>
+    <nav aria-label="Pagination" class="pagination-nav">
+        {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" rel="prev">Précédent</a>{% endif %}
+        {% for href in pagination.hrefs %}
+            <a href="{{ href }}" {% if loop.index0 == pagination.pageNumber %}aria-current="page" class="current"{% endif %}>
+                {{ loop.index }}
+            </a>
+        {% endfor %}
+        {% if pagination.href.next %}<a href="{{ pagination.href.next }}" rel="next">Suivant</a>{% endif %}
+    </nav>
 </main>
 
 <script>
