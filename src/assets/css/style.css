@@ -1714,6 +1714,11 @@ footer .footer-legal span {
   align-items: center;
   gap: 1rem;
 }
+#pagination-container #pagination-numbers {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
 #pagination-container a {
   color: var(--main-color);
   text-decoration: none;

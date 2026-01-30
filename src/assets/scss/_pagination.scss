@@ -4,6 +4,12 @@
     align-items: center;
     gap: 1rem;
 
+    #pagination-numbers {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
     a {
         color: var(--main-color);
         text-decoration: none;
