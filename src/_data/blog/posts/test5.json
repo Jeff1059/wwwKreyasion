@@ -1,4 +1,5 @@
 {
+  "readTime": "5 min",
   "meta": {
     "og:type": "article",
     "title": "test",
@@ -6,11 +7,11 @@
     "canonical": "https://www.kreasyon-design.fr/test",
     "og:title": ""
   },
+  "date": "30-01-2026",
   "title": "Alors",
-  "category": "decalé",
-  "description": "ddd",
   "content": "ddddd",
-  "readTime": "5 min",
+  "id": "test5",
   "image": "/assets/images/maquette.jpg",
-  "id": "test5"
+  "description": "ddd",
+  "category": "decalé"
 }
