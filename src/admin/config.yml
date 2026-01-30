@@ -270,7 +270,7 @@ collections:
           - { label: "OG Image", name: "og:image", widget: "image", required: false }
           - { label: "OG Type", name: "og:type", widget: "string", default: "article" }
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "DD-MM-YYYY", time_format: false, format: "DD-MM-YYYY" }
       - { label: "Catégorie", name: "category", widget: "string" }
       - { label: "Temps de lecture", name: "readTime", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
