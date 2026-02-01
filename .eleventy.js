@@ -1,6 +1,8 @@
-import he from "he";
+const he = require("he");
+const { DateTime } = require("luxon");
 
-export default function (eleventyConfig) {
+module.exports = function (eleventyConfig) {
+  // Filter: decode entities + escape for HTML attribute
   eleventyConfig.addFilter("attr", (v = "") =>
     he.decode(String(v))
       .replace(/&/g, "&amp;")
@@ -8,11 +10,6 @@ export default function (eleventyConfig) {
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
   );
-}
-
-const { DateTime } = require("luxon");
-
-module.exports = function (eleventyConfig) {
     // Copy assets to dist
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/admin");
