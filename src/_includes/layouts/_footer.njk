@@ -1,0 +1,19 @@
+    <footer>
+        <div class="container">
+            <div class="social">
+                {% for item in homepage.footer.social %}
+                    <a href="{{ item.url }}" class="{{ item.class }}">{{ item.platform }}</a>
+                {% endfor %}
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-nav">
+                    {% for item in homepage.footer.links %}
+                        <a href="{{ item.url }}" class="{{ item.class }}">{{ item.label }}</a>
+                    {% endfor %}
+                </div>
+                <p class="footer-legal">{{ homepage.footer.copyright }}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>

@@ -10,30 +10,30 @@ eleventyComputed:
     og_image: "{{ homepage.head['og:image'] }}"
 ---
 
-<section id="banner" class="banner">
-    <div class="container">
-        <div class="banner-content">
-            <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" fetchpriority="high">
-            <div class="banner-content_text">
-                <h1>{{ homepage.hero.title }}</h1>
-                <p>{{ homepage.hero.subtitle }}</p>
-                {% if homepage.hero.cta %}
-                    <a class="main-btn" href="{{ homepage.hero.cta.link }}">{{ homepage.hero.cta.text }}</a>
-                {% endif %}
+    <section id="banner" class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" fetchpriority="high">
+                <div class="banner-content_text">
+                    <h1>{{ homepage.hero.title }}</h1>
+                    <p>{{ homepage.hero.subtitle }}</p>
+                    {% if homepage.hero.cta %}
+                        <a class="main-btn" href="{{ homepage.hero.cta.link }}">{{ homepage.hero.cta.text }}</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="profil" class="reveal fade-in-left">
-    <div class="container">
-        <h2 class="undertitle">{{ homepage.profil.sectionTitle | markdown | safe }}</h2>
-        <div class="flex">
-            <div class="profil-design">
-                <img class="profil-card_image" src="{{ homepage.profil.image }}" alt="" height="215" width="153" fetchpriority="high">
-                <div class="profil-card">
-                    <div class="profil-card_content">
-                        <div class="profil-card_text">
+    <section id="profil" class="reveal fade-in-left">
+        <div class="container">
+            <h2 class="undertitle">{{ homepage.profil.sectionTitle | markdown | safe }}</h2>
+            <div class="flex">
+                <div class="profil-design">
+                    <img class="profil-card_image" src="{{ homepage.profil.image }}" alt="" height="215" width="153" fetchpriority="high">
+                    <div class="profil-card">
+                        <div class="profil-card_content">
+                            <div class="profil-card_text">
                             <h3>{{ homepage.profil.citation }}</h3>
                             {{ homepage.profil.description | markdown | safe }}
                         </div>
@@ -52,13 +52,12 @@ eleventyComputed:
                 {% endfor %}
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="services" class="in reveal fade-in-left">
-    <div class="container">
-        <h2 class="undertitle">{{ homepage.services.sectionTitle | markdown | safe }}</h2>
-        <div class="services-area">
+    <section id="services" class="in reveal fade-in-left">
+        <div class="container">
+            <h2 class="undertitle">{{ homepage.services.sectionTitle | markdown | safe }}</h2>
+            <div class="services-area">
             {% for item in homepage.services.items %}
                 <div class="services-card">
                     <div class="services-card_head">
@@ -68,14 +67,14 @@ eleventyComputed:
                     <div class="description"><p>{{ item.description | markdown | safe }}</p></div>
                 </div>
             {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="competences" class="in reveal fade-in-left">
-    <div class="container">
-        <h2 class="undertitle">{{ homepage.competences.sectionTitle | markdown | safe }}</h2>
-        <div class="competences-content">
+    <section id="competences" class="in reveal fade-in-left">
+        <div class="container">
+            <h2 class="undertitle">{{ homepage.competences.sectionTitle | markdown | safe }}</h2>
+            <div class="competences-content">
             <div class="competences-pills">
                 {% for category in homepage.competences.pills %}
                     <div class="pills-area">
@@ -102,13 +101,12 @@ eleventyComputed:
                 {% endfor %}
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="realisations" class="in reveal fade-in-left">
-    <div class="container">
-        <h2 class="undertitle">{{ homepage.realisations.sectionTitle | markdown | safe }}</h2>
-        <div class="work-content">
+    <section id="realisations" class="in reveal fade-in-left">
+        <div class="container">
+            <h2 class="undertitle">{{ homepage.realisations.sectionTitle | markdown | safe }}</h2>
+            <div class="work-content">
             <div class="work-content_text">
                 <a href="{{ homepage.realisations.items[0].url }}">
                     <div class="work-content_client_desc">
@@ -145,12 +143,12 @@ eleventyComputed:
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-<section id="testimonials" class="in reveal fade-in-left">
-    <div class="container">
-        <div class="testimonial-title">
-            <h2 class="undertitle">{{ homepage.testimonials.sectionTitle | markdown | safe }}</h2>
+    <section id="testimonials" class="in reveal fade-in-left">
+        <div class="container">
+            <div class="testimonial-title">
+                <h2 class="undertitle">{{ homepage.testimonials.sectionTitle | markdown | safe }}</h2>
             <img src="{{ homepage.testimonials.image }}" alt="avis-image">
         </div>
         {% for item in homepage.testimonials.items %}
@@ -167,43 +165,41 @@ eleventyComputed:
                 </div>
             </div>
         {% endfor %}
-    </div>
-</section>
+    </section>
 
-<section id="contact" class="in reveal fade-in-left">
-    <div class="container">
-        <div class="form">
-            <h2>Me contacter</h2>
-            <h3>Formulaire de contact</h3>
-            <form id="contact-form">
-                <input type="text" name="Nom" id="nom" placeholder="Nom*" required>
-                <input type="text" name="Prenom" id="prenom" placeholder="Prénom*" required>
-                <input type="text" name="Entreprise" id="entreprise" placeholder="Entreprise">
-                <input type="email" name="email" id="email" placeholder="Email*" required>
-                <textarea name="demande" id="demande" placeholder="Description de votre besoin"></textarea>
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAACJ-zFe3667bncKz" data-callback="enableSubmit">
-                </div>
-                <div class="form-btn_area">
-                    <button type="reset" class="main-btn form-btn_annuler">Effacer</button>
-                    <button type="submit" class="main-btn form-btn_send">Envoyer</button>
-                </div>
-            </form>
-        </div>
-        <div id="faq" class="faq">
-            <div class="faq-area">
-                <img src="{{ homepage.faq.image }}" alt="faq-image">
-                <h3>{{ homepage.faq.sectionTitle | markdown | safe }}</h3>
-                <div data-cms="faq.items">
-                    {% for item in homepage.faq.items %}
-                        <div class="faq-content">
-                            <h4 class="faq-title">{{ item.question }}</h4>
-                            <div class="faq-text">
-                                <div><p>{{ item.answer }}</p></div>
+    <section id="contact" class="in reveal fade-in-left">
+        <div class="container">
+            <div class="form">
+                <h2>Me contacter</h2>
+                <h3>Formulaire de contact</h3>
+                <form id="contact-form">
+                    <input type="text" name="Nom" id="nom" placeholder="Nom*" required>
+                    <input type="text" name="Prenom" id="prenom" placeholder="Prénom*" required>
+                    <input type="text" name="Entreprise" id="entreprise" placeholder="Entreprise">
+                    <input type="email" name="email" id="email" placeholder="Email*" required>
+                    <textarea name="demande" id="demande" placeholder="Description de votre besoin"></textarea>
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACJ-zFe3667bncKz" data-callback="enableSubmit"></div>
+                    <div class="form-btn_area">
+                        <button type="reset" class="main-btn form-btn_annuler">Effacer</button>
+                        <button type="submit" class="main-btn form-btn_send">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+            <div id="faq" class="faq">
+                <div class="faq-area">
+                    <img src="{{ homepage.faq.image }}" alt="faq-image">
+                    <h3>{{ homepage.faq.sectionTitle | markdown | safe }}</h3>
+                    <div data-cms="faq.items">
+                        {% for item in homepage.faq.items %}
+                            <div class="faq-content">
+                                <h4 class="faq-title">{{ item.question }}</h4>
+                                <div class="faq-text">
+                                    <div><p>{{ item.answer }}</p></div>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
