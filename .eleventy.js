@@ -2,14 +2,18 @@ const he = require("he");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-  // Filter: decode entities + escape for HTML attribute
-  eleventyConfig.addFilter("attr", (v = "") =>
-    he.decode(String(v))
-      .replace(/&/g, "&amp;")
-      .replace(/"/g, "&quot;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-  );
+    // Filter: decode entities + escape for HTML attribute
+    eleventyConfig.addNunjucksFilter("attr", function (v = "") {
+        console.log("DEBUG attr:", JSON.stringify(v)); // ← Ajoute ça
+        const decoded = he.decode(String(v));
+        const result = decoded
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+        console.log("DEBUG result:", JSON.stringify(result)); // ← Et ça
+        return result;
+    });
     // Copy assets to dist
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/admin");
