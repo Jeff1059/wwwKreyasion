@@ -1,3 +1,15 @@
+import he from "he";
+
+export default function (eleventyConfig) {
+  eleventyConfig.addFilter("attr", (v = "") =>
+    he.decode(String(v))
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+  );
+}
+
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
