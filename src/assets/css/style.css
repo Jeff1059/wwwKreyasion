@@ -1761,4 +1761,7 @@ footer .footer-legal span {
   background-color: transparent;
   cursor: default;
   pointer-events: none;
+}or: transparent;
+  cursor: default;
+  pointer-events: none;
 }

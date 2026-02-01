@@ -132,6 +132,7 @@ section {
 .banner-content_text {
     display: flex;
     flex-direction: column;
+    flex-basis: 65%;
 }
 
 .undertitle {
@@ -159,6 +160,13 @@ section {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 1400px) {
+
+    #banner {
+        height: fit-content;
+    }
+
+}
 
 @media screen and (max-width: 1300px) {
 
@@ -178,10 +186,6 @@ section {
 }
 
 @media screen and (max-width: 900px) {
-
-    #banner {
-        height: fit-content;
-    }
 
     section {
         padding-top: 2rem;
