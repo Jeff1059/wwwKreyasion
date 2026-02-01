@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ seo.description or homepage.head.description }}">
+    <meta name="description" content="{{ seo.description or homepage.head.description | attr }}">
     <link rel="canonical" href="{{ seo.canonical or homepage.head.canonical }}">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/favicon.ico">
@@ -14,8 +14,8 @@
     <title>{{ seo.title or homepage.head.title }}</title>
 
     <!-- Balises sociales -->
-    <meta property="og:title" content="{{ seo.og_title or seo.title or homepage.head.og_title }}">
-    <meta property="og:description" content="{{ seo.og_description or seo.description or homepage.head.og_description }}">
+    <meta property="og:title" content="{{ seo.og_title or seo.title or homepage.head.og_title | attr }}">
+    <meta property="og:description" content="{{ seo.og_description or seo.description or homepage.head.og_description | attr }}">
     <meta property="og:image" content="{{ seo.og_image or homepage.head.og_image or 'https://www.kreasyon-design.fr//assets/images/logo-kreasyon-300.jpg' }}">
 
     <!-- Balise tarteaucitron -->
