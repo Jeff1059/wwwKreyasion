@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ seo.description or homepage.head.description | attr }}">
-    <link rel="canonical" href="{{ seo.canonical or homepage.head.canonical }}">
+    <meta name="description" content="{{ seo.description | safe | attr}}">
+    <link rel="canonical" href="{{ seo.canonical }}">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/assets/css/style.min.css">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet">
-    <title>{{ seo.title or homepage.head.title }}</title>
+    <title>{{ seo.title | attr | safe }}</title>
 
     <!-- Balises sociales -->
-    <meta property="og:title" content="{{ seo.og_title or seo.title or homepage.head.og_title | attr }}">
-    <meta property="og:description" content="{{ seo.og_description or seo.description or homepage.head.og_description | attr }}">
-    <meta property="og:image" content="{{ seo.og_image or homepage.head.og_image or 'https://www.kreasyon-design.fr//assets/images/logo-kreasyon-300.jpg' }}">
+    <meta property="og:title" content="{{ seo.og_title or seo.title | attr | safe }}">
+    <meta property="og:description" content="{{ seo.og_description or seo.description | attr | safe }}">
+    <meta property="og:image" content="{{ seo.og_image or 'https://www.kreasyon-design.fr/assets/images/logo-kreasyon-300.jpg' }}">
 
     <!-- Balise tarteaucitron -->
     <script src="/tarteaucitron/tarteaucitron.min.js"></script>

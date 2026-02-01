@@ -1,19 +1,38 @@
-const he = require("he");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-    // Filter: decode entities + escape for HTML attribute
-    eleventyConfig.addNunjucksFilter("attr", function (v = "") {
-        console.log("DEBUG attr:", JSON.stringify(v)); // ← Ajoute ça
-        const decoded = he.decode(String(v));
-        const result = decoded
+
+    eleventyConfig.addNunjucksFilter("attr", function (v) {
+        // Decode Decap CMS (text/string widgets)
+        let decoded = String(v || "")
+            // Apostrophes & quotes
+            .replace(/&#39;/g, "'")
+            .replace(/&quot;/g, '"')
+            // Base HTML
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            .replace(/&gt;/g, ">")
+            .replace(/&nbsp;/g, " ")
+            // Français courant
+            .replace(/&eacute;/g, "é").replace(/&Eacute;/g, "É")
+            .replace(/&egrave;/g, "è").replace(/&Egrave;/g, "È")
+            .replace(/&ecirc;/g, "ê").replace(/&Ecirc;/g, "Ê")
+            .replace(/&agrave;/g, "à").replace(/&Agrave;/g, "À")
+            .replace(/&ccedil;/g, "ç").replace(/&Ccedil;/g, "Ç")
+            .replace(/&iuml;/g, "ï").replace(/&Iuml;/g, "Ï")
+            .replace(/&ocirc;/g, "ô").replace(/&Ocirc;/g, "Ô")
+            .replace(/&ugrave;/g, "ù").replace(/&Ugrave;/g, "Ù")
+            .replace(/&auml;/g, "ä").replace(/&Auml;/g, "Ä")
+            .replace(/&ouml;/g, "ö").replace(/&Ouml;/g, "Ö");
+
+        // Escape FINAL pour attribut HTML
+        return decoded
             .replace(/&/g, "&amp;")
             .replace(/"/g, "&quot;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;");
-        console.log("DEBUG result:", JSON.stringify(result)); // ← Et ça
-        return result;
     });
+
     // Copy assets to dist
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/admin");
