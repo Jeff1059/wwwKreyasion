@@ -1,5 +1,4 @@
 ---
-layout: layouts/base.njk
 eleventyComputed:
   seo:
     title: "{{ homepage.head.title }}"
@@ -10,196 +9,216 @@ eleventyComputed:
     og_image: "{{ homepage.head['og:image'] }}"
 ---
 
-    <section id="banner" class="banner">
-        <div class="container">
-            <div class="banner-content">
-                <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" fetchpriority="high">
-                <div class="banner-content_text">
-                    <h1>{{ homepage.hero.title }}</h1>
-                    <p>{{ homepage.hero.subtitle }}</p>
-                    {% if homepage.hero.cta %}
-                        <a class="main-btn" href="{{ homepage.hero.cta.link }}">{{ homepage.hero.cta.text }}</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </section>
+<!DOCTYPE html>
+<html lang="fr">
 
-    <section id="profil" class="reveal fade-in-left">
-        <div class="container">
-            <h2 class="undertitle">{{ homepage.profil.sectionTitle | markdown | safe }}</h2>
-            <div class="flex">
-                <div class="profil-design">
-                    <img class="profil-card_image" src="{{ homepage.profil.image }}" alt="" height="215" width="153" fetchpriority="high">
-                    <div class="profil-card">
-                        <div class="profil-card_content">
-                            <div class="profil-card_text">
-                            <h3>{{ homepage.profil.citation }}</h3>
-                            {{ homepage.profil.description | markdown | safe }}
-                        </div>
+{% include "./_includes/layouts/_head.njk" %}
+
+<body>
+    {% include "./_includes/layouts/_header.njk" %}
+
+    <main>
+        <section id="banner" class="banner">
+            <div class="container">
+                <div class="banner-content">
+                    <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" fetchpriority="high">
+                    <div class="banner-content_text">
+                        <h1>{{ homepage.hero.title }}</h1>
+                        <p>{{ homepage.hero.subtitle }}</p>
+                        {% if homepage.hero.cta %}
+                            <a class="main-btn" href="{{ homepage.hero.cta.link }}">{{ homepage.hero.cta.text }}</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-            <div class="parcours">
-                {% for item in homepage.profil.parcours %}
-                    <div class="story">
-                        <div class="icon"><img src="{{ item.icon }}" alt=""></div>
-                        <div class="story-text">
-                            <p><span>{{ item.value }}</span></p>
-                            <p>{{ item.label }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="in reveal fade-in-left">
-        <div class="container">
-            <h2 class="undertitle">{{ homepage.services.sectionTitle | markdown | safe }}</h2>
-            <div class="services-area">
-            {% for item in homepage.services.items %}
-                <div class="services-card">
-                    <div class="services-card_head">
-                        <img src="{{ item.image }}" alt="{{ item.title }}">
-                        <h3>{{ item.title }}</h3>
-                    </div>
-                    <div class="description"><p>{{ item.description | markdown | safe }}</p></div>
-                </div>
-            {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <section id="competences" class="in reveal fade-in-left">
-        <div class="container">
-            <h2 class="undertitle">{{ homepage.competences.sectionTitle | markdown | safe }}</h2>
-            <div class="competences-content">
-            <div class="competences-pills">
-                {% for category in homepage.competences.pills %}
-                    <div class="pills-area">
-                        <div class="pill-section">{{ category.category }}</div>
-                        <div class="pill-name">
-                            {% for skill in category.skills %}
-                                <a href="" class="margin-none">{{ skill }}</a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="competences-grid">
-                {% for card in homepage.competences.cards %}
-                    <div class="card">
-                        <div class="icon"><img src="{{ card.icon }}" alt=""></div>
-                        <div class="card-content">
-                            <div class="card-content_text">
-                                <h3>{{ card.title }}</h3>
-                                <p>{{ card.items | join(', ') }}</p>
+        <section id="profil" class="reveal fade-in-left">
+            <div class="container">
+                <h2 class="undertitle">{{ homepage.profil.sectionTitle | markdown | safe }}</h2>
+                <div class="flex">
+                    <div class="profil-design">
+                        <img class="profil-card_image" src="{{ homepage.profil.image }}" alt="" height="215" width="153" fetchpriority="high">
+                        <div class="profil-card">
+                            <div class="profil-card_content">
+                                <div class="profil-card_text">
+                                    <h3>{{ homepage.profil.citation }}</h3>
+                                    {{ homepage.profil.description | markdown | safe }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <section id="realisations" class="in reveal fade-in-left">
-        <div class="container">
-            <h2 class="undertitle">{{ homepage.realisations.sectionTitle | markdown | safe }}</h2>
-            <div class="work-content">
-            <div class="work-content_text">
-                <a href="{{ homepage.realisations.items[0].url }}">
-                    <div class="work-content_client_desc">
-                        <h3 class="client">{{ homepage.realisations.items[0].client }}</h3>
-                        <div class="wrapper-logo">
-                            <img src="{{ homepage.realisations.items[0].logo }}" class="client-logo" alt="{{ homepage.realisations.items[0].client }}">
-                        </div>
-                    </div>
-                </a>
-                <div class="description">
-                    {{ homepage.realisations.items[0].description | markdown | safe }}
-                </div>
-                <div class="pill-name">
-                    {% for tech in homepage.realisations.items[0].technologies %}
-                        <div class="margin-none">{{ tech }}</div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="slider">
-                {% for slide in homepage.realisations.items[0].slides %}
-                    <div class="slide {% if loop.first %}active{% endif %}">
-                        <em class="slide-badge">Voir</em>
-                        <div class="slide-content">
-                            <img src="{{ slide.image }}" alt="slide-{{ loop.index }}">
-                            <div class="slide-content_text">
-                                <h3>{{ slide.title }}</h3>
-                                <a href="{{ slide.linkUrl }}" target="_blank" rel="noopener noreferrer">{{ slide.linkText }}</a>
-                            </div>
-                        </div>
-                        <div class="slide-number">{{ loop.index }}</div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <section id="testimonials" class="in reveal fade-in-left">
-        <div class="container">
-            <div class="testimonial-title">
-                <h2 class="undertitle">{{ homepage.testimonials.sectionTitle | markdown | safe }}</h2>
-            <img src="{{ homepage.testimonials.image }}" alt="avis-image">
-        </div>
-        {% for item in homepage.testimonials.items %}
-            <div class="testimonial">
-                <div class="testimonial-card">
-                    <p class="testimonial-feedback">{{ item.testimonial }}</p>
-                    <div class="testimonial-profile">
-                        <img src="{{ item.photo }}" alt="{{ item.name }}">
-                        <div class="testimonial-profile_text">
-                            <p class="testimonial-name">{{ item.name }}</p>
-                            <p class="testimonial-position">{{ item.position }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </section>
-
-    <section id="contact" class="in reveal fade-in-left">
-        <div class="container">
-            <div class="form">
-                <h2>Me contacter</h2>
-                <h3>Formulaire de contact</h3>
-                <form id="contact-form">
-                    <input type="text" name="Nom" id="nom" placeholder="Nom*" required>
-                    <input type="text" name="Prenom" id="prenom" placeholder="Prénom*" required>
-                    <input type="text" name="Entreprise" id="entreprise" placeholder="Entreprise">
-                    <input type="email" name="email" id="email" placeholder="Email*" required>
-                    <textarea name="demande" id="demande" placeholder="Description de votre besoin"></textarea>
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACJ-zFe3667bncKz" data-callback="enableSubmit"></div>
-                    <div class="form-btn_area">
-                        <button type="reset" class="main-btn form-btn_annuler">Effacer</button>
-                        <button type="submit" class="main-btn form-btn_send">Envoyer</button>
-                    </div>
-                </form>
-            </div>
-            <div id="faq" class="faq">
-                <div class="faq-area">
-                    <img src="{{ homepage.faq.image }}" alt="faq-image">
-                    <h3>{{ homepage.faq.sectionTitle | markdown | safe }}</h3>
-                    <div data-cms="faq.items">
-                        {% for item in homepage.faq.items %}
-                            <div class="faq-content">
-                                <h4 class="faq-title">{{ item.question }}</h4>
-                                <div class="faq-text">
-                                    <div><p>{{ item.answer }}</p></div>
+                    <div class="parcours">
+                        {% for item in homepage.profil.parcours %}
+                            <div class="story">
+                                <div class="icon"><img src="{{ item.icon }}" alt=""></div>
+                                <div class="story-text">
+                                    <p><span>{{ item.value }}</span></p>
+                                    <p>{{ item.label }}</p>
                                 </div>
                             </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="services" class="in reveal fade-in-left">
+            <div class="container">
+                <h2 class="undertitle">{{ homepage.services.sectionTitle | markdown | safe }}</h2>
+                <div class="services-area">
+                    {% for item in homepage.services.items %}
+                        <div class="services-card">
+                            <div class="services-card_head">
+                                <img src="{{ item.image }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                            </div>
+                            <div class="description"><p>{{ item.description | markdown | safe }}</p></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" class="in reveal fade-in-left">
+            <div class="container">
+                <h2 class="undertitle">{{ homepage.competences.sectionTitle | markdown | safe }}</h2>
+                <div class="competences-content">
+                    <div class="competences-pills">
+                        {% for category in homepage.competences.pills %}
+                        <div class="pills-area">
+                            <div class="pill-section">{{ category.category }}</div>
+                            <div class="pill-name">
+                                {% for skill in category.skills %}
+                                    <a href="" class="margin-none">{{ skill }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="competences-grid">
+                        {% for card in homepage.competences.cards %}
+                        <div class="card">
+                            <div class="icon"><img src="{{ card.icon }}" alt=""></div>
+                            <div class="card-content">
+                                <div class="card-content_text">
+                                    <h3>{{ card.title }}</h3>
+                                    <p>{{ card.items | join(', ') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="realisations" class="in reveal fade-in-left">
+            <div class="container">
+                <h2 class="undertitle">{{ homepage.realisations.sectionTitle | markdown | safe }}</h2>
+                <div class="work-content">
+                    <div class="work-content_text">
+                        <a href="{{ homepage.realisations.items[0].url }}">
+                        <div class="work-content_client_desc">
+                            <h3 class="client">{{ homepage.realisations.items[0].client }}</h3>
+                            <div class="wrapper-logo">
+                                <img src="{{ homepage.realisations.items[0].logo }}" class="client-logo" alt="{{ homepage.realisations.items[0].client }}">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="description">
+                            {{ homepage.realisations.items[0].description | markdown | safe }}
+                        </div>
+                        <div class="pill-name">
+                            {% for tech in homepage.realisations.items[0].technologies %}
+                                <div class="margin-none">{{ tech }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="slider">
+                        {% for slide in homepage.realisations.items[0].slides %}
+                        <div class="slide {% if loop.first %}active{% endif %}">
+                            <em class="slide-badge">Voir</em>
+                            <div class="slide-content">
+                                <img src="{{ slide.image }}" alt="slide-{{ loop.index }}">
+                                <div class="slide-content_text">
+                                    <h3>{{ slide.title }}</h3>
+                                    <a href="{{ slide.linkUrl }}" target="_blank" rel="noopener noreferrer">{{ slide.linkText }}</a>
+                                </div>
+                            </div>
+                            <div class="slide-number">{{ loop.index }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="in reveal fade-in-left">
+            <div class="container">
+                <div class="testimonial-title">
+                    <h2 class="undertitle">{{ homepage.testimonials.sectionTitle | markdown | safe }}</h2>
+                    <img src="{{ homepage.testimonials.image }}" alt="avis-image">
+                </div>
+                {% for item in homepage.testimonials.items %}
+                <div class="testimonial">
+                    <div class="testimonial-card">
+                        <p class="testimonial-feedback">{{ item.testimonial }}</p>
+                        <div class="testimonial-profile">
+                            <img src="{{ item.photo }}" alt="{{ item.name }}">
+                            <div class="testimonial-profile_text">
+                                <p class="testimonial-name">{{ item.name }}</p>
+                                <p class="testimonial-position">{{ item.position }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="contact" class="in reveal fade-in-left">
+            <div class="container">
+                <div class="form">
+                    <h2>Me contacter</h2>
+                    <h3>Formulaire de contact</h3>
+                    <form id="contact-form">
+                        <input type="text" name="Nom" id="nom" placeholder="Nom*" required>
+                        <input type="text" name="Prenom" id="prenom" placeholder="Prénom*" required>
+                        <input type="text" name="Entreprise" id="entreprise" placeholder="Entreprise">
+                        <input type="email" name="email" id="email" placeholder="Email*" required>
+                        <textarea name="demande" id="demande" placeholder="Description de votre besoin"></textarea>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACJ-zFe3667bncKz" data-callback="enableSubmit"></div>
+                        <div class="form-btn_area">
+                            <button type="reset" class="main-btn form-btn_annuler">Effacer</button>
+                            <button type="submit" class="main-btn form-btn_send">Envoyer</button>
+                        </div>
+                    </form>
+                </div>
+                
+            
+                <div id="faq" class="faq">
+                    <div class="faq-area">
+                        <img src="{{ homepage.faq.image }}" alt="faq-image">
+                        <h3>{{ homepage.faq.sectionTitle | markdown | safe }}</h3>
+                        <div data-cms="faq.items">
+                            {% for item in homepage.faq.items %}
+                                <div class="faq-content">
+                                    <h4 class="faq-title">{{ item.question }}</h4>
+                                    <div class="faq-text">
+                                        <div><p>{{ item.answer }}</p></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include "./_includes/layouts/_footer.njk" %}
+
+    <script src="/assets/js/form.js"></script>
+    </body>
+    </html>
