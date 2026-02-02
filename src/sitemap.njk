@@ -12,7 +12,8 @@ eleventyExcludeFromCollections: true
   {%- if not page.data.draft and page.url 
       and not page.url.startsWith('/admin/') 
       and not page.url.startsWith('/assets/') 
-      and not page.url.startsWith('/tarteaucitron/') -%}
+      and not page.url.startsWith('/tarteaucitron/')
+      and not page.url.startsWith('/sinbad/') -%}
   <url>
     {%- set pageUrl = page.url | url -%}
     {%- if pageUrl != "/" and pageUrl.slice(-1) == "/" -%}
