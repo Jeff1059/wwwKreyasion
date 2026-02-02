@@ -361,7 +361,6 @@ section {
 .banner-content_text {
   display: flex;
   flex-direction: column;
-  flex-basis: 65%;
 }
 
 .undertitle span {
@@ -383,12 +382,6 @@ section {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 1400px) {
-  #banner {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-}
 @media screen and (max-width: 1300px) {
   .flex {
     justify-content: center;
@@ -402,6 +395,10 @@ section {
   }
 }
 @media screen and (max-width: 900px) {
+  #banner {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   section {
     padding-top: 2rem;
   }
@@ -1762,6 +1759,9 @@ footer .footer-legal span {
 }
 #pagination-container a.ellipsis {
   background-color: transparent;
+  cursor: default;
+  pointer-events: none;
+}ent;
   cursor: default;
   pointer-events: none;
 }
