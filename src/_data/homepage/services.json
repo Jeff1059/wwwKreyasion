@@ -3,21 +3,21 @@
   "items": [
     {
       "id": "web",
-      "title": "Création de votre site vitrine",
-      "description": "* test\n* test",
+      "title": "Création de votre site web",
+      "description": "* Mise en place : domaine, hébergement, cms...\n* Maquettes (logo, palette...)\n* Site vitrine...",
       "image": "/assets/images/service-web.png"
     },
     {
       "id": "uxui",
-      "title": "Refonte & amélioration UX",
-      "description": "Structure des pages, messages, parcours utilisateur et hiérarchie de l'information.<br><br>Validation via maquettes et définition des fonctionnalités essentielles, puis phase de tests/recette et corrections.",
-      "image": "/assets/images/service-uxui.png"
+      "title": "Intégration",
+      "description": "* Intégration des templates à votre CMS\n* Rendu moderne, responsive et cohérent",
+      "image": "/assets/images/service-dev.png"
     },
     {
       "id": "dev",
-      "title": "Intégration HTML / CSS / Javascript",
-      "description": "Intégration des templates à votre CMS pour un rendu moderne, responsive et cohérent.<br><br>Optimisations de base : performance, lisibilité, et cohérence visuelle",
-      "image": "/assets/images/service-dev.png"
+      "title": "Mesure d'audience et maintenance",
+      "description": "* Installation et paramétrage Google Analytics / Microsoft Clarity\n* Évolution des templates",
+      "image": "/assets/images/service-uxui.png"
     }
   ]
 }
