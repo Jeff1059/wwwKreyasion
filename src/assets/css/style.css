@@ -520,7 +520,7 @@ section {
 }
 
 .profil-card_text {
-  padding: 2rem 1.5rem 2rem 1.5rem;
+  padding: 3rem 1.5rem 3rem 1.5rem;
 }
 .profil-card_text h3 {
   padding-left: 100px;
@@ -1215,11 +1215,12 @@ footer .footer-legal span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 #services .services-card_head h3 {
   margin-bottom: 0;
+  text-align: center;
 }
 #services .services-card_head img {
   display: block;
@@ -1240,7 +1241,7 @@ footer .footer-legal span {
 }
 #services ul li {
   position: relative;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 #services ul li::before {
   content: "";

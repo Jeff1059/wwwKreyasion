@@ -63,7 +63,7 @@
 }
 
 .profil-card_text {
-    padding: 2rem 1.5rem 2rem 1.5rem;
+    padding: 3rem 1.5rem 3rem 1.5rem;
 
     h3 {
         padding-left: 100px;
@@ -871,11 +871,12 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         margin-bottom: 2rem;
 
         h3 {
             margin-bottom: 0;
+            text-align: center;
         }
 
         img {
@@ -907,7 +908,7 @@ footer {
 
         li {
             position: relative;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
 
             &::before {
                 content: "";
