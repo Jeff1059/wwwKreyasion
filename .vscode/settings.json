@@ -10,7 +10,8 @@
         {
             "format": "compressed",
             "extensionName": ".min.css",
-            "savePath": "/src/assets/css"
+            "savePath": "/src/assets/css",
+            "savePathReplacementPairs": null
         }
     ],
     "liveSassCompile.settings.generateMap": false
