@@ -1436,11 +1436,27 @@ footer .footer-legal span {
   display: flex;
   padding: 1rem;
   gap: 1rem;
+  background-color: var(--alternative-s-color);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+.blog-similar a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 .blog-similar a img {
   max-width: 90px;
   height: auto;
   border-radius: 10px;
+}
+
+.blog-similar_title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .article-card {

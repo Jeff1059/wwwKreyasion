@@ -49,8 +49,10 @@ eleventyComputed:
                             <li>
                                 <a href="/blog/{{ sim.id }}/">
                                     <img src="{{ sim.image }}" alt="{{ sim.title }}">
-                                    {{ sim.title }}
-                                    <span>{{ sim.readTime }}</span>
+                                    <div class="blog-similar_title">
+                                        {{ sim.title }}
+                                        <span>Temps de lecture : {{ sim.readTime }}</span>
+                                    </div>
                                 </a>
                             </li>
                         {% endfor %}
