@@ -587,7 +587,7 @@ section {
   width: 100%;
 }
 .card .card-content li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Section Competences */
@@ -814,7 +814,7 @@ section {
   gap: 2rem;
   width: 80%;
   justify-content: space-around;
-  padding: 4rem 2rem 4rem 2rem;
+  padding: 4rem 2rem;
 }
 #testimonials .testimonial-title {
   position: relative;
@@ -834,7 +834,7 @@ section {
   gap: 1rem;
   background-color: var(--neutral-light);
   border-radius: 16px;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   max-width: 400px;
   height: 100%;
 }
@@ -907,7 +907,7 @@ section {
   flex: 1 1 43%;
   background-color: var(--surface-color);
   color: var(--main-color);
-  padding: 3rem 1rem 3rem 1rem;
+  padding: 3rem 1rem;
   border-radius: 16px;
 }
 #contact .form::before {
