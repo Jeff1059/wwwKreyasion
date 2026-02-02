@@ -115,7 +115,7 @@ collections:
             fields:
               - { label: "Icône", name: "icon", widget: "image" }
               - { label: "Titre", name: "title", widget: "string" }
-              - { label: "Éléments", name: "items", widget: "list", field: { label: "Élément", name: "item", widget: "string" } }
+              - { label: "Élément", name: "item", widget: "markdown" }
 
       - label: "Réalisations"
         name: "realisations"
