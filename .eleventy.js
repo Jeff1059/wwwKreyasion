@@ -79,21 +79,18 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addNunjucksFilter("similarArticles", function (allPosts, currentArticle, max = 3) {
         if (!currentArticle || !currentArticle.category) {
-            return []; // Pas de catégorie → pas d'articles similaires
+            return [];
         }
 
-        const currentCategory = currentArticle.category;
-        const currentUrl = currentArticle.url || currentArticle.data.permalink;
+        const currentCategory = currentArticle.category;  // ← Direct .category
+        const currentId = currentArticle.id;
 
         return allPosts
-            .filter(post => {
-                // Sécurité : vérifie que post existe et a une catégorie
-                return post &&
-                    post.data &&
-                    post.data.category === currentCategory &&
-                    post.url !== currentUrl;
-            })
-            .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+            .filter(post =>
+                post.category === currentCategory &&
+                post.id !== currentId
+            )
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, max);
     });
 
