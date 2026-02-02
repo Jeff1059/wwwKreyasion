@@ -1425,6 +1425,23 @@ footer .footer-legal span {
   gap: 2rem;
 }
 
+.blog-similar ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+}
+.blog-similar a {
+  display: flex;
+  gap: 1rem;
+}
+.blog-similar a img {
+  max-width: 90px;
+  height: auto;
+  border-radius: 10px;
+}
+
 .article-card {
   display: flex;
   gap: 1.5rem;

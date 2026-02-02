@@ -57,6 +57,28 @@
     gap: 2rem;
 }
 
+.blog-similar {
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    a {
+        display: flex;
+        gap: 1rem;
+
+        img {
+            max-width: 90px;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+}
+
 .article-card {
     display: flex;
     gap: 1.5rem;

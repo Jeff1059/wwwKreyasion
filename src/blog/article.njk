@@ -40,7 +40,7 @@ eleventyComputed:
             <div class="article-content">
                 {{ article.content | markdown | safe }}
             </div>
-            <aside class="blog-toc">
+            <aside class="blog-similar">
                 <h3>Articles similaires</h3>
                 <ul>
                     {% set similar = collections.blogPosts | similarArticles(article) %}
@@ -48,6 +48,7 @@ eleventyComputed:
                         {% for sim in similar %}
                             <li>
                                 <a href="/blog/{{ sim.id }}/">
+                                    <img src="{{ sim.image }}" alt="{{ sim.title }}">
                                     {{ sim.title }}
                                 </a>
                             </li>
