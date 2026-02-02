@@ -520,7 +520,7 @@ section {
 }
 
 .profil-card_text {
-  padding: 3rem 1.5rem 3rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 .profil-card_text h3 {
   padding-left: 100px;
@@ -834,7 +834,7 @@ section {
   gap: 1rem;
   background-color: var(--neutral-light);
   border-radius: 16px;
-  padding: 1rem;
+  padding: 2rem 1rem;
   max-width: 400px;
   height: 100%;
 }
