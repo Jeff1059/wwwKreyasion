@@ -29,6 +29,10 @@ span {
   color: unset;
 }
 
+ul {
+  padding-left: 20px;
+}
+
 :root {
   --background-color: #1E1B1C;
   --accent-color: #d67959;
@@ -96,6 +100,7 @@ span {
 .navbar .nav-links ul {
   display: flex;
   list-style: none;
+  padding-left: 0;
 }
 
 li a {
@@ -361,6 +366,7 @@ section {
 .banner-content_text {
   display: flex;
   flex-direction: column;
+  flex-basis: 65%;
 }
 
 .undertitle span {
@@ -382,6 +388,12 @@ section {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 1400px) {
+  #banner {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
 @media screen and (max-width: 1300px) {
   .flex {
     justify-content: center;
@@ -395,10 +407,6 @@ section {
   }
 }
 @media screen and (max-width: 900px) {
-  #banner {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
   section {
     padding-top: 2rem;
   }
@@ -539,6 +547,7 @@ section {
 }
 .story .story-text span {
   font-weight: 700;
+  color: var(--accent-color);
 }
 
 .icon {
@@ -678,9 +687,6 @@ section {
 }
 .work-content_text .description li {
   margin-bottom: 1rem;
-}
-.work-content_text .description ul {
-  padding-left: 20px;
 }
 
 .slider {
@@ -1758,10 +1764,6 @@ footer .footer-legal span {
   pointer-events: none;
 }
 #pagination-container a.ellipsis {
-  background-color: transparent;
-  cursor: default;
-  pointer-events: none;
-}{
   background-color: transparent;
   cursor: default;
   pointer-events: none;
