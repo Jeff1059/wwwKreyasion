@@ -65,15 +65,20 @@ eleventyComputed:
             </div>
             <aside class="blog-toc">
                 <h3>Articles similaires</h3>
-                <nav>
-                    <ul>
-                        {% for category in collections.categories %}
-                            <li class="blog-toc_category">
-                                <a href="#" class="category-filter" data-filter="{{ category.name | slugify }}">{{ category.name }} ({{ category.count }})</a>
+                <ul>
+                    {% set similar = collections.blogPosts | similarArticles(article) %}
+                    {% if similar.length > 0 %}
+                        {% for sim in similar %}
+                            <li>
+                                <a href="/blog/{{ sim.id }}/">
+                                    {{ sim.title }}
+                                </a>
                             </li>
                         {% endfor %}
-                    </ul>
-                </nav>
+                    {% else %}
+                        <li>Aucun article similaire</li>
+                    {% endif %}
+                </ul>
             </aside>
         </div>
     </section>

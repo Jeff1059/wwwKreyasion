@@ -1800,17 +1800,17 @@ footer .footer-legal span {
   background-color: var(--accent-color);
   color: #fff;
 }
-#pagination-container a .current {
+#pagination-container a.current {
   background-color: var(--accent-color);
   color: #fff;
   pointer-events: none;
 }
-#pagination-container a .disabled {
+#pagination-container a.disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
-#pagination-container a .ellipsis {
+#pagination-container a.ellipsis {
   background-color: transparent;
   cursor: default;
   pointer-events: none;

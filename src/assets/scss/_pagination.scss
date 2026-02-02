@@ -33,7 +33,7 @@
 
         }
 
-        .current {
+        &.current {
 
             background-color: var(--accent-color);
             color: #fff;
@@ -41,7 +41,7 @@
 
         }
 
-        .disabled {
+        &.disabled {
 
             opacity: 0.5;
             cursor: not-allowed;
@@ -49,7 +49,7 @@
 
         }
 
-        .ellipsis {
+        &.ellipsis {
 
             background-color: transparent;
             cursor: default;

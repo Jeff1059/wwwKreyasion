@@ -77,6 +77,22 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addNunjucksFilter("similarArticles", function (allPosts, currentArticle, max = 3) {
+        const currentCategory = currentArticle.data.category;
+
+        return allPosts
+            .filter(post =>
+                post.data.category === currentCategory &&
+                post.url !== currentArticle.url
+            )
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, max);
+    });
+
+    eleventyConfig.addPassthroughCopy("src/assets", {
+        filter: inputPath => !inputPath.includes("/scss/")
+    });
+
     eleventyConfig.addCollection("categories", function (collectionApi) {
         const globalData = collectionApi.getAll()[0].data;
         const posts = globalData.blog.posts;
