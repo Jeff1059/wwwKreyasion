@@ -900,6 +900,10 @@ footer {
         }
     }
 
+    ul {
+        list-style: square url(/assets/images/check.png) inside;
+    }
+
 }
 
 @media screen and (max-width: 1300px) {

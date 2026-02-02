@@ -73,7 +73,7 @@ eleventyComputed:
     <!-- Client-side Pagination Container -->
     <nav aria-label="Pagination" class="pagination-nav" id="pagination-container">
         <a href="#" id="pagination-prev">Précédent</a>
-        <div id="pagination-numbers"></div>
+        <div class="pagination-numbers"></div>
         <a href="#" id="pagination-next">Suivant</a>
     </nav>
 </main>
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const paginationNav = document.getElementById('pagination-container');
     const paginationPrev = document.getElementById('pagination-prev');
     const paginationNext = document.getElementById('pagination-next');
-    const paginationNumbers = document.getElementById('pagination-numbers');
+    const paginationNumbers = document.querySelector('.pagination-numbers');
     const noArticlesMsg = document.getElementById('no-articles-message');
     const ITEMS_PER_PAGE = 4;
     let currentPage = 1;
