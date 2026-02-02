@@ -1379,7 +1379,6 @@ footer .footer-legal span {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
   height: 100%;
   gap: 3rem;
   padding-top: 3rem;
@@ -1388,6 +1387,7 @@ footer .footer-legal span {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
 }
