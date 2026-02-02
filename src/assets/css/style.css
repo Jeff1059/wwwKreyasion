@@ -1240,11 +1240,12 @@ footer .footer-legal span {
 }
 #services ul li {
   position: relative;
+  margin-bottom: 0.5rem;
 }
 #services ul li::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: -1.25rem;
   top: 0.2em;
   width: 1em;
   height: 1em;
