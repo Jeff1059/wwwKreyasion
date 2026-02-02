@@ -103,7 +103,7 @@ eleventyComputed:
                             <div class="card-content">
                                 <div class="card-content_text">
                                     <h3>{{ card.title }}</h3>
-                                    <p>{{ card.items | join(', ') }}</p>
+                                    <p>{{ card.item | markdown | safe }}</p>
                                 </div>
                             </div>
                         </div>
