@@ -586,6 +586,9 @@ section {
   padding: 40px 20px 40px 20px;
   width: 100%;
 }
+.card .card-content li {
+  margin-bottom: 1rem;
+}
 
 /* Section Competences */
 #competences {
