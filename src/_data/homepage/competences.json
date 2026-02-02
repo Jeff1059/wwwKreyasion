@@ -39,7 +39,8 @@
       "title": "Cadrage du besoin",
       "items": [
         "animation d'atelier"
-      ]
+      ],
+      "item": "animation d'atelier"
     },
     {
       "id": "conception",
@@ -49,7 +50,8 @@
         "Choix des visuels",
         "Définition des fonctionnalités",
         "Création d'une maquette"
-      ]
+      ],
+      "item": "* Choix des visuels\n* Définition des fonctionnalités\n* Création d'une maquette"
     },
     {
       "id": "dev",
@@ -58,7 +60,8 @@
       "items": [
         "Création des modèles statiques",
         "Intégration CMS"
-      ]
+      ],
+      "item": "* Création des modèles statiques\n* Intégration CMS"
     }
   ]
 }
