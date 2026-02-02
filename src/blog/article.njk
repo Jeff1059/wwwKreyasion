@@ -50,6 +50,7 @@ eleventyComputed:
                                 <a href="/blog/{{ sim.id }}/">
                                     <img src="{{ sim.image }}" alt="{{ sim.title }}">
                                     {{ sim.title }}
+                                    <span>{{ sim.readTime }}</span>
                                 </a>
                             </li>
                         {% endfor %}

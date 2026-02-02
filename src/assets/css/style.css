@@ -1434,6 +1434,7 @@ footer .footer-legal span {
 }
 .blog-similar a {
   display: flex;
+  padding: 1rem;
   gap: 1rem;
 }
 .blog-similar a img {
