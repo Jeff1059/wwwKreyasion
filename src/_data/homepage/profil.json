@@ -2,7 +2,7 @@
   "sectionTitle": "Mon <span>profil</span>",
   "image": "/assets/images/jg-profil.webp",
   "citation": "Concevoir des solutions simples, efficaces et centrées sur l'usage",
-  "description": "Consultant en **transformation digitale** et **responsable applicatif**, j'ai travaillé sur des solutions web et des environnements orientés données (workflows, bases de données, validation applicative).\n\nJ'apporte une approche structurée : recueil du besoin, rédaction, coordination, tests/recette et gestion des anomalies.",
+  "description": "Consultant en **transformation digitale** et **responsable applicatif**, j'ai travaillé sur des solutions web et des environnements orientés données (workflows, bases de données, validation applicative).\\\n\\\nJ'apporte une approche structurée : recueil du besoin, rédaction, coordination, tests/recette et gestion des anomalies.",
   "parcours": [
     {
       "icon": "/assets/images/icon-diplome.svg",
