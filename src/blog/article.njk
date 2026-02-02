@@ -40,29 +40,6 @@ eleventyComputed:
             <div class="article-content">
                 {{ article.content | markdown | safe }}
             </div>
-            <div class="blog-articles">
-                {% for article in collections.blogPosts %}
-                    <a href="/blog/{{ article.id }}/" class="article-card" data-category="{{ article.category | slugify }}">
-                        <div class="article-card_image">
-                            <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
-                        </div>
-                        <div class="article-card_content">
-                            <div class="article-card_header">
-                                <h2 class="article-card_title">{{ article.title }}</h2>
-                                <span class="article-card_read-time">{{ article.readTime }}</span>
-                            </div>
-                            <p class="article-card_description">{{ article.description }}</p>
-                            <div class="article-card_meta">
-                                <span>{{ article.date }}</span> • 
-                                <span class="article-card_category">{{ article.category }}</span>
-                            </div>
-                        </div>
-                    </a>
-                {% endfor %}
-                <div id="no-articles-message" class="blog-empty" style="display: none;">
-                    <h3>Aucun article trouvé dans cette catégorie.</h3>
-                </div>
-            </div>
             <aside class="blog-toc">
                 <h3>Articles similaires</h3>
                 <ul>
