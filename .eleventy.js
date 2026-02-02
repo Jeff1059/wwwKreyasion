@@ -78,11 +78,11 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addNunjucksFilter("similarArticles", function (allPosts, currentArticle, max = 3) {
-        if (!currentArticle || !currentArticle.data || !currentArticle.data.category) {
+        if (!currentArticle || !currentArticle.category) {
             return []; // Pas de catégorie → pas d'articles similaires
         }
 
-        const currentCategory = currentArticle.data.category;
+        const currentCategory = currentArticle.category;
         const currentUrl = currentArticle.url || currentArticle.data.permalink;
 
         return allPosts
