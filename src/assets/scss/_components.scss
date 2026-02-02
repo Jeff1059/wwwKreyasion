@@ -901,7 +901,26 @@ footer {
     }
 
     ul {
-        list-style: square url(/assets/images/check.png) inside;
+
+        list-style: none;
+        padding-left: 2.2rem;
+
+        li {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.2em;
+                width: 1em;
+                height: 1em;
+                background-image: url("/assets/images/check.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
     }
 
 }
