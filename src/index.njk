@@ -127,7 +127,7 @@ eleventyComputed:
                         </div>
                         </a>
                         <div class="description">
-                            {{ homepage.realisations.items[0].description | markdown | safe }}
+                            {{ homepage.realisations.items[0].description }}
                         </div>
                         <div class="pill-name">
                             {% for tech in homepage.realisations.items[0].technologies %}
