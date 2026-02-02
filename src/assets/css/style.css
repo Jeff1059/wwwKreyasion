@@ -1372,6 +1372,31 @@ footer .footer-legal span {
   }
 }
 /* Blog List Page Styles */
+#article-cover {
+  padding-bottom: 0;
+}
+#article-cover .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+  gap: 3rem;
+  padding-top: 3rem;
+}
+#article-cover .cover {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+#article-cover .cover img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
 .sub-title {
   box-shadow: inset 5px 5px 30px rgba(0, 0, 0, 0.5), inset -5px -5px 30px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -1715,7 +1740,6 @@ footer .footer-legal span {
   gap: 0.5rem;
   color: var(--accent-color);
   text-decoration: none;
-  margin-bottom: 2rem;
   font-weight: 600;
   transition: transform 0.2s ease;
 }
@@ -1776,17 +1800,17 @@ footer .footer-legal span {
   background-color: var(--accent-color);
   color: #fff;
 }
-#pagination-container a.current {
+#pagination-container a .current {
   background-color: var(--accent-color);
   color: #fff;
   pointer-events: none;
 }
-#pagination-container a.disabled {
+#pagination-container a .disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
-#pagination-container a.ellipsis {
+#pagination-container a .ellipsis {
   background-color: transparent;
   cursor: default;
   pointer-events: none;

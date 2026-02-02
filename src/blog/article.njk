@@ -17,16 +17,18 @@ eleventyComputed:
 
 {% set meta = article.meta %}
 
-<section id="cover">
-    <img src="{{ article.image }}" alt="" fetchpriority="high">
+<section id="article-cover">
     <div class="container">
-        <div class="page-header">
-            <h1 class="section-title">{{ article.title }}</h1>
-            <p class="article-meta sub-title">
-                <span>{{ article.date }}</span> •
-                <span>{{ article.readTime }}</span> •
-                <span>{{ article.category }}</span>
-            </p>
+        <div class="cover">
+            <img src="{{ article.image }}" alt="">
+            <div class="page-header">
+                <h1 class="section-title">{{ article.title }}</h1>
+                <p class="article-meta sub-title">
+                    <span>{{ article.date }}</span> •
+                    <span>{{ article.readTime }}</span> •
+                    <span>{{ article.category }}</span>
+                </p>
+            </div>
         </div>
     </div>
 </section>

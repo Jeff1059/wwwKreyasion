@@ -34,7 +34,11 @@ module.exports = function (eleventyConfig) {
     });
 
     // Copy assets to dist
-    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy("src/assets", {
+        filter: function (inputPath) {
+            return !inputPath.includes("/scss/");
+        }
+    });
     eleventyConfig.addPassthroughCopy("src/admin");
     eleventyConfig.addPassthroughCopy("src/scripts");
     eleventyConfig.addPassthroughCopy("src/tarteaucitron");
