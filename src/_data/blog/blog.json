@@ -5,16 +5,5 @@
     "canonical": "https://www.kreasyon-design.fr/blog"
   },
   "headerTitle": "Mon Blog",
-  "coverImage": "/assets/images/cover-blog-design.webp",
-  "articles": [
-    {
-      "id": "organisation-pages-web",
-      "title": "Organisation de ses pages web",
-      "date": "2026-01-26",
-      "category": "Développement",
-      "readTime": "5 min",
-      "image": "/assets/images/blog/organisation-pages-web.jpg",
-      "description": "Apprenez à structurer vos pages HTML de manière sémantique et optimisée pour le SEO."
-    }
-  ]
+  "coverImage": "/assets/images/cover-blog-design.webp"
 }
