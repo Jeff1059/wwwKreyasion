@@ -78,16 +78,25 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addNunjucksFilter("similarArticles", function (allPosts, currentArticle, max = 3) {
+        if (!currentArticle || !currentArticle.data || !currentArticle.data.category) {
+            return []; // Pas de catégorie → pas d'articles similaires
+        }
+
         const currentCategory = currentArticle.data.category;
+        const currentUrl = currentArticle.url || currentArticle.data.permalink;
 
         return allPosts
-            .filter(post =>
-                post.data.category === currentCategory &&
-                post.url !== currentArticle.url
-            )
-            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .filter(post => {
+                // Sécurité : vérifie que post existe et a une catégorie
+                return post &&
+                    post.data &&
+                    post.data.category === currentCategory &&
+                    post.url !== currentUrl;
+            })
+            .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
             .slice(0, max);
     });
+
 
     eleventyConfig.addPassthroughCopy("src/assets", {
         filter: inputPath => !inputPath.includes("/scss/")
