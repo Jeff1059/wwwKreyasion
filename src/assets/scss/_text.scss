@@ -20,6 +20,7 @@ h6 {
 
 .banner-content_text h1 {
     font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 .card-content_text p {
@@ -33,5 +34,17 @@ h6 {
 @media screen and (max-width: 1200px) {
     .banner-content_text h1 {
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 90%;
     }
 }
