@@ -63,8 +63,7 @@ module.exports = function (eleventyConfig) {
 
 eleventyConfig.addFilter("sitemapDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
-  });
-};
+ });
 
 
     // Add Collections
