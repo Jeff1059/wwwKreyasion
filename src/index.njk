@@ -65,7 +65,7 @@ eleventyComputed:
 
         <section id="services" class="in reveal fade-in-left">
             <div class="container">
-                <h2 class="undertitle">{{ homepage.services.sectionTitle | markdown | safe }}</h2>
+                <h2 class="undertitle">{{ homepage.services.sectionTitle | safe }}</h2>
                 <div class="services-area">
                     {% for item in homepage.services.items %}
                         <div class="services-card">
@@ -73,7 +73,7 @@ eleventyComputed:
                                 <img src="{{ item.image }}" alt="{{ item.title }}">
                                 <h3>{{ item.title }}</h3>
                             </div>
-                            <div class="description"><p>{{ item.description | markdown | safe }}</p></div>
+                            <div class="description"><p>{{ item.description | safe }}</p></div>
                         </div>
                     {% endfor %}
                 </div>
@@ -82,7 +82,7 @@ eleventyComputed:
 
         <section id="competences" class="in reveal fade-in-left">
             <div class="container">
-                <h2 class="undertitle">{{ homepage.competences.sectionTitle | markdown | safe }}</h2>
+                <h2 class="undertitle">{{ homepage.competences.sectionTitle | safe }}</h2>
                 <div class="competences-content">
                     <div class="competences-pills">
                         {% for category in homepage.competences.pills %}
@@ -115,7 +115,7 @@ eleventyComputed:
 
         <section id="realisations" class="in reveal fade-in-left">
             <div class="container">
-                <h2 class="undertitle">{{ homepage.realisations.sectionTitle | markdown | safe }}</h2>
+                <h2 class="undertitle">{{ homepage.realisations.sectionTitle | safe }}</h2>
                 <div class="work-content">
                     <div class="work-content_text">
                         <a href="{{ homepage.realisations.items[0].url }}">
@@ -127,7 +127,7 @@ eleventyComputed:
                         </div>
                         </a>
                         <div class="description">
-                            {{ homepage.realisations.items[0].description | markdown | safe }}
+                            {{ homepage.realisations.items[0].description | safe }}
                         </div>
                         <div class="pill-name">
                             {% for tech in homepage.realisations.items[0].technologies %}
@@ -157,7 +157,7 @@ eleventyComputed:
         <section id="testimonials" class="in reveal fade-in-left">
             <div class="container">
                 <div class="testimonial-title">
-                    <h2 class="undertitle">{{ homepage.testimonials.sectionTitle | markdown | safe }}</h2>
+                    <h2 class="undertitle">{{ homepage.testimonials.sectionTitle | safe }}</h2>
                     <img src="{{ homepage.testimonials.image }}" alt="avis-image">
                 </div>
                 {% for item in homepage.testimonials.items %}
