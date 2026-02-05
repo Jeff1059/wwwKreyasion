@@ -97,20 +97,16 @@
     flex-direction: column;
     gap: 0.5rem;
 
-    &::before {
-        content: "";
-        display: block;
-        width: 4px;
-        height: 4px;
-        background: url("../images/eye.svg");
-        background-size: cover;
+    .read-time {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 0.5rem;
     }
 
-    span {
-        padding-left: 1rem;
-        font-size: 0.875rem;
-        color: var(--main-color);
-        opacity: 0.7;
+    svg {
+        width: 20px;
+        height: 20px;
     }
 }
 
