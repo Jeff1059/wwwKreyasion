@@ -1432,6 +1432,7 @@ footer .footer-legal span {
   flex-direction: row;
   list-style: none;
   gap: 2rem;
+  padding-left: 0;
 }
 .blog-similar a {
   display: flex;
@@ -1458,6 +1459,20 @@ footer .footer-legal span {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+.blog-similar_title::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: url("../images/eye.svg");
+  background-size: cover;
+}
+.blog-similar_title span {
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  color: var(--main-color);
+  opacity: 0.7;
 }
 
 .article-card {

@@ -54,14 +54,12 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-              - { label: "Classe CSS", name: "class", widget: "string", required: false }
           - label: "Réseaux sociaux"
             name: "social"
             widget: "list"
             fields:
               - { label: "Plateforme", name: "platform", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-              - { label: "Classe icône", name: "class", widget: "string" }
 
   # ==========================================
   # SECTIONS HOME PAGE
