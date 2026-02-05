@@ -12,12 +12,12 @@
   ],
   "social": [
     {
-      "platform": "<span>linkedin<span>",
+      "platform": "Linkedin",
       "url": "https://www.linkedin.com/in/gros-desormeauxj/",
       "class": "icon-linkedin"
     },
     {
-      "platform": "github",
+      "platform": "Github",
       "url": "https://github.com/Jeff1059",
       "class": "icon-github"
     }
