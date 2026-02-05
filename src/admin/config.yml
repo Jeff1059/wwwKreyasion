@@ -73,7 +73,7 @@ collections:
         name: "profil"
         file: "src/_data/homepage/profil.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "markdown", modes: ['rich_text'] }
+          - { label: "Titre de section", name: "sectionTitle", widget: "text" }
           - { label: "Photo de profil", name: "image", widget: "image" }
           - { label: "Citation", name: "citation", widget: "string" }
           - { label: "Description", name: "description", widget: "markdown" }
@@ -89,7 +89,7 @@ collections:
         name: "services"
         file: "src/_data/homepage/services.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "markdown", modes: ['rich_text'] }
+          - { label: "Titre de section", name: "sectionTitle", widget: "text" }
           - label: "Liste des services"
             name: "items"
             widget: "list"
@@ -102,7 +102,7 @@ collections:
         name: "competences"
         file: "src/_data/homepage/competences.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "markdown", modes: ['rich_text'] }
+          - { label: "Titre de section", name: "sectionTitle", widget: "text" }
           - label: "Pills (catégories)"
             name: "pills"
             widget: "list"
@@ -121,7 +121,7 @@ collections:
         name: "realisations"
         file: "src/_data/homepage/realisations.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "markdown", modes: ['rich_text'] }
+          - { label: "Titre de section", name: "sectionTitle", widget: "text" }
           - label: "Projets"
             name: "items"
             widget: "list"
@@ -144,7 +144,7 @@ collections:
         name: "testimonials"
         file: "src/_data/homepage/testimonials.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "rich_text" }
+          - { label: "Titre de section", name: "sectionTitle", widget: "text" }
           - { label: "Image latérale", name: "image", widget: "image" }
           - label: "Liste des témoignages"
             name: "items"
@@ -160,7 +160,7 @@ collections:
         name: "faq"
         file: "src/_data/homepage/faq.json"
         fields:
-          - { label: "Titre de section", name: "sectionTitle", widget: "markdown", modes: ['rich_text'] }
+          - { label: "Titre de section", name: "sectionTitle", widget: "text" }
           - { label: "Image", name: "image", widget: "image" }
           - label: "Questions"
             name: "items"
