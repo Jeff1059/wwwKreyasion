@@ -6,11 +6,11 @@
     z-index: 997;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: var(--surface-color);
 }
 
 .bg-scroll {
     position: fixed;
-    background-color: var(--alternative-text-color);
     border-bottom: 1px solid var(--header-border);
     transition: 1s;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
