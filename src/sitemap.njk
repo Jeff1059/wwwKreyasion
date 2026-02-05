@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
       {%- set pageUrl = pageUrl.slice(0, -1) -%}
     {%- endif %}
     <loc>{{ baseUrl }}{{ pageUrl }}</loc>
-    <lastmod>{{ page.date}}</lastmod>
+    <lastmod>{{ page.date | formatDate }}</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   {%- endif -%}
