@@ -1819,14 +1819,6 @@ footer .footer-legal span {
   color: #333;
 }
 
-.table-article tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.table-article tr:hover {
-  background-color: #e8f4f8;
-}
-
 /* Mobile : empilement */
 @media (max-width: 768px) {
   .table-article {
