@@ -1722,6 +1722,7 @@ footer .footer-legal span {
   font-size: 2rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--accent-color);
 }
 .article-content h3 {
   font-size: 1.5rem;
