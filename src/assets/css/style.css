@@ -1799,6 +1799,44 @@ footer .footer-legal span {
   content: "←";
 }
 
+.table-article {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.95em;
+}
+
+.table-article th,
+.table-article td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table-article th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.table-article tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-article tr:hover {
+  background-color: #e8f4f8;
+}
+
+/* Mobile : empilement */
+@media (max-width: 768px) {
+  .table-article {
+    font-size: 0.85em;
+  }
+  .table-article th,
+  .table-article td {
+    padding: 8px 5px;
+  }
+}
 @keyframes fade-in-left {
   0% {
     opacity: 0;
