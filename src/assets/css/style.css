@@ -1426,6 +1426,9 @@ footer .footer-legal span {
   gap: 2rem;
 }
 
+.blog-similar {
+  padding-top: 3rem;
+}
 .blog-similar ul {
   display: flex;
   flex-wrap: wrap;
@@ -1822,7 +1825,6 @@ footer .footer-legal span {
   color: #333;
 }
 
-/* Mobile : empilement */
 @media (max-width: 768px) {
   .table-article {
     font-size: 0.85em;
@@ -1830,6 +1832,12 @@ footer .footer-legal span {
   .table-article th,
   .table-article td {
     padding: 8px 5px;
+  }
+  .article-content img[style*=float] {
+    float: none !important;
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
   }
 }
 @keyframes fade-in-left {

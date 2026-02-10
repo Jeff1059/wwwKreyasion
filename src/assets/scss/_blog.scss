@@ -59,6 +59,8 @@
 
 .blog-similar {
 
+    padding-top: 3rem;
+
     ul {
         display: flex;
         flex-wrap: wrap;
@@ -492,7 +494,6 @@
     color: #333;
 }
 
-/* Mobile : empilement */
 @media (max-width: 768px) {
     .table-article {
         font-size: 0.85em;
@@ -501,5 +502,12 @@
     .table-article th,
     .table-article td {
         padding: 8px 5px;
+    }
+
+    .article-content img[style*="float"] {
+        float: none !important;
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
     }
 }
