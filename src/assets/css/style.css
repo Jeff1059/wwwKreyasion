@@ -1713,8 +1713,7 @@ footer .footer-legal span {
 /* Article Page Styles */
 .article-content {
   margin: 0 auto;
-  padding: 0;
-  max-width: 1200px;
+  padding-inline: 15px;
 }
 .article-content h1 {
   font-size: 2.5rem;
