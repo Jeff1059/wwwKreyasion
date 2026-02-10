@@ -1825,6 +1825,22 @@ footer .footer-legal span {
   color: #333;
 }
 
+.float-right {
+  float: right;
+  margin: 24px 20px 20px 20px;
+}
+
+.float-left {
+  float: left;
+  margin: 24px 20px 20px 20px;
+}
+
+.clear-both {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .table-article {
     font-size: 0.85em;
@@ -1833,8 +1849,8 @@ footer .footer-legal span {
   .table-article td {
     padding: 8px 5px;
   }
-  .article-content img[style*=float] {
-    float: none !important;
+  .article-content img[class*=float-right] {
+    float: none;
     display: block;
     margin: 20px auto;
     max-width: 100%;
