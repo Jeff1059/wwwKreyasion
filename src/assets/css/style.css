@@ -1509,8 +1509,8 @@ footer .footer-legal span {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
+  -o-object-position: center;
+     object-position: center;
   transition: transform 0.3s ease;
 }
 @media (max-width: 640px) {
