@@ -232,7 +232,7 @@ h6 {
 
 .banner-content_text h1 {
   font-size: 3rem;
-  letter-spacing: 2px;
+  letter-spacing: -1px;
 }
 
 .card-content_text p {
