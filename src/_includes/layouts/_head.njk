@@ -1,69 +1,66 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ seo.description | attr | safe }}">
-    <link rel="canonical" href="{{ seo.canonical }}">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" href="https://www.kreasyon-design.fr/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kreasyon-design.fr/apple-touch-icon.png">
-    <link rel="stylesheet" href="https://www.kreasyon-design.fr/assets/css/style.min.css">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet">
-    <title>{{ seo.title | attr | safe }}</title>
 
-    <!-- Balises sociales -->
-    <meta property="og:title" content="{{ seo.og_title or seo.title | attr | safe }}">
-    <meta property="og:description" content="{{ seo.og_description or seo.description | attr | safe }}">
-    <meta property="og:image" content="{{ seo.og_image or 'https://www.kreasyon-design.fr/assets/images/logo-kreasyon-300.jpg' }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ seo.description | attr | safe }}">
+<link rel="canonical" href="{{ seo.canonical }}">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="https://www.kreasyon-design.fr/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kreasyon-design.fr/apple-touch-icon.png">
+<link rel="stylesheet" href="https://www.kreasyon-design.fr/assets/css/style.min.css">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet">
+<title>{{ seo.title | attr | safe }}</title>
 
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https: https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.bunny.net https://challenges.cloudflare.com; font-src 'self' https://fonts.bunny.net;">
+<!-- Balises sociales -->
+<meta property="og:title" content="{{ seo.og_title or seo.title | attr | safe }}">
+<meta property="og:description" content="{{ seo.og_description or seo.description | attr | safe }}">
+<meta property="og:image" content="{{ seo.og_image or 'https://www.kreasyon-design.fr/assets/images/logo-kreasyon-300.jpg' }}">
 
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https: https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.bunny.net https://challenges.cloudflare.com; font-src 'self' https://fonts.bunny.net;">
 
 
-    <!-- Balise tarteaucitron -->
-    <script src="/tarteaucitron/tarteaucitron.min.js"></script>
-    <script type="text/javascript">
-        tarteaucitron.init({
-            "privacyUrl": "https://www.kreasyon-design.fr/politique-confidentialite.html",
-            "bodyPosition": "top",
-            "hashtag": "#tarteaucitron",
-            "cookieName": "tarteaucitron",
-            "orientation": "popup",
-            "groupServices": true,
-            "showDetailsOnClick": true,
-            "serviceDefaultState": "wait",
-            "showAlertSmall": false,
-            "cookieslist": false,
-            "cookieslistEmbed": false,
-            "closePopup": true,
-            "showIcon": true,
-            "iconSrc": "/assets/images/shield-user.svg",
-            "iconPosition": "BottomRight",
-            "adblocker": true,
-            "DenyAllCta": true,
-            "AcceptAllCta": true,
-            "highPrivacy": true,
-            "alwaysNeedConsent": false,
-            "handleBrowserDNTRequest": false,
-            "removeCredit": false,
-            "moreInfoLink": true,
-            "useExternalCss": false,
-            "useExternalJs": false,
-            "googleConsentMode": true,
-            "bingConsentMode": true,
-            "pianoConsentMode": true,
-            "pianoConsentModeEssential": false,
-            "softConsentMode": false,
-            "dataLayer": false,
-            "serverSide": false,
-                "partnersList": true
-        });
-    </script>
-    <script>
-        tarteaucitron.user.gtagUa = 'G-FBDKWKVLFC';
-        tarteaucitron.user.gtagMore = function () { };
-        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-    </script>
-</head> 
+<!-- Balise tarteaucitron -->
+<script src="/tarteaucitron/tarteaucitron.min.js"></script>
+<script type="text/javascript">
+    tarteaucitron.init({
+    "privacyUrl": "https://www.kreasyon-design.fr/politique-confidentialite.html",
+    "bodyPosition": "top",
+    "hashtag": "#tarteaucitron",
+    "cookieName": "tarteaucitron",
+    "orientation": "popup",
+    "groupServices": true,
+    "showDetailsOnClick": true,
+    "serviceDefaultState": "wait",
+    "showAlertSmall": false,
+    "cookieslist": false,
+    "cookieslistEmbed": false,
+    "closePopup": true,
+    "showIcon": true,
+    "iconSrc": "/assets/images/shield-user.svg",
+    "iconPosition": "BottomRight",
+    "adblocker": true,
+    "DenyAllCta": true,
+    "AcceptAllCta": true,
+    "highPrivacy": true,
+    "alwaysNeedConsent": false,
+    "handleBrowserDNTRequest": false,
+    "removeCredit": false,
+    "moreInfoLink": true,
+    "useExternalCss": false,
+    "useExternalJs": false,
+    "googleConsentMode": true,
+    "bingConsentMode": true,
+    "pianoConsentMode": true,
+    "pianoConsentModeEssential": false,
+    "softConsentMode": false,
+    "dataLayer": false,
+    "serverSide": false,
+    "partnersList": true
+    });
+</script>
+<script>
+    tarteaucitron.user.gtagUa = 'G-FBDKWKVLFC';
+    tarteaucitron.user.gtagMore = function () { };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
