@@ -6,14 +6,14 @@
     "canonical": "https://www.kreasyon-design.fr/blog/indexation-pages",
     "og:title": "",
     "og:description": "",
-    "og:image": "https://www.kreasyon-design.fr/assets/images/blog/organisation-pages-web.jpg",
+    "og:image": "/assets/images/organisation_page_web1.png",
     "og:type": "article"
   },
   "date": "06-02-2026",
   "title": "Qu'est ce que l'indexation de pages ?",
   "content": "## Introduction\n\nBien structurer sa page web est essentiel...",
   "id": "indexation-pages",
-  "image": "/assets/images/indexation-page.png",
+  "image": "/assets/images/organisation_page_web1.png",
   "description": "Guide technique sur l'indexation pour booster votre référencement naturel",
   "category": "Développement"
 }
