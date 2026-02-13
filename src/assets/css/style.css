@@ -1846,6 +1846,16 @@ footer .footer-legal span {
   overflow: hidden;
 }
 
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/cta-banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media (max-width: 768px) {
   .table-article {
     font-size: 0.85em;
