@@ -13,13 +13,11 @@ eleventyComputed:
 <section id="cover">
     <img src="{{ data.coverImage }}" alt="">
 
-
+    
     <div class="container">
         <div class="page-header">
             <h1 class="section-title">{{ data.headerTitle }}</h1>
-            {% if meta.description %}
-                <p class="sub-title">{{ meta.description }}</p>
-            {% endif %}
+            <p class="sub-title">{{ meta.description }}</p>
         </div>
     </div>
 </section>

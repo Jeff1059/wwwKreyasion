@@ -46,7 +46,9 @@ eleventyComputed:
             <div class="container">
                 <div class="cta-content">
                     <h2 class="cta-title">{{ article.cta.title }}</h2>
-                    <p class="cta-sub-title">{{ article.cta.description }}</p>
+                    {% if article.cta.description %}
+                        <p class="cta-sub-title">{{ article.cta.description }}</p>
+                    {% endif %}
                     <a href="{{ article.cta.button.url }}" class="main-btn">{{ article.cta.button.label }}</a>
                 </div>
             </div>
