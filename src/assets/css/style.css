@@ -1717,6 +1717,7 @@ footer .footer-legal span {
 .article-content {
   margin: 0 auto;
   padding-inline: 15px;
+  max-width: 1200px;
 }
 .article-content h1 {
   font-size: 2.5rem;
@@ -1753,6 +1754,10 @@ footer .footer-legal span {
 .article-content ol li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
+}
+.article-content ul li a,
+.article-content ol li a {
+  padding: unset;
 }
 .article-content span {
   color: var(--accent-color);

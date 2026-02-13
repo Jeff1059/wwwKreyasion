@@ -373,6 +373,7 @@
 
     margin: 0 auto;
     padding-inline: 15px;
+    max-width: 1200px;
 
     h1 {
         font-size: 2.5rem;
@@ -413,6 +414,10 @@
         li {
             margin-bottom: 0.5rem;
             line-height: 1.6;
+
+            a {
+                padding: unset;
+            }
         }
     }
 
