@@ -1847,11 +1847,7 @@ footer .footer-legal span {
 }
 
 .cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1200px;
-  height: 300px;
+  position: relative;
 }
 .cta::before {
   content: "";
