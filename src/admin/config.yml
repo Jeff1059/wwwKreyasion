@@ -251,7 +251,7 @@ collections:
     label: "✍️ Articles du Blog"
     folder: "src/_data/blog/posts"
     create: true
-    media_folder: "src/assets/images/posts"
+    media_folder: "/src/assets/images/posts"
     slug: "{{id}}"
     extension: "json"
     format: "json"
