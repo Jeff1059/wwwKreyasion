@@ -22,7 +22,7 @@
         gap: 3rem;
 
         img {
-            max-width: 300px;
+            max-width: 250px;
             height: auto;
             border-radius: 10px;
         }
@@ -52,9 +52,9 @@
 /* Article Cards */
 
 .blog-articles {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 1rem 1rem;
 }
 
 .blog-similar {
@@ -176,7 +176,7 @@
 }
 
 .article-card_title {
-    font-size: 1.5rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--main-color);
     margin: 0;
@@ -207,6 +207,7 @@
     font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
+    width: fit-content;
 }
 
 .article-card_description {
@@ -376,13 +377,13 @@
     max-width: 1200px;
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
         line-height: 1.2;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         margin-top: 2.5rem;
         margin-bottom: 1rem;
         color: var(--accent-color);
