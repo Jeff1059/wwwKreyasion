@@ -1422,7 +1422,7 @@ footer .footer-legal span {
 /* Article Cards */
 .blog-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 1.5rem 1.5rem;
 }
 
@@ -1476,6 +1476,7 @@ footer .footer-legal span {
 
 .article-card {
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   background-color: var(--surface-color);
   border-radius: 16px;
@@ -1500,27 +1501,16 @@ footer .footer-legal span {
 }
 
 .article-card_image {
+  display: flex;
   flex-shrink: 0;
-  width: 150px;
-  height: 150px;
   border-radius: 12px;
   overflow: hidden;
-  background-color: var(--alternative-s-color);
 }
 .article-card_image img {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  max-width: 125px;
+  height: auto;
   transition: transform 0.3s ease;
-}
-@media (max-width: 640px) {
-  .article-card_image {
-    width: 100%;
-    height: 150px;
-  }
 }
 
 .article-card_content {
