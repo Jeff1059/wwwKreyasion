@@ -30,7 +30,7 @@ eleventyComputed:
                 <!-- Articles List -->
                 <div class="blog-articles">
                     {% for article in collections.blogPosts %}
-                        <a href="/blog/{{ article.id }}/" class="article-card" data-category="{{ article.category | slugify }}">
+                        <a href="/blog/{{ article.id }}" class="article-card" data-category="{{ article.category | slugify }}">
                             <div class="article-card_image">
                                 <img src="{{ article.image }}" alt="{{ article.title }}" loading="lazy">
                             </div>
