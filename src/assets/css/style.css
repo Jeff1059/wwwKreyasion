@@ -51,7 +51,7 @@ ul {
   --white: #ffffff;
   --header-border: #4A3F41;
   /*  blog grid */
-  --grid-blog: 300px;
+  --grid-blog: 315px;
 }
 
 /*
@@ -1428,7 +1428,7 @@ footer .footer-legal span {
   gap: 1.5rem 1.5rem;
 }
 @media (max-width: 350px) {
-  .blog-articles {
+  .blog-articles :root {
     --grid-blog: 1fr;
   }
 }
