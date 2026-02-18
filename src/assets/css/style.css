@@ -50,6 +50,8 @@ ul {
   --shape: #311817;
   --white: #ffffff;
   --header-border: #4A3F41;
+  /*  blog grid */
+  --grid-blog: 300px;
 }
 
 /*
@@ -1422,8 +1424,13 @@ footer .footer-legal span {
 /* Article Cards */
 .blog-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-blog), 1fr));
   gap: 1.5rem 1.5rem;
+}
+@media (max-width: 350px) {
+  .blog-articles {
+    --grid-blog: 1fr;
+  }
 }
 
 .blog-similar {
