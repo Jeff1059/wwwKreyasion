@@ -1409,6 +1409,10 @@ footer .footer-legal span {
   }
 }
 /* Blog List Page Styles */
+.section-title {
+  font-size: 1.5rem;
+}
+
 #article-cover {
   padding-bottom: 0;
 }
@@ -1429,7 +1433,7 @@ footer .footer-legal span {
   gap: 3rem;
 }
 #article-cover .cover img {
-  max-width: 250px;
+  max-width: 215px;
   height: auto;
   border-radius: 10px;
 }
@@ -1764,7 +1768,7 @@ footer .footer-legal span {
   line-height: 1.2;
 }
 .article-content h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: var(--accent-color);
