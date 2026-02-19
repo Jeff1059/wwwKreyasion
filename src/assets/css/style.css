@@ -424,7 +424,7 @@ section {
 .breadcrumb-sub {
   padding-top: 0;
 }
-.breadcrumb-sub h2 {
+.breadcrumb-sub .title {
   margin-top: 2rem;
 }
 
