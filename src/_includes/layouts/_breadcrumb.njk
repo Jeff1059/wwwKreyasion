@@ -1,0 +1,20 @@
+{% if navigationBreadcrumb %}
+<section id="breadcrumb">
+    <div class="container">
+        <nav aria-label="Fil d'Ariane">
+        <ul>
+            {% for ancestor in navigationBreadcrumb %}
+            <li class="breadcrumb_item">
+            {% if not loop.last %}
+                <a href="{{ ancestor.url }}">{{ ancestor.title }}</a>
+                <span class="breadcrumb_separator">/</span>
+            {% else %}
+                <span aria-current="page">{{ ancestor.title }}</span>
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        </nav>
+    </div>
+</section>
+{% endif %}

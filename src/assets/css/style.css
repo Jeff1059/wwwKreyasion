@@ -391,6 +391,23 @@ section {
   justify-content: space-between;
 }
 
+#breadcrumb ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+#breadcrumb li {
+  display: flex;
+  flex-direction: row;
+}
+#breadcrumb a {
+  padding: 0;
+}
+#breadcrumb a span {
+  padding-inline: 1rem;
+}
+
 @media screen and (max-width: 1400px) {
   #banner {
     height: -moz-fit-content;
@@ -1510,8 +1527,8 @@ footer .footer-legal span {
 .article-card_image {
   display: flex;
   flex-shrink: 0;
-  width: 125px;
-  height: 125px;
+  width: 115px;
+  height: 115px;
   border-radius: 12px;
   overflow: hidden;
 }

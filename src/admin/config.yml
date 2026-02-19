@@ -33,7 +33,7 @@ collections:
         name: "hero"
         file: "src/_data/homepage/hero.json"
         fields:
-          - { label: "Titre principal", name: "title", widget: "string" }
+          - { label: "Titre principal", name: "headerTitle", widget: "string" }
           - { label: "Sous-titre", name: "subtitle", widget: "text" }
           - label: "CTA (Bouton)"
             name: "cta"
@@ -269,7 +269,7 @@ collections:
           - { label: "OG Description", name: "og:description", widget: "text", required: false }
           - { label: "OG Image", name: "og:image", widget: "image", required: false }
           - { label: "OG Type", name: "og:type", widget: "string", default: "article" }
-      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Titre", name: "headerTitle", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "DD-MM-YYYY", time_format: false, format: "DD-MM-YYYY" }
       - { label: "Catégorie", name: "category", widget: "string" }
       - { label: "Temps de lecture", name: "readTime", widget: "string" }

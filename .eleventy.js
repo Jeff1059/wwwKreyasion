@@ -61,9 +61,12 @@ module.exports = function (eleventyConfig) {
         return DateTime.fromJSDate(new Date(dateObj), { zone: 'utc' }).setLocale('fr').toLocaleString(DateTime.DATE_FULL);
     });
 
-eleventyConfig.addFilter("sitemapDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
- });
+    eleventyConfig.addFilter("sitemapDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+    });
+
+    const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
 
     // Add Collections

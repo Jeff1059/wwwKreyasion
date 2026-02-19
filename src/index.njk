@@ -1,5 +1,8 @@
 ---
 eleventyComputed:
+  eleventyNavigation:
+    key: "accueil"
+    title: "Accueil"
   seo:
     title: "{{ homepage.head.title }}"
     description: "{{ homepage.head.description }}"
@@ -13,12 +16,12 @@ eleventyComputed:
 <html lang="fr">
 
 <head>
-{% include "./_includes/layouts/_head.njk" %}
+{% include "layouts/_head.njk" %}
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
-    {% include "./_includes/layouts/_header.njk" %}
+    {% include "layouts/_header.njk" %}
 
     <main>
         <section id="banner" class="banner">

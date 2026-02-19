@@ -160,6 +160,30 @@ section {
     justify-content: space-between;
 }
 
+#breadcrumb {
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+    }
+
+    a {
+        padding: 0;
+
+        span {
+            padding-inline: 1rem;
+        }
+    }
+
+}
+
 @media screen and (max-width: 1400px) {
 
     #banner {
