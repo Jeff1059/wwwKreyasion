@@ -42,7 +42,7 @@ section {
     .container {
         display: flex;
         align-items: center;
-        min-height: 180px;
+        min-height: 150px;
     }
 
     .page-header {
@@ -53,12 +53,14 @@ section {
 
         .section-title {
             text-align: left;
+            margin-top: 1rem;
             margin-bottom: 0;
             filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
         }
 
         p {
             margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
     }

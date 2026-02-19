@@ -293,7 +293,7 @@ section {
 #cover .container {
   display: flex;
   align-items: center;
-  min-height: 180px;
+  min-height: 150px;
 }
 #cover .page-header {
   position: relative;
@@ -303,11 +303,13 @@ section {
 }
 #cover .page-header .section-title {
   text-align: left;
+  margin-top: 1rem;
   margin-bottom: 0;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
 }
 #cover .page-header p {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 #banner {
