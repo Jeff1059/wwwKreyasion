@@ -44,6 +44,11 @@ eleventyComputed:
 
 <main id="article-detail">
     <section class="breadcrumb-sub">
+
+        <div class="article-content">
+            {{ article.content | markdown | safe }}
+        </div>
+
         <div class="cta">
             <div class="container">
                 <div class="cta-content">
@@ -55,9 +60,7 @@ eleventyComputed:
                 </div>
             </div>
         </div>
-        <div class="article-content">
-            {{ article.content | markdown | safe }}
-        </div>
+        
         <aside class="container blog-similar">
             <h3>Articles similaires</h3>
             <ul>
