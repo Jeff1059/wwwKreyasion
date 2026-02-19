@@ -29,7 +29,7 @@ eleventyComputed:
                 <div class="banner-content">
                     <img class="banner-content_image" src="{{ homepage.hero.image }}" alt="bannière" fetchpriority="high">
                     <div class="banner-content_text">
-                        <h1>{{ homepage.hero.title }}</h1>
+                        <h1>{{ homepage.hero.headTitle }}</h1>
                         <p>{{ homepage.hero.subtitle }}</p>
                         {% if homepage.hero.cta %}
                             <a class="main-btn" href="{{ homepage.hero.cta.link }}">{{ homepage.hero.cta.text }}</a>
