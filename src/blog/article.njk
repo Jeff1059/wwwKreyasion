@@ -43,13 +43,7 @@ eleventyComputed:
 {% include "layouts/_breadcrumb.njk" %}
 
 <main id="article-detail">
-    <section>
-        <div class="container">
-            <a href="/blog" class="article-back">Retour à la liste</a>
-            <div class="article-content">
-                {{ article.content | markdown | safe }}
-            </div>
-        </div>
+    <section class="breadcrumb-sub">
         <div class="cta">
             <div class="container">
                 <div class="cta-content">

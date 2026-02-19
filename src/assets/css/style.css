@@ -391,11 +391,16 @@ section {
   justify-content: space-between;
 }
 
+#breadcrumb {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
 #breadcrumb ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style: none;
+  padding-left: 0;
 }
 #breadcrumb li {
   display: flex;
@@ -404,8 +409,12 @@ section {
 #breadcrumb a {
   padding: 0;
 }
-#breadcrumb a span {
+#breadcrumb .breadcrumb-separator {
   padding-inline: 1rem;
+}
+
+.breadcrumb-sub {
+  padding-top: 1rem;
 }
 
 @media screen and (max-width: 1400px) {
