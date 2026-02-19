@@ -201,7 +201,12 @@ section {
 }
 
 .breadcrumb-sub {
+
     padding-top: 0;
+
+    h1 {
+        margin-top: 2rem;
+    }
 }
 
 @media screen and (max-width: 1400px) {
