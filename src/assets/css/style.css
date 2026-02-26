@@ -441,6 +441,14 @@ section {
   margin-top: 2rem;
 }
 
+.warning {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #1e1a1a;
+  border-radius: 8px;
+  border: 1px solid #c65555;
+}
+
 @media screen and (max-width: 1400px) {
   #banner {
     height: -moz-fit-content;
@@ -1778,7 +1786,7 @@ footer .footer-legal span {
 .article-content h2 {
   font-size: 1.5rem;
   margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--accent-color);
 }
 .article-content h3 {

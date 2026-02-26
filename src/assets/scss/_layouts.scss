@@ -219,6 +219,14 @@ section {
     }
 }
 
+.warning {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #1e1a1a;
+    border-radius: 8px;
+    border: 1px solid #c65555;
+}
+
 @media screen and (max-width: 1400px) {
 
     #banner {
