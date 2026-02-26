@@ -1774,7 +1774,8 @@ footer .footer-legal span {
 
 /* Article Page Styles */
 .article-content {
-  margin: 0 auto;
+  margin-inline: auto;
+  margin-bottom: 3rem;
   padding-inline: 15px;
   max-width: 1200px;
 }
