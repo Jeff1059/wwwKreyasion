@@ -333,7 +333,6 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 40vw 10vh;
-  z-index: -1;
 }
 
 .banner p {
